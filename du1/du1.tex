@@ -1,0 +1,56 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8x]{inputenc}
+\usepackage{indentfirst} %indentace prvního odstavce
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage[czech]{babel}
+\usepackage{mathdots}
+\usepackage{slashbox}
+
+\begin{document}
+\begin{center}
+\large NMMB538 - DÚ1
+
+\normalsize Jan Oupický
+\end{center}
+\vspace{1\baselineskip}
+
+\section{}
+$\hat{f}$ značí homogenizaci polynomu $f$ pomocí proměnné $z$. Proto
+\[
+\widehat{w(x,y)} = y^2 z - x^3 - a x z^2 - b z^3
+\]
+$\pi_X(f)$ značí náhrazení proměnné $X$ jednotkou. Proto
+\[
+\pi_X(\widehat{w(x,y)}) = - b z^3 + y^2 z - az^2 - 1
+\]
+\[
+\pi_Y(\widehat{w(x,y)}) = - b z^3 - x^3 - a x z^2 + z
+\]
+
+\section{}
+$w(x,y) = y^2-x^3-ax-b$. $deg(w) = 3 \implies 3w(x,y) = -3x^3+3y^2-3ax-3b$
+\[
+\frac{\partial w}{\partial x} = -3x^2-a
+\]
+\[
+\frac{\partial w}{\partial y} = 2y\\\implies
+\]
+\[
+x\frac{\partial w}{\partial x}\frac{\partial w}{\partial y} + y\frac{\partial w}{\partial y} = x(-3x^2-a)+y(2y) = -3x^3+2y^2-ax \neq 3w(x,y)
+\]
+Rovnost (P4) tedy neplatí, což není překvapivé, jelikož $w$ není homogenní.
+
+\section{}
+Využijeme toho, že $f \in K[x_1,\dots,x_n]$ je irreducibilní právě tehdy, když $\hat{f}$ je irreducibilní (P3 (v)) a také vlastnosti (P3 (i)). Označme $\hat{f} = F \coloneqq 2X^3-X^2Y+2XY^2-Y^3$. 
+
+Použijeme zobrazení $\pi_Y$ a označme $f \coloneqq \pi_Y(F) = 2x^3-x^2+2x-1 \in \mathbb{Q}[x]$. Tento polynom už lze jednoduše rozložit na ireducibilní polynomy. Všimneme si, že $f = 2(x^3-\frac{1}{2}x^2+x-\frac{1}{2}) \implies f(\frac{1}{2}) = 0 \implies f = (2x-1)(x^2+1)$. Vidíme, že oba faktory jsou ireducibilní $\mathbb{Q}[x]$. Použijeme zobrazení $\hat{\,}$ na oba faktory a dostaneme, že\\ $F = (2X-Y)(X^2+Y^2)$, přičemž víme, že jsou ireducibilní.
+\end{document}
+
