@@ -87,7 +87,11 @@ Pokud místo v nekonečnu pro $K(C)$ existuje, tak bude odpovídat místu v $K(\
 
 Pokud $\sqrt{-\frac{a}{b}} \in K$, tak dle P.15 je toto místo ($P_\alpha$) jednoznačně určené a je stupně 1. Pokud $\sqrt{-\frac{a}{b}} \notin K$, tak nemůže být stupně 1.
 
-Valuace:
+Valuace: BÚNO: $a=1, b=-1$. Máme tedy $f = x^2-y^2 - 1, C = V_f \implies F \coloneqq \hat{f} = X^2-Y^2-Z^2, \hat{C} = V_F$. Bod v nekonečnu tedy je $(Z:X:Y) = (0:1:1)$. Zvolme stejně jako v úloze 4 model pomocí $\pi_Y \implies \pi_Y((0:1:1)) = (0,1), f' \coloneqq \pi_Y(F) = x^2-z^2-1$. Na polynom musíme aplikovat substituci, abychom křivku posunuly do počátku. Zvolme tedy $x \mapsto x+1, z \mapsto z$. Máme tedy nový polynom $f''(z,x) = f'(z,x+1) = x^2+2x-z^2$, pro který $f''(0,0) = 0$. $\frac{\partial f}{\partial x}(z,x) = 2x + 2 \implies f''$ je hladký v $(0,0)$. Spočteme valuace. 
+
+$v_{P_{(0,0)}}(z) = 1$, jelikož tečna v $(0,0)$ je $2x$ a $z \notin (2x)$. Máme také rovnost $x^2+2x=z^2$. Z té dopočítáme valuaci pro x. $v_{P_{(0,0)}}(z^2) = 2 v_{P_{(0,0)}}(z) = 2 = v_{P_{(0,0)}}(x^2+2x) = v_{P_{(0,0)}}(x) + v_{P_{(0,0)}}(x+2) = v_{P_{(0,0)}}(x)$. Takže $v_{P_{(0,0)}}(x) = 2$. 
+
+Stejným postupem (využitím izomorfismu a resubstitucí $\psi_Y$) jako v úloze 4 dostaneme $v_{P_{(0,1)}}(x + (f')) = v_{P_{(0:1:1)}}(\frac{X + (F)}{Y+(F)})$ a  $v_{P_{(0,1)}}(z + (f')) = v_{P_{(0:1:1)}}(\frac{Z + (F)}{Y+(F)})$. Z toho opět dopočítáme  $v_{P_\infty}(y + (f)) = v_{P_{(0:1:1)}}(\frac{Y + (F)}{Z+(F)}) = -1$ a $v_{P_\infty}(x + (f)) = v_{P_{(0:1:1)}}(\frac{X + (F)}{Z+(F)}) = 1$
 
 V případě $K = \mathbb{R}$, tak místo v nekonečnu existuje pokud $a > 0, b < 0$ nebo $a < 0, b > 0$ (jinak neexistuje odmocnina). Pokud místo neexistuje, tak má křivka tvar elipsy. Naopak pokud místo v nekonečnu existuje, tak je to hyperbola.
 \end{document}
