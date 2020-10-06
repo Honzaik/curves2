@@ -52,5 +52,44 @@ Rovnost (P4) tedy neplatí, což není překvapivé, jelikož $w$ není homogenn
 Využijeme toho, že $f \in K[x_1,\dots,x_n]$ je irreducibilní právě tehdy, když $\hat{f}$ je irreducibilní (P3 (v)) a také vlastnosti (P3 (i)). Označme $\hat{f} = F \coloneqq 2X^3-X^2Y+2XY^2-Y^3$. 
 
 Použijeme zobrazení $\pi_Y$ a označme $f \coloneqq \pi_Y(F) = 2x^3-x^2+2x-1 \in \mathbb{Q}[x]$. Tento polynom už lze jednoduše rozložit na ireducibilní polynomy. Všimneme si, že $f = 2(x^3-\frac{1}{2}x^2+x-\frac{1}{2}) \implies f(\frac{1}{2}) = 0 \implies f = (2x-1)(x^2+1)$. Vidíme, že oba faktory jsou ireducibilní $\mathbb{Q}[x]$. Použijeme zobrazení $\hat{\,}$ na oba faktory a dostaneme, že\\ $F = (2X-Y)(X^2+Y^2)$, přičemž víme, že jsou ireducibilní.
+
+\section{}
+Označme $w(x,y) \coloneqq y^2-x^3-ax-b \in K[x,y], C = V_w$. Po zhomogenizovaní dostaneme $W \coloneqq \hat{w} = Y^2Z - X^3 - aXZ^2 - bZ^3 \in K[X,Y,Z], \hat{C} = V_W$. Vidíme, že bod v nekonečnu pro tuto křivku je jediný a to $(Z:X:Y) = (0:0:1)$. Chceme tedy spočítat valuaci X a Y v místě $P_{(0:0:1)} \in K(\hat{C})$, která bude ekvivalentní valuaci x a y v místě $P_{\infty} \in K(C)$. 
+
+Jediný model, který nám zobrazí bod $(0:0:1)$ na affiní bod je $\pi_Y(\hat{C})$. Přesněji $\pi_Y((0:0:1))=(0,0)$. Stejně tak dostáváme vyjádření křivky (pokud pouzijeme trochu nepřesně značení $\pi_Y$ i pro homomorfismus polynomů) $f \coloneqq \pi_Y(W) = z - x^3 - axz^2 - bz^3 = z + z(-axz - bz^2) + (-x^3) \in K[x,z]$.
+
+Polynom $f$ je v bodě $(0,0)$ hladký ($\frac{\partial f}{\partial z} = 1$). Tečna v bodě $(0,0)$ je $z$. Víme tedy že $v_{(0,0)}(x) = 1$, protože $x \notin (z)$. Dále máme rovnost $z + z(-axz - bz^2) = x^3 \implies v_{(0,0)}(x^3) = 3v_{(0,0)}(x) = 3 = v_{(0,0)}(z(1 -axz - bz^2)) = v_{(0,0)}(z) + v_{(0,0)}(1 -axz - bz^2) = v_{(0,0)}(z)$. Máme tedy $v_{(0,0)}(x)=1, v_{(0,0)}(z) = 3$.
+
+Použijeme-li izomorfimus $\psi_Y$ z P.14 dostaneme tedy $P_{(0,0)} \in K(V_f) \cong P_{(0:0:1)} \in K(\hat{C})$. Dostaneme tedy $1 = v_{P_{(0,0)}}(x+(f)) = v_{P_{(0:0:1)}}(\frac{X+(W)}{Y+(W)})$ a $3 = v_{P_{(0,0)}}(z+(f)) = v_{P_{(0:0:1)}}(\frac{Z+(W)}{Y+(W)})$. Víme tedy:
+\[
+v_{P_{(0:0:1)}}(X+(W)) - v_{P_{(0:0:1)}}({Y+(W)}) = 1
+\]
+\[
+v_{P_{(0:0:1)}}(Z+(W)) - v_{P_{(0:0:1)}}({Y+(W)}) = 3
+\]
+Chtěli bychom zjistit $v_{P_{(0:0:1)}}(Y+(W))$.
+
+Poté $P_{\infty} \in K(C) \cong P_{(0:0:1)} \in K(\hat{C}) \implies v_{P_\infty}(x+(w)) = v_{P_{(0:0:1)}}(\frac{X+(W)}{Z+(W)})$ a \\$v_{P_\infty}(y+(w)) = v_{P_{(0:0:1)}}(\frac{Y+(W)}{Z+(W)})$.
+\section{}
+Absolutní ireducibilita: Označme zadaný polynom $f \coloneqq ax^2+by^2-1$. $f$ je primitivní. Nechť $D = \bar{K}[x]$, $D$ je zřejmě obor. Použijeme Eisensteinovo kritérium. $f \in D[y] \implies f = by^2 + (ax^2-1)$. $ax^2-1 = (\sqrt{a}x-1)(\sqrt{a}x+1) \in D$. Zvolme $c \coloneqq \sqrt{a}x+1$, $c$ je irreducibilní v $D$,  $b \in K, c \nmid b$ a zároveň $c | (ax^2-1), c^2 \nmid (ax^2-1)$. Tedy dle Eisensteinova kritéria je $f$ irreducibilní v $D$ neboli absolutně irreducibilní v $K[x,y]$.
+
+Spočteme parciální derivace pro $f$:
+\[
+\frac{\partial f}{\partial x}(x,y) = 2ax
+\]
+\[
+\frac{\partial f}{\partial y}(x,y) = -2by
+\]
+Obě derivace jsou nulové pouze v bode $(0,0)$, ten ale není na křivce. $C$ je proto hladká.
+
+Označme $F \coloneqq \hat{f} = aX^2+bY^2-Z^2$. $\hat{C} = V_F$.  Derivace pro $X,Y$ jsou stejné. Jediná nová parciální derivace je $\frac{\partial F}{\partial Z}(z,x,y) = -2Z$. Jako v přechozím případě, aby všechny derivace byly 0, tak musí být všechny souřadnice rovné 0, což není bod v projektivní prostoru. Proto je $\hat{C}$ hladká.
+
+Pokud místo v nekonečnu pro $K(C)$ existuje, tak bude odpovídat místu v $K(\hat{C})$ pro nějaký bod $\alpha \in \hat{C}$. Pro tento bod tedy platí $F(\alpha)=0$. Tento bod bude mít souřadnice $(Z:X:Y) = (0:\alpha_1:\alpha_2)$. Zvolme $\alpha_1 = 1$ a dopočteme $\alpha_2$. $F(\alpha)=0 \iff a + bY^2 = 0 \implies Y = \sqrt{-\frac{a}{b}}$. Takže musí platit $\alpha = (0:1:\sqrt{-\frac{a}{b}})$.
+
+Pokud $\sqrt{-\frac{a}{b}} \in K$, tak dle P.15 je toto místo ($P_\alpha$) jednoznačně určené a je stupně 1. Pokud $\sqrt{-\frac{a}{b}} \notin K$, tak nemůže být stupně 1.
+
+Valuace:
+
+V případě $K = \mathbb{R}$, tak místo v nekonečnu existuje pokud $a > 0, b < 0$ nebo $a < 0, b > 0$ (jinak neexistuje odmocnina). Pokud místo neexistuje, tak má křivka tvar elipsy. Naopak pokud místo v nekonečnu existuje, tak je to hyperbola.
 \end{document}
 
