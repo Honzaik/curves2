@@ -1,0 +1,59 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8x]{inputenc}
+\usepackage{indentfirst} %indentace prvního odstavce
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage[czech]{babel}
+\usepackage{mathdots}
+\usepackage{slashbox}
+
+\begin{document}
+\begin{center}
+\large NMMB538 - DÚ2
+
+\normalsize Jan Oupický
+\end{center}
+\vspace{1\baselineskip}
+
+\section{}
+Chceme ukázat, že $F/F^{p^i}, i \geq 0, p = char(F)$ je čistě neseparabilní. Toto tělesové rozšíření je zřejmě algebraické, jelikož $\forall \alpha \in F: m_{\alpha,F^{p^i}} = x^{p^i} - \alpha^{p^i} \in F^{p^i}[x]$. Chceme tedy ukázat, že $\forall \alpha \in F$ je čistě neseparabilní. 
+
+Využijeme prop. S.5 implikaci $(ii) \implies (i)$. Čistě z definice $F^{p^i}$ tedy dokážeme nalézt dané $j \geq 0$ tž. $\alpha^{p^{i^{j}}} \in F^{p^i}$ $(j = 1)$. Rozšíření je tedy čistě neseparabilní.
+
+\section{}
+Máme $char(K) = p$. Předpokládejme, že $K$ je perfektní, neboli $a \mapsto a^p$ je automorfimus $K$. Máme tedy $F = K(x), F^p = (K(x))^p$. Víme, že platí $a,b \in K[x]: (a+b)^p = a^p + b^p$. Tudíž $f(x) = \sum f_ix^i \in K[x] \implies (f(x))^p = \sum f_i^p x^{ip}$. Díky tomu, že je $K$ perfektní, víme $\forall a \in K \exists b \in K: b^p = a$. Poté již nahledéneme, že $(K(x))^p = K(x^p) = F^p$.
+
+Chceme tedy spočítat $[F:F^p]=[K(x):K(x^p)]$. $x$ je algebraický prvek nad $K(x^p)$, protože $g(T) = T^p - x^p \in K(x^p)[T] = F^p[T]$. Tento polynom je $m_{x,F^p}$, protože kdyby existoval $f \in F^p[T]: deg(f) < deg(g)$, tak by $f|g$. Zároveň ale $g(T)=T^p - x^p = (T-x)^p$, takže by $f$ musel být polynom, který je tvaru $(T-x)^i, i < p$, ale to nemůže být polynom $F^p[T]=K(x^p)[T]$, protože $x^i$ se v tam nevyskytují.
+
+Zároveň zřejmě $K(x^p)(x)=K(x,x^p)=K(x)$, takže 
+\[
+p = \deg m_{x,F^p} = [K(x):K(x^p)] = [F:F^p]
+\]
+
+Není důvod proč stejný postup nebude fungovat pro $[F:F^{p^i}]$, takže $[F:F^{p^i}] = p^i$.
+
+Nyní spočteme hodnoty $N_{F|F_p}(\alpha), \alpha=x^2+1$ a $Tr_{F|F_p}(\alpha)$. Víme, že $[F:F^p]=p$, tedy báze $F$ nad $F^p$ má $p$ elementů. Zvolme například bázi $(x^0,x^1,\dots,x^{p-1})$. Tato množina zřejmě generuje $F$a má $p$ prvků, tedy je to opravdu báze. Spočítáme jak vypadá matice $M_\alpha$.
+\begin{gather*}
+\alpha u_1 = \alpha \cdot 1 \implies \mu_1 = (1,0,1,0,\dots,0)\\
+\alpha u_2 = \alpha \cdot x \implies \mu_2 = (0,1,0,1,,0\dots,0)\\
+\vdots\\
+\alpha u_{p-2} =  \alpha \cdot x^{p-3} = x^{p-3} + x^{p-1}  \implies \mu_{p-2} = (0,\dots,1,0,1)\\
+\alpha u_{p-1} =  \alpha \cdot x^{p-2} = x^{p-2} + x^p  \implies \mu_{p-1} = (x^p,\dots,0,1,0)\\
+\alpha u_{p} =  \alpha \cdot x^{p-1} = x^{p-1} + x \cdot x^p  \implies \mu_{p-2} = (0,x^p,0,\dots,0,1)\\
+\end{gather*}
+Ze stejných důvodů jako výše (pokud je $K$ perfektní) platí $K(x,y)^p = K(x^p,y^p)$. Chceme tedy $[K(x,y):K(x^p,y^p)]$. Platí $[K(x,y):K(x^p,y^p)]= [K(x,y):K(x^p,y^p)(x)] \cdot [K(x^p,y^p,x):K(x^p,y^p)]$. Hodnotu $[K(x^p,y^p,x):K(x^p,y^p)]$ známe z předchozího bodu, protože $K(x^p,y^p,x) = K(x,y^p)$. A pokud definijeme $D = K(y^p)$, tak platí
+\[
+[K(x^p,y^p,x):K(x^p,y^p)] = [D(x):D(x^p)] = p
+\]
+
+Stejně tak symetricky můžeme nově definovat $D=K(x)$ a hodnotu $[K(x,y):K(x^p,y^p,x)]=[D(y):D(y^p)]$ spočítat obdobně. Máme tedy $[K(x,y):K(x^p,y^p)] = p^2$.
+
+\end{document}
+
