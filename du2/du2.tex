@@ -43,5 +43,20 @@ Nyní spočteme hodnoty $N_{F|F_p}(\alpha), \alpha=x^2+1$ a $Tr_{F|F_p}(\alpha)$
 
 Nyní předpokládejmě, že $K$ není perfektní. Tudíž musí být $K$ nekonečné těleso s charakteristikou $p$, kde Frobeinův endomorfismus není surjektivní. Tudíž $K(x)^p \neq K(x^p)$. Poté rozšíření $F/F^p$ nebude konečného stupně, jelikož v $K(x)$ existuje nekonečně mnoho prvků z $K$, které nejsou tvaru $a^p, a \in K$ tudíž nejsou v $F^p$.
 
+\section{}
+Mějme tedy $K \subset L$ separabilní rozšíření těles. Dokážeme $L$ perfektní $\iff K$ perfektní. Platí $char(K) = 0 \iff char(L) = 0$, tedy v případě nulové charakteristiky je to zřejmé. Uvažujme tedy $p = char(K) = char(L)$.
+
+$\Rightarrow$: $L$ je perfektní, tudíž je Frobeinův endomorfimus surjektivní na $L$. Zároveň $\forall a \in K: a^p \in K$, tudíž Frobeinův endomorfimus nemůže zobrazit prvek $a \in K \subset L$ na prvek, který je mimo $K$. Takže je Frobeinův endomorfismus surjektivní i na $K$ neboli $K$ je perfektní.
+
+$\Leftarrow$: To, že je Frobeinův endomorfimus surjektivní můžeme vyjádřit, že $K = K^p$. Tedy $K$ je perfektní $\iff$ $K^p = K$. Dále z definice separability platí, že $L/K$ je algebraické rozšíření. Algebraické rozšíření můžeme zapsat takto $L = \cup_{a\in L} K(a)$. $a$ je algebraické nad $K$ a tedy $K(a)$ je rozšíření konečného stupně. Pokud ukážeme, že $K(a)$ je perfektní, tak bude i $L$ perfektní, jelikož je to sjednocení perfektních těles.
+
+Označme $[K(a):K]=n \in \mathbb{N}$. Označme $f(x)=m_{a,K}$. Díky perfektnosti $K$ platí $(K(a))^p = K(a^p), K = K^p$, $f(a)=0 \implies (f(a))^p = \iff f(a^p)=0$ tedy $[K(a^p):K] = n$. Máme tedy:
+\[
+n=[K(a):K]=[K(a):K(a^p)]\cdot [K(a^p):K], [K(a^p):K] =n \implies [K(a):K(a^p)] = 1
+\]
+
+Neboli $K(a)=K(a^p)=(K(a))^p$ tedy $K(a)$ je perfektní. Takže $L$ je perfektní.
+
+\section{}
 \end{document}
 
