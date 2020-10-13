@@ -58,7 +58,59 @@ n=[K(a):K]=[K(a):K(a^p)]\cdot [K(a^p):K], [K(a^p):K] =n \implies [K(a):K(a^p)] =
 Neboli $K(a)=K(a^p)=(K(a))^p$ tedy $K(a)$ je perfektní. Takže $L$ je perfektní.
 
 \section{}
-$min_{y,K(x)} = w(x,T) \in K(x)[T] \implies [F:K(x)] = 2, min_{x,K(y)} = w(T,y) \in K(y)[T] \implies [F:K(y)] = 3]$. v 1. pripade Všechny jsou insep až na $y$, to je insep když min poly je tvaru $T^p - \beta \in K(x)[T]$, tedy char musí byt 2 a g(x)=0, pote singularita z derivaci a char. podobne pro $x$ v $K(y) f(x) = x^3$ $ g(x)=const$ pote char 3 a .... z definice nejsou v ostatnich pripadech x a y ciste neseparabilni tudiz ty rozsireni jsou separabilni
+Označme $w(x,y) = y^2 + yg(x) - f(x)$ Weierstrasuv polynom. Z definice a minulých přednášek víme, že $[F:K(x)]=2$ a $[F:K(y)] = 3$, jelikož $m_{y,K(x)}(T) = w(x,T) = T^2 + Tg(x) - f(x) \in K(x)[T]$. Víme, že tento polynom je ireducibilní a zároveň platí $w(x,y) = 0$ v $F$. Stejně tak $m_{x,K(y)}(T) = w(T,y) = -T^3 + a_2T^2 + T(a_4+a_1) + a_6 + a_3y + y^2 \in K(y)[T]$. 
+
+$F/K(x)$ je čistě neseparabilní pokud všechny prvky $F$ jsou čistě neseparabilní nad $K(x)$. Všechny prvky  z $F \cap K(x)$ jsou čistě neseparabilní nad $K(x)$ z definice. 
+
+Chceme tedy určit, kdy je $y$ čistě neseparabilní nad $K(x)$. Dle Prop. S.5 musí být $min_{y,K(x)}(T)$ tvaru $T^{p^j}-\beta, \beta \in K(x)$. Výše vidíme, že toto může nastat pouze v případě, kdy $p = char(K) = 2$ a $g(x)=0 \iff a_1=a_3=0$. V jiných případech není $y$ čistě separabilní nad $K(x)$, tedy ani $F$.
+
+Ukážeme, že v tomto případě je křivka určená tímto polynomem $w(x,y)= y^2 - f(x)$ má singularitu:
+\[ 
+\frac{\partial w}{\partial x}(x,y) = -3x^2+2a_2x+a_4 = x^2+a_4
+\]
+\[
+\frac{\partial w}{\partial y}(x,y) = 2y = 0
+\]
+Chceme bod $(x_1,y_1)$ ve kterém jsou derivace výše $0$ a splňuje rovnici $w(x_1,y_1)=0$. $x_1$ volíme dle hodnoty $a_4$, pokud $a_4 = 0 \implies x_1 = 0$ a naopak. Nyní obě derivace jsou 0. Chceme ještě aby platilo $y_1^2-f(x_1) = 0 \implies y_1^2 = f(x_1)$. Zřejmě lze zvolit $y_1$ aby toto platilo, tudíž máme singularitu.
+
+Nyní uvažme stejný postup pro určení, kdy je $x$ čistě neseparabilní nad $K(y)$. Musí tedy platit $p=3=char(K)$ a $a_2=0, a_4+a_1 = 0$. Poté je $m_{x,K(y)}(T)=-T^3+a_6 + a_3y + y^2 \in K(y)[T]$.
+Opět určíme singularitu:
+\[ 
+\frac{\partial w}{\partial x}(x,y) = -3x^2 = 0
+\]
+\[
+\frac{\partial w}{\partial y}(x,y) = a_3+2y = a_3 - y
+\]
+
+Pro bod singularity $(x_1,y_1)$ tedy platí $y_1 = a_3$ a $x_1$ volíme, aby platilo $x_1^3=a_6+2a_3$.
+
+V případě, kdy $y$ není čistě neseparabilní nad $K(x)$, tak $y$ je separabilní nad $K(x)$ dle Prop S.4. Zároveň prvky $F \cap K(x)$ jsou tedy také separabilní dle S.4 a ostatní jsou jejich kombinace, které jsou také separabilní, jelikož separabilní prvky tvoří těleso. Takže je $F/K(x)$ separabilní rozšíření. Stejný argument se dá použít proč je $F/K(y)$ separabilní v případě, když $x$ není čistě neseparabilní.
+
+\section{}
+Výše jsme určili $[F:K(x)]=2$ a $[F:K(y)] = 3$, zvolme bázi $B_y = (1,y)$ tělesa $F$ nad $K(x)$ (pro zjednodušení místo $\frac{y+(w)}{1+(w)} \in F$ prvek $y$, stejně tak pro ostatní zmíněné prvky). Bázi $F$ nad $K(y)$ zvolíme $B_x=(1,x,x^2)$ (obdobné ztotožnění).
+
+Spočteme tedy matici $M_x$:
+\begin{gather*}
+x\cdot 1 = x \implies \mu_1 = (0, 1, 0)\\
+x\cdot x = x^2 \implies \mu_2 = (0, 0, 1)\\
+x\cdot x^2 = x^3 = a_2x^2+x(a_4+a_1) + a_6 + a_3y + y^2 \implies \mu_3 = (a_6 + a_3y + y^2, a_4+a_1, a_2)\\
+M_x = \begin{pmatrix}
+0 & 0 & a_6 + a_3y + y^2\\
+1 & 0 & a_4+a_1\\
+0 & 1 & a_2
+\end{pmatrix}
+\end{gather*}
+Takže $N_{F|K(y)}(x) = a_6 + a_3y + y^2, Tr_{F|K(y)}(x)=a_2$. Obdobně pro $M_y$:
+
+\begin{gather*}
+y\cdot 1 = y \implies \mu_1 = (0, 1)\\
+y\cdot y = y^2 = f(x)-yg(x) \implies \mu_2 = (f(x),-g(x))\\
+M_y = \begin{pmatrix}
+0 & f(x)\\
+1 & -g(x)
+\end{pmatrix}
+\end{gather*}
+Takže $N_{F|K(x)}(y) = -f(x), Tr_{F|K(x)}(y)=-g(x)$.
 
 \end{document}
 
