@@ -37,7 +37,9 @@ Zároveň zřejmě $K(x^p)(x)=K(x,x^p)=K(x)$, takže
 p = \deg m_{x,F^p} = [K(x):K(x^p)] = [F:F^p]
 \]
 
-Není důvod proč stejný postup nebude fungovat pro $[F:F^{p^i}]$, takže $[F:F^{p^i}] = p^i$. Stejně tak symetricky můžeme nově definovat $D=K(x)$ a hodnotu $[K(x,y):K(x^p,y^p,x)]=[D(y):D(y^p)]$ spočítat obdobně. Máme tedy $[K(x,y):K(x^p,y^p)] = p^2$.
+Není důvod proč stejný postup nebude fungovat pro $[F:F^{p^i}]$, takže $[F:F^{p^i}] = p^i$. 
+
+Díky perfektnosti $K$, $(K(x,y))^p = K(x^p,y^p)$. Počítáme tedy $[K(x,y):K(x^p,y^p)] = [K(x,y):K(x,y^p)] \cdot [K(x,y^p):K(x^p,y^p)]$. Definujme $D= K(x) \implies [K(x,y):K(x,y^p)] = [D(y):D(y^p)] = p$. Toto platí díky předchozí části ($D = K, y=x$). Stejně tak můžeme napsat $D = K(y^p) \implies  [K(x,y^p):K(x^p,y^p)] = [D(x):D(x^p)]=p$. Takže $[K(x,y):K(x^p,y^p)] = p^2$.
 
 Nyní spočteme hodnoty $N_{F|F_p}(\alpha), \alpha=x^2+1$ a $Tr_{F|F_p}(\alpha)$. Víme, že $x$ je čistě neseparabilní. Tudíž $[F:F^p]_s < [F:F^p] (\iff [K(x^p)(x):K(x^p)]_s < [K(x^p)(x):K(x^p)])$. Dále máme rovnost $[F:F^p] = [F:F^p]_s \cdot [F:F^p]_i = p \implies [F:F^p]_s = 1, [F:F^p]_i = p$. Pro výpočet normy a stopy použijeme tedy prop S.12, kde $s=1, t=p$. Jediný prvek $\text{Hom}_{F^p}(F,\bar{F^p})$ je tedy identita na $F$. Takže $\sigma(\alpha)=\alpha \implies N_{F|F_p}(\alpha) = \alpha^p = (x^2+1)^p = x^{2p}+1, Tr_{F|F_p}(\alpha) = p(x^2+1) = 0$. 
 
