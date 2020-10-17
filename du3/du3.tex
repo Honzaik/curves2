@@ -1,0 +1,47 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8x]{inputenc}
+\usepackage{indentfirst} %indentace prvního odstavce
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage[czech]{babel}
+\usepackage{mathdots}
+\usepackage{slashbox}
+
+\begin{document}
+\begin{center}
+\large NMMB538 - DÚ3
+
+\normalsize Jan Oupický
+\end{center}
+\vspace{1\baselineskip}
+
+\section{}
+\begin{enumerate}
+    \item $x \in P \subset O_P$. Z definice $O_P$ víme, že $K \subset O_P \implies K[x] \subset O_P$. Zřejmě $x\notin O_P$, protože jinak by $O_P = F$. Označme $I \coloneqq P \cap K[x]$. $I$ je prvoideál v $K[x]$, tedy je tvaru $I = (f), f \in K[x], f$ ireducibilní. Označme $R \coloneqq K[x]_{(f)} = \{ \frac{a}{b} | a \in K[x], b \in K[x] \setminus (f) \}$. 
+
+    $R \subseteq O_P$, protoze $O_P = \{a \in F | v_P(a) \geq 0 \}, P = \{ a \in F | v_P(a) \geq 1 \} \implies \frac{a}{b} \in R: v_P(\frac{a}{b}) = v_P(a)-v_P(b)$ z definice $v_P(b)=0$, protože $b \notin (f) \subset P$ a $a \in K[x] \in O_P \implies v_P(a) \geq 0 \implies v_P(\frac{a}{b} \geq 0$. 
+
+    Zároveň je $R$ také valuační okruh $F$. Protože $\frac{a}{b} \in F \iff a \in K[x], b \in K[x]\setminus 0$. Buď $b \notin (f) \implies \frac{a}{b} \in R, a \notin (f), b \in (f) \implies \frac{b}{a} \in R$ a nebo $a,b \in (f)$ a to se dá vydělit na jeden z přechozích případů. Nechť $Q$ je daný jediný maximální ideál $R$. Máme tedy $Q \subset R \subseteq O_P$. Z maximality $P$ tedy plyne, že $Q = P$ a tedy musí platit $R = O_P$.
+
+    \item $\Rightarrow:$ $P' \subset P \implies a\in F : v_{P'}(a) = e(P'|P)\cdot v_P(a)$ kde $e(P'|P)\geq 1$. $x \in P$ z definice $P$, tedy $v_P(x) > 0 \implies v_{P'} > 0$ z předchozí rovnosti.
+
+    $\Leftarrow:$ Označme $Q \coloneqq P' \cap F$. $v_{P'}(x)\geq 0, x \in F \implies v_Q(x) \geq 0$. Tedy $Q$ je místo $K(x)$ obsahující $x$. Víme, že existuje jediné takové místo $F/K$, protože \\$1=[F:K(x)]\geq \sum_{P:x\in P} v_P(x)\deg(P)$ . Takže $P' \subset Q = P \implies P' | P$.
+
+    \item Z předchozího bodu víme, že $v_P(x)=1$ a $\deg_{F/K}(P)=1$. Tudíž $e(P'|P)=v_{P'}(x)$. Stejně tak dle prop F.6, kde $K'=K, \deg_{F/K}(P)=1 \implies f(P'|P)=\deg_{F'/K}(P')$.
+    \item Označíme-li $n = [F':F]$, rozšíření je konečné, jelikož $F'$ je algebraické funkční těleso nad $K$ a $F=K(x)$ a $x$ je transcendentní nad $K$.
+
+    Použijeme-li značení a předpoklady věty F.7 pro naše $P$ obsahující $x$ a předchozí bod. Dostaneme tedy \\$[F':F]=\sum_i v_{P_i}(x)\cdot \deg_{F'/K}(P_i)$
+
+\section{}
+h
+\end{enumerate}
+
+\end{document}
+
