@@ -23,7 +23,7 @@
 \vspace{1\baselineskip}
 
 \section{}
-\begin{enumerate}
+\begin{enumerate}[label=(\alph*)]
     \item $x \in P \subset O_P$. Z definice $O_P$ víme, že $K \subset O_P \implies K[x] \subset O_P$. Zřejmě $x\notin O_P$, protože jinak by $O_P = F$. Označme $I \coloneqq P \cap K[x]$. $I$ je prvoideál v $K[x]$, tedy je tvaru $I = (f), f \in K[x], f$ ireducibilní. Označme $R \coloneqq K[x]_{(f)} = \{ \frac{a}{b} | a \in K[x], b \in K[x] \setminus (f) \}$. 
 
     $R \subseteq O_P$, protoze $O_P = \{a \in F | v_P(a) \geq 0 \}, P = \{ a \in F | v_P(a) \geq 1 \} \implies \frac{a}{b} \in R: v_P(\frac{a}{b}) = v_P(a)-v_P(b)$ z definice $v_P(b)=0$, protože $b \notin (f) \subset P$ a $a \in K[x] \in O_P \implies v_P(a) \geq 0 \implies v_P(\frac{a}{b} \geq 0$. 
@@ -38,9 +38,14 @@
     \item Označíme-li $n = [F':F]$, rozšíření je konečné, jelikož $F'$ je algebraické funkční těleso nad $K$ a $F=K(x)$ a $x$ je transcendentní nad $K$.
 
     Použijeme-li značení a předpoklady věty F.7 pro naše $P$ obsahující $x$ a předchozí bod. Dostaneme tedy \\$[F':F]=\sum_i v_{P_i}(x)\cdot \deg_{F'/K}(P_i)$
+\end{enumerate}
 
 \section{}
-h
+\begin{enumerate}[label=(\alph*)]
+    \item Z předchozího úkolu víme, že pokud $w$ je smooth, tak $F/K(x)$ je separabilní. Také víme, že $F/K(x)$ je konečné. Dále $F$ je jednoduché rozšíření jelikož $F = \{\frac{a+(w)}{b+(w)}| a \in K[x,y], b \in K[x,y] \setminus 0 \} \supset \{\frac{a+(w)}{b+(w)}| a \in K[x], b \in K[x] \setminus 0 \} \cong K(x)$. Tedy lehce nepřesně můžeme napsat, že $K(x)=K(x+(w)) \implies F = K(x+(w))(y+(w))$. Budeme ale používat zjednodušené značení, jako v předchozím úkolu. 
+
+    Tedy $[F:K(x)]=2$, $m_{y,K(x)}(T)=T^2 - x^3 - ax -b$. Kořeny tohoto polynomu jsou $y,-y \in F$ . Víme, že $y$ je separabilní nad $K(x)$ tedy  $|\text{Hom}(F,\bar{K(x)})|=[F:K(x)]=2$. Oba tyto homomorfismy permutují kořeny $m_{y,K(x)}$ a oba tyto kořeny jsou v $F$. Takze je $F/K(x)$ normální a Galoisovo.
+    \item u
 \end{enumerate}
 
 \end{document}
