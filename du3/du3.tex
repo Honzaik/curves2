@@ -46,7 +46,9 @@ Označme $w(x,y)=y^2-x^3-ax-b$.
     \item Z předchozího úkolu víme, že pokud $w$ je smooth, tak $F/K(x)$ je separabilní. Také víme, že $F/K(x)$ je konečné. Dále $F$ je jednoduché rozšíření jelikož $F = \{\frac{a+(w)}{b+(w)}| a \in K[x,y], b \in K[x,y] \setminus 0 \} \supset \{\frac{a+(w)}{b+(w)}| a \in K[x], b \in K[x] \setminus 0 \} \cong K(x)$. Tedy lehce nepřesně můžeme napsat, že $K(x)=K(x+(w)) \implies F = K(x+(w))(y+(w))$. Budeme ale používat zjednodušené značení, jako v předchozím úkolu. 
 
     Tedy $[F:K(x)]=2$, $m_{y,K(x)}(T)=T^2 - x^3 - ax -b$. Kořeny tohoto polynomu jsou $y,-y \in F$ . Víme, že $y$ je separabilní nad $K(x)$ tedy  $|\text{Hom}(F,\bar{K(x)})|=[F:K(x)]=2$. Oba tyto homomorfismy permutují kořeny $m_{y,K(x)}$ a oba tyto kořeny jsou v $F$. Takze je $F/K(x)$ normální a Galoisovo.
-    \item Pokud $t=y+\lambda x + \mu$, protíná $C=V_w$ právě ve 2 různých bodech, tak pro dané $(x,y)$ platí $y=-\lambda x - \mu, w(x,y)=0 \implies w(x,-\lambda x - \mu) = 0$, kde $g(x)=w(x,-\lambda x - \mu) = -x^3+x^2 \lambda^2 + x(2\lambda \mu -a)+\mu^2 -b \in K[x]$. Tento polynom je stupně $3$ a dle zadání má jen 2 různé kořeny tedy má násobný kořen $\implies g(x)=-(x-c_1)^2(x-c_2) \in K[x]$. ?????
+    \item Pokud $t=y+\lambda x + \mu$, protíná $C=V_w$ právě ve 2 různých bodech, tak pro dané $(x,y)$ platí $y=-\lambda x - \mu, w(x,y)=0 \implies w(x,-\lambda x - \mu) = 0$, kde $g(x)=w(x,-\lambda x - \mu) = -x^3+x^2 \lambda^2 + x(2\lambda \mu -a)+\mu^2 -b \in K[x]$. Tento polynom je stupně $3$ a dle zadání má jen 2 různé kořeny tedy má násobný kořen $\implies g(x)=-(x-c_1)^2(x-c_2) \in K[x]$. 
+
+    Dále nevím.
 
     \item Zjistíme, kdy je $F/K(y)$ normální. $m_{x,K(y)}(T) = -T^3-aT-b-y^2 \in K(y)[T]$. Víme, že kořen v $F$ je $x$, polynom tedy vydělíme v F $\frac{m_{x,K(y)}(T)}{T-x} = -T^2-Tx-x^2-a$. Z toho nám vyjde, že další kořeny $m_{x,K(y)}(T)$ tedy jsou $x_{1,2} = \frac{1}{2}(-x\pm \sqrt{-3x^2-4a})$. Pokud $x_{1,2} \in F$ tak je $F/K(y)$ Galoisovo. 
 
@@ -79,7 +81,7 @@ Označme $w(x,y)=y^2-x^3-ax^2-bx \in K[x,y], a^2-4b \neq 0, b \neq 0$.
 
     \item $K(t^2,st)=K(t^2)(st)$. $st \notin K(t^2)$ protože $st=\frac{yb-x^2y}{x^2}$ a monočlen $x^2y$ nemůžeme dostat jako prvek $K(\frac{y^2}{x^2})$. Zároveň $m_{st,K(t^2)}(T) = T^2-(st)^2$. Je to opravdu min. poly nad $K(t)$ protože výše jsme ukázali, že $s^2 \in K(t^2)\implies (st)^2=s^2t^2 \in K(t^2)$.
 
-    Tedy $z \in K(t^2,st): z = f+g\cdot st, f,g \in K(t^2) (\iff f = f'(t^2), f' \in K[x], g = g'(t^2), g' \in K[x]) \implies z = f(t^2)+g(t^2)\cdot t \cdot s$??
+    Tedy $z \in K(t^2,st): z = \frac{f+g\cdot st}{h+j\cdot st}, f,g,h,j \in K(t^2) (\iff f = f'(t^2), \dots, f' \in K[x]) \implies z = \frac{f'(t^2)+g'(t^2)st}{h'(t^2)+j'(t^2)st} \cdot \frac{h'(t^2)-j'(t^2)st}{h'(t^2)-j'(t^2)st} = \frac{a(t^2)+b(t^2)st}{c(t^2)}$
 
     Pokud tedy existují $f,g,h \in K[x]: t = \frac{f(t^2)+s\cdot g(t^2)}{h(t^2)} \implies$
     \[th\left(\frac{y^2}{x^2}\right)=\frac{y}{x}h\left(\frac{y^2}{x^2}\right) = f\left(\frac{y^2}{x^2}\right)+\frac{b-x^2}{x}g\left(\frac{y^2}{x^2}\right)\]
