@@ -1,0 +1,40 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8x]{inputenc}
+\usepackage{indentfirst} %indentace prvního odstavce
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage[czech]{babel}
+\usepackage{mathdots}
+\usepackage{slashbox}
+
+\begin{document}
+\begin{center}
+\large NMMB538 - DÚ4
+
+\normalsize Jan Oupický
+\end{center}
+\vspace{1\baselineskip}
+
+\section{}
+Předpokládejme $a^2 \neq 4b, b \neq 0$ viz předchozí úkol. Definujme polynom $w(x,y) = y^2 - x^3 + 2ax^2 - x(a^2-4b)$ neboli máme dokázat, že $F$ je dáno $w(u,v)=0$. Tento polynom je Weirstrassův, tedy víme, že je ireducibilní. Chceme ověřit, že v $F$ platí $w(u,v)=0$.
+
+Z minulého úkolu víme ($t=\frac{y}{x}, s=\frac{b-x^2}{x})$, že $K(t,s)=F' \supset F = K(t^2, st) = K(u,v)$. Dále víme, že platí rovnost $s^2 = t^4 - 2at^2 + (a^2-4b)$ v $F'$. Tedy $u = t^2, v = st \implies s = \frac{v}{t}$ v $F'$. Dosadíme-li $\frac{v^2}{t^2}=\frac{v^2}{u} = u^2-2au+(a^2-4b) \implies v^2 = u^3-2au^2+u(a^2-4b)$. Daná rovnost platí v $F'$, ale obsahuje jen prvky z $F$ tedy platí i v $F$. Tudíž platí $w(u,v)=0$ v $F$.
+
+Ukážeme, že $w(x,y)$ je hladký, tedy genus $F$ je 1.
+\begin{gather*}
+\frac{\partial w}{\partial x} (x,y) = -3x^2 + 4ax - a^2 + 4b\\
+\frac{\partial w}{\partial y} (x,y) = 2y\\
+\end{gather*}
+Spočteme řešení $-3x^2 + 4ax - a^2 + 4b = 0$. Máme řešení $x_{1,2} = \frac{1}{3}(2a\pm \sqrt{a^2+12b})$. Tedy pokud existuje singularita, tak je v bodě $(x_1, 0)$ nebo $(x_2, 0)$. Ověříme opět, zda pro tyto body platí také $w(x,y)=0$. Pro případ $w(x_1,0) = 0$: zajímá tedy kdy $- x_1^3 + 2ax_1^2 - x_1(a^2-4b) = x_1(- x_1^2 + 2ax_1 -(a^2-4b)) = 0$. $x_1 = 0 \iff 2a - \sqrt{a^2+12b} = 0 \iff 4b = a^2$ což nejde z předpokladů. Zbývá tedy $- x_1^2 + 2ax_1 -(a^2-4b) = 0$. Pokud dosadíme za $x_1$, tak dostaneme $\frac{-2}{9}\left(a \sqrt{a^2+12 b}+a^2-12 b\right) = 0$, kde řešení musí splňovat $b=0$ nebo $4b = a^2$.
+$w(x,y)$ je tedy smooth, tedy je $F$ eliptické funkční těleso, tedy je rodu 1.
+
+Víme, že $F'/F$ je konečné jednoduché algebraické rozšíření. V předchozím úkolu jsme ukázali $K(t,s)\supset K(t^2,st)$ a $K(t,s)=K(t^2,st)(t)$ a že $m_{t,F}(T)=T^2-t^2$. Tento polynom je ireducibilní nad $F$ a jeho kořeny jsou $t,-t \in F'$, tedy je $F'/F$ normální a Galoisovo.
+\end{document}
+
