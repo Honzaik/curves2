@@ -36,5 +36,59 @@ Spočteme řešení $-3x^2 + 4ax - a^2 + 4b = 0$. Máme řešení $x_{1,2} = \fr
 $w(x,y)$ je tedy smooth, tedy je $F$ eliptické funkční těleso, tedy je rodu 1.
 
 Víme, že $F'/F$ je konečné jednoduché algebraické rozšíření. V předchozím úkolu jsme ukázali $K(t,s)\supset K(t^2,st)$ a $K(t,s)=K(t^2,st)(t)$ a že $m_{t,F}(T)=T^2-t^2$. Tento polynom je ireducibilní nad $F$ a jeho kořeny jsou $t,-t \in F'$, tedy je $F'/F$ normální a Galoisovo.
+
+\section{}
+Definujme $w'(x,y)=y^2-x^3-ax^2-bx \in K[x,y], b \neq 0, 4b \neq a^2$. Dále obdobně $w(x,y) = y^2 - x^3 + 2ax^2 - x(a^2-4b) \in K[x,y], b \neq 0, 4b \neq a^2$. 
+
+Máme definováno, že $F' = K(x,y)$ kde $w'(x,y)=0$ a $F' = K(u,v)$, kde $w(u,v)=0$. Oba polynomy $w',w$ jsou Weirstrassovy a pro funkční tělesa dáná těmito polynomy víme, že platí
+\begin{gather*}
+P'_\infty \in \mathbb{P}_{F'/K}: v_{P'_\infty}(x)=-2, v_{P'_\infty}(y) = -3\\
+P_\infty \in \mathbb{P}_{F/K}: v_{P_\infty}(u)=-2, v_{P_\infty}(v) = -3\\
+\end{gather*}
+Dále spočteme valuace pro $x,y,u,v$ v místech $P'_{(0,0)}, P_{(0,0)}$. $y,v$ nejsou tečny v $(0,0)$ a $(0,0) \in V_w \cap V_{w'}$, takže jejich valuace je 1. Pro $x,u$ to vychází stejně, jelikož oba polynomy mají $mult_y=2$.
+\begin{gather*}
+P'_{(0,0)} \in \mathbb{P}_{F'/K}: v_{P'_{(0,0)}}(x)=2, v_{P'_{(0,0)}}(y) = 1\\
+P_{(0,0)} \in \mathbb{P}_{F/K}: v_{P_{(0,0)}}(u)=2, v_{P_{(0,0)}}(v) = 1
+\end{gather*}
+
+\begin{enumerate}[label=(\alph*)]
+    \item Dle definice $\text{div}_{F'/K}(x) = \sum\limits_{P \in \mathbb{P}_{F'/K}} v_P(x)P$. Víme, že jediná místa, kde $v_P(x) \neq 0$ jsou $P'_{(0,0)}$ a $P'_\infty$. Takže $\text{div}_{F'/K}(x) = v'_0(x)P'_{(0,0)}+ v'_\infty(x)P'_\infty = 2P'_{(0,0)} - 2P'_\infty$.
+
+    Obdobně pro zbytek:
+    \begin{gather*}
+    \text{div}_{F'/K}(y) = v'_0(y)P'_{(0,0)}+ v'_\infty(y)P'_\infty = 1P'_{(0,0)} - 3P'_\infty\\
+    \text{div}_{F/K}(u) = v_0(u)P_{(0,0)}+ v_\infty(u)P_\infty = 2P_{(0,0)} - 2P_\infty\\
+    \text{div}_{F/K}(v) = v_0(v)P_{(0,0)}+ v_\infty(v)P_\infty = 1P_{(0,0)} - 3P_\infty
+    \end{gather*}
+
+    \item Použijeme The Fundamental Equality (F.7) a Proposition F.6. Uvažujme nejprve $P = P_\infty$. Víme, že $[F':F]=2$. Dále dle proposition F.6 pro taková místa $P'$ platí $\deg_{F'/K}(P')[K:K]=f(P'|P)\deg_{F/K}(P)$. Víme ale že pro naše $P=P_\infty, P_{0,0}:$ $\deg_{F/K}(P) = 1$. Tedy $f(P'|P)=\deg_{F'/K}(P')$. Dle F.7 tedy máme 3 možnosti:
+    \begin{enumerate}
+        \item Existují právě 2 místa $P' \in \mathbb{P}_{F'/K}: P'|P, \deg_{F'/K}(P') = 1$ a platí $e(P'|P)=1=f(P'|P)$.
+        \item Existuje jedno místo $P' \in \mathbb{P}_{F'/K}: P'|P, \deg_{F'/K}(P') = 1$ a platí $e(P'|P)=2$ a $f(P'|P)=1$.
+        \item Existuje jedno místo $P' \in \mathbb{P}_{F'/K}: P'|P, \deg_{F'/K}(P') = 2$ a platí $e(P'|P)=1$ a $f(P'|P)=2$.
+    \end{enumerate}
+
+    
+
+    Uvažujme nyní případ $P=P_\infty$. Víme, že $v_P(u)=-2 \implies u^{-2} \in P$. Spočteme $v'_\infty(u) = v'_\infty(\frac{y^2}{x^2}) = 2v'_\infty(y)-2v'_\infty(x) = 2\cdot(-3)-2\cdot(-2) = -2 \implies u^{-2} \in P'_\infty$. 
+
+    Víme, že $P'_\infty \cap F$ je místo $F/K$ a toto místo obsahuje $u^{-2}$. $P_\infty$ je jediné místo $F/K$ co obsahuje $u^{-2}$. Nezbývá tedy než $P'_\infty \cap F = P_\infty \implies P'_\infty | P_\infty$.
+
+    Obdobně $v'_0(u) = v'_0(\frac{y^2}{x^2}) = 2v'_0(y)-2v'_0(x) = 2\cdot 1-2\cdot2 = -2 \implies u^{-2} \in P'_{(0,0)}$. Stejně jako výše tedy platí $P'_{(0,0)} \cap F = P_\infty \implies P'_{(0,0)} | P_\infty$. 
+
+    Pro $P=P_\infty$ tedy máme 2 různá místa $F'/K$ co ho obsahují $(P'_\infty, P'_{(0,0)})$. Platí možnost a) $\implies e(P'_\infty|P)=e(P'_{(0,0)}|P)=1$ a $f(P'_\infty|P)=f(P'_{(0,0)}|P)=1$
+
+    Uvažujme nyní $P = P_{(0,0)}$. Víme, že místo $P' \in \mathbb{P}_{F'/K}: P'|P$ nemůže už být $P'_\infty$ ani $P'_{(0,0)}$ jinak by $P_{(0,0)} = P' \cap F = P_\infty \implies P_\infty = P_{(0,0)} \implies$ spor.
+
+    Chceme místo $P'$, pro které platí $v_{P'}(u) \ge 2$, protože $P'|P \implies v_{P'}(u)\ge v_P(u)=2$. Platí $v_{P'}(u)=v_P'(\frac{y^2}{x^2}) = 2 (v_{P'}(y)-v_{P'}(x)) \ge 2 \iff v_{P'}(y)-v_{P'}(x) \ge 1$. Rozebereme možné hodnoty $v_{P'}(\cdot)$.
+
+    Pokud $v_{P'}(x) < 0 \implies P' = P'_\infty \implies$ spor. Pokud $v_{P'}(x) > 0, v_{P'}(y) > 0 \implies P' = P'_{(0,0)} \implies $ spor. Zbývá tedy $v_{P'}(x) = 0$ nebo $v_{P'}(y)=0$. Druhá možnost nemůže nastat jelikož by neplatilo $v_{P'}(y)-v_{P'}(x) \ge 1$. Hledáme tedy místo $F'/K$, kde $v_{P'}(x) = 0, v_{P'}(y) \ge 1$.
+
+    Chceme tedy najít body $(x', 0) \in V_{w'} \implies x(x^2+ax+b)= 0$. Pokud $x = 0$, tak máme místo $P'_{(0,0)}$, které nemůžeme použít. Chceme tedy místa příslušná zbylým kořenům. Řešení kvadratické rovnice jsou $x_{1,2}=\frac{1}{2}(-a\pm \sqrt{a^2-4b})$. Z přepokladů to pod odmocninou není 0, tedy máme vždy 2 kořeny za předpokladu že existuje daná odmocnina v $K$.
+
+    Označme místa příslušná těmto bodům $(x_1, 0), (x_2, 0) \in  V_{w'}$ jako $P'_1, P'_2$. Máme tedy 2 různá místa stupně $1$ t.ž. $v_{P'}(y)\geq 1, v_{P'}(x)=0 \implies v_{P'}(u)\geq 2$ (jelikož dále $e(P'|P)=1 \implies v_{P'}(u)=2$. Tedy daná místa obsahují $P_{(0,0)}$ a platí $e(P'|P)=f(P'|P)=1$.
+
+\end{enumerate}
+
 \end{document}
 
