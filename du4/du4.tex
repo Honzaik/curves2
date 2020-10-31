@@ -89,8 +89,53 @@ P_{(0,0)} \in \mathbb{P}_{F/K}: v_{P_{(0,0)}}(u)=2, v_{P_{(0,0)}}(v) = 1
     Označme místa příslušná těmto bodům $(x_1, 0), (x_2, 0) \in  V_{w'}$ jako $P'_1, P'_2$. Máme tedy 2 různá místa stupně $1$ t.ž. $v_{P'}(y)\geq 1, v_{P'}(x)=0 \implies v_{P'}(u)\geq 2$ (jelikož dále $e(P'|P)=1 \implies v_{P'}(u)=2$. Tedy daná místa obsahují $P_{(0,0)}$ a platí $e(P'|P)=f(P'|P)=1$.
 
     Pokud neexistuje $\sqrt{a^2-4b}$. Tak neexistuje jiné místo stupně $1$ obsahující $y$. Tedy zbývá možnost $P'$ je jediné místo obsahující $P_{(0,0)}$, $P'$ je stupně $2$.
- 
+
+    \item Pro přehlednost označme $P'_0 \coloneqq P'_{(0,0)}, P_0 \coloneqq P_{(0,0)}$. Dle b) tedy $P'_0, P'_\infty | P_\infty$ a $P'_1, P'_2 | P_0$. Víme, že $\text{div}_{F/K}(u) = 2P_0 - 2P_\infty$. Dále jsme zjistili, že jediná místa $P' \in \mathbb{P}_{F'/K}$, kde $v_{P'}(u) < 0$ jsou $P'_0$ a $P'_\infty$. Kdyby totiž existovalo jiné místo $F'/K$ t.ž. $v_{P'}(u)<0 \implies P' \cap F = P \in \mathbb{P}_{F/K}$ neboli místo t.ž. $v_P(u) < 0$ což musí být $P_\infty$ a jiná místa co ho dělí už nejsou, tedy spor. Stejně tak jiná místa $P' \in \mathbb{P}_{F'/K}: v_{P'}(u) > 0$ než $P'_1, P'_2$ nejsou.
+
+    Z toho plyne $\text{div}_{F'/K}(u) = 2P'_1 + 2P'_2 - 2P'_0 - 2P'_\infty$.
+
+    Spočteme $\text{Con}_{F'/F}(\text{div}_{F/K}(u)) = 2(\sum\limits_{P'|P_0}1\cdot P') -2(\sum\limits_{P'|P_\infty}1\cdot P') = 2(P'_1+P'_2)-2(P'_0+P'_\infty)$.
+
+    Rovnost tedy platí.
+
+    \item Máme $\text{Con}_{F'/F}(P_\infty) = \sum\limits_{P'|P}1\cdot P' = P'_0 + P'_\infty$. Potom $\deg_{F'/K}(P'_0+P'_\infty) = \deg_{F'/K}(P'_0) + \deg_{F'/K}(P'_\infty) = 1+1=2$. První $\deg$ značí stupeň divisoru a druhý deg je stupeň místa.
+
+    Na druhé straně $\deg_{F/K}{P_\infty} = 1$ a $[F':F] = 2$ tedy rovnost platí.
+
+    \item $\text{div}_{F'/K}(x) = 2P'_0 - 2P'_\infty$. $P'_0 \cap F = P_\infty = P'_\infty \cap F$ a $f(P'_\infty|P_\infty)=1=f(P'_0|P_\infty)$ jak jsme zjistili výše. Hodnota $\text{N}_{F'/F}(\text{div}_{F'/K}(x)) = \text{N}_{F'/F}(2P'_0 - 2P'_\infty) = 2(1P_\infty)-2(1P_\infty) = 0$.
+
+    $[F':F]=2$ a $F'/F$ je Galoisovo rozšíření, tedy $|\text{Gal}(F'|F)|=2$. Dle F.15 musí tedy $\sigma_1 \in \text{Gal}(F'|F): \sigma_1(P'_0)=P'_0 \iff \sigma_1 = id$ a $\sigma_2 \in \text{Gal}(F'|F): \sigma_2(P'_0)=P'_\infty$, jelikož obě tyto místa dělí $P_\infty$. Zřejmě $\sigma_1(x)=x$. 
+
+    Dle rovnosti F.9 platí $-2=v'_\infty(x)=v_{\sigma_2(P'_0)}(x)=v'_0(\sigma_2^{-1}(x))$. Víme, že $v'_0(\sigma_2^{-1}(x))=-2$, ale $v'_0(x^{-1})=-v'_0(x)=-2$. Tedy $\sigma_2^{-1}(x) = x^{-1} \iff \sigma_2(x) = x^{-1}$. TODO vyjadřit x v bazi 1,t pote sigma 2 posila t na -t pote vyjde ze $sigma_2(x)=bx^{-1}$
+
+    Dle S.12 tedy $N_{F'/F}(x)=\sigma_1(x)\cdot \sigma_2(x) = x \cdot x^{-1} = 1$ a zřejmě $\text{div}_{F/K}(1) = 0$. Rovnost tedy platí.
+
+    \item Máme $F' \supset F \supset K(v), [F':F]=2$. Dále platí $[F:K(v)]=3$, jelikož polynom $w(x,y)$ z 1) dává minimální polynom $u$ nad $K(v)$. $F/K(v)$ je tedy algebraické konečného stupně.
+
+    Dle lemma F.9 je tedy $\text{N}_{F'/K(v)}(\text{div}_{F'/K}(x)) = 0$, protože dle e) $\text{N}_{F'/F}(\text{div}_{F'/K}(x)) = 0$ a zřejmě $\text{N}_{F/K(v)}(0) = 0$. 
+
+    Obdobně použitím proposition S.13 platí $N_{F'/K(v)}(x) = 1$, jelikož dle e) $N_{F'/F}(x) = 1$ a $N_{F/K(v)}(1) = 1$. Poté $\text{div}_{K(v)/K}(1) = 0$
 \end{enumerate}
+
+\section{}
+Proposition F.13 říká v našem případě:
+\begin{gather*}
+\deg_{F'/K}(\text{Con}_{F'/F}(P)) = \frac{[F':F]}{[K:K]}\cdot \deg_{F/K}(P) = \frac{2}{1} \cdot 1 = 2 \implies\\
+\text{Con}_{F'/F}(P) = \sum\limits_{P'|P}e(P'|P)P' \implies \deg_{F'/K}(\text{Con}_{F'/F}(P)) = \sum\limits_{P'|P}e(P'|P)\deg_{F'/K}(P') \implies\\
+\sum\limits_{P'|P}e(P'|P)\deg_{F'/K}(P') = 2
+\end{gather*}
+Máme tedy 3 možnosti:
+
+\begin{enumerate}
+    \item Máme $P_1 \neq P_2: P_1, P_2 | P$. Poté už musí platit $\deg_{F'/K}(P_1)=1=\deg_{F'/K}(P_2)$ a $e(P_1|P)=1=e(P_2|P)$.
+    \item Nebo jediné $P' | P$, pro které buď $e(P'|P)=2$ a následně musí být $\deg_{F'/K}(P')=1$,
+    \item nebo $e(P'|P)=1$ a následně musí $\deg_{F'/K}(P')=2$.
+\end{enumerate}
+
+Dle proposition F.6 platí (v našem případě $K'=K$), že pokud $P'|P$, pak $\deg_{F'/K}(P') = f(P'|P)\cdot \deg_{F/K}(P)$. Jelikož $f(P'|P) \geq 1$ a předpokládáme, že $\deg_{F'/K}(P')=1$, nezbývá nic jiného, než $\deg_{F/K}(P) = 1$.
+
+V předpokladech proposition F.6 je pouze, že $F'/F$ je algebraické rozšíření. 
+
 
 \end{document}
 
