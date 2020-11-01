@@ -35,7 +35,7 @@ Ukážeme, že $w(x,y)$ je hladký, tedy genus $F$ je 1.
 Spočteme řešení $-3x^2 + 4ax - a^2 + 4b = 0$. Máme řešení $x_{1,2} = \frac{1}{3}(2a\pm \sqrt{a^2+12b})$. Tedy pokud existuje singularita, tak je v bodě $(x_1, 0)$ nebo $(x_2, 0)$. Ověříme opět, zda pro tyto body platí také $w(x,y)=0$. Pro případ $w(x_1,0) = 0$: zajímá tedy kdy $- x_1^3 + 2ax_1^2 - x_1(a^2-4b) = x_1(- x_1^2 + 2ax_1 -(a^2-4b)) = 0$. $x_1 = 0 \iff 2a - \sqrt{a^2+12b} = 0 \iff 4b = a^2$ což nejde z předpokladů. Zbývá tedy $- x_1^2 + 2ax_1 -(a^2-4b) = 0$. Pokud dosadíme za $x_1$, tak dostaneme $\frac{-2}{9}\left(a \sqrt{a^2+12 b}+a^2-12 b\right) = 0$, kde řešení musí splňovat $b=0$ nebo $4b = a^2$.
 $w(x,y)$ je tedy smooth, tedy je $F$ eliptické funkční těleso, tedy je rodu 1.
 
-Víme, že $F'/F$ je konečné jednoduché algebraické rozšíření. V předchozím úkolu jsme ukázali $K(t,s)\supset K(t^2,st)$ a $K(t,s)=K(t^2,st)(t)$ a že $m_{t,F}(T)=T^2-t^2$. Tento polynom je ireducibilní nad $F$ a jeho kořeny jsou $t,-t \in F'$, tedy je $F'/F$ normální a Galoisovo.
+Víme, že $F'/F$ je konečné jednoduché algebraické rozšíření. V předchozím úkolu jsme ukázali $K(t,s)\supset K(t^2,st)$ a $K(t,s)=K(t^2,st)(t)$ a že $m_{t,F}(T)=T^2-t^2$. Tento polynom je ireducibilní nad $F$ a jeho kořeny jsou $t,-t \in F'$. Tedy je $t$ separabilní nad $F$ a $F'=F(t)$, tedy $F'/F$ je separabilní a zároveň $-t \in F'$ tedy je $F'/F$ normální $\implies$ Galoisovo.
 
 \section{}
 Definujme $w'(x,y)=y^2-x^3-ax^2-bx \in K[x,y], b \neq 0, 4b \neq a^2$. Dále obdobně $w(x,y) = y^2 - x^3 + 2ax^2 - x(a^2-4b) \in K[x,y], b \neq 0, 4b \neq a^2$. 
@@ -104,17 +104,30 @@ P_{(0,0)} \in \mathbb{P}_{F/K}: v_{P_{(0,0)}}(u)=2, v_{P_{(0,0)}}(v) = 1
 
     \item $\text{div}_{F'/K}(x) = 2P'_0 - 2P'_\infty$. $P'_0 \cap F = P_\infty = P'_\infty \cap F$ a $f(P'_\infty|P_\infty)=1=f(P'_0|P_\infty)$ jak jsme zjistili výše. Hodnota $\text{N}_{F'/F}(\text{div}_{F'/K}(x)) = \text{N}_{F'/F}(2P'_0 - 2P'_\infty) = 2(1P_\infty)-2(1P_\infty) = 0$.
 
-    $[F':F]=2$ a $F'/F$ je Galoisovo rozšíření, tedy $|\text{Gal}(F'|F)|=2$. Dle F.15 musí tedy $\sigma_1 \in \text{Gal}(F'|F): \sigma_1(P'_0)=P'_0 \iff \sigma_1 = id$ a $\sigma_2 \in \text{Gal}(F'|F): \sigma_2(P'_0)=P'_\infty$, jelikož obě tyto místa dělí $P_\infty$. Zřejmě $\sigma_1(x)=x$. 
+    $[F':F]=2$ a $F'/F$ je Galoisovo rozšíření, tedy $|\text{Gal}(F'|F)|=2$. Zřejmě jeden automorfismus je identita, tedy $\sigma_1(x)=x$. 
 
-    Dle rovnosti F.9 platí $-2=v'_\infty(x)=v_{\sigma_2(P'_0)}(x)=v'_0(\sigma_2^{-1}(x))$. Víme, že $v'_0(\sigma_2^{-1}(x))=-2$, ale $v'_0(x^{-1})=-v'_0(x)=-2$. Tedy $\sigma_2^{-1}(x) = x^{-1} \iff \sigma_2(x) = x^{-1}$. TODO vyjadřit x v bazi 1,t pote sigma 2 posila t na -t pote vyjde ze $sigma_2(x)=bx^{-1}$
+    V minulém úkolu, jsme dokázali, že $F'=K(s,t) = F(t)$ a že $min_{t,F}(T)=T^2-t^2$. Tedy prvky $\text{Gal}(F'|F)$ permutují kořeny zmíněného minimálního polynomu ($t, -t$). Víme, že $\sigma_1 = id \implies \sigma_2(t) = -t$.
 
-    Dle S.12 tedy $N_{F'/F}(x)=\sigma_1(x)\cdot \sigma_2(x) = x \cdot x^{-1} = 1$ a zřejmě $\text{div}_{F/K}(1) = 0$. Rovnost tedy platí.
+    Nyní vyjádříme $x \in F'$ v bázi $(1,t)$ nad $F$. Použijeme vzorec z minulého úkolu pro výpočet $x$ pomocí $t$ a $s$. Výsledkem je:
+    \begin{gather*}
+    x = \frac{2bt^6-2abt^4}{(t^4-at^2)^2-(st)^2t^2} + t \cdot \frac{-2bst^3}{(t^4-at^2)^2-(st)^2t^2}
+    \end{gather*}
+
+    Díky tomu můžeme spočítat tedy $\sigma_2(x)$:
+    \begin{gather*}
+    \sigma_2(x) = \frac{2bt^6-2abt^4}{(t^4-at^2)^2-(st)^2t^2} + \sigma_2(t) \cdot \frac{-2bst^3}{(t^4-at^2)^2-(st)^2t^2} = \\
+    \frac{2bt^6-2abt^4}{(t^4-at^2)^2-(st)^2t^2} + (-t) \cdot \frac{-2bst^3}{(t^4-at^2)^2-(st)^2t^2}
+    \end{gather*}
+
+    Po dosazení za $t,s$ vyjde, že $\sigma_2(x)=bx^{-1}$
+
+    Dle S.12 tedy $N_{F'/F}(x)=\sigma_1(x)\cdot \sigma_2(x) = x \cdot bx^{-1} = b$ a zřejmě $\text{div}_{F/K}(b) = 0$, jelikož $b \in K$. Rovnost tedy platí.
 
     \item Máme $F' \supset F \supset K(v), [F':F]=2$. Dále platí $[F:K(v)]=3$, jelikož polynom $w(x,y)$ z 1) dává minimální polynom $u$ nad $K(v)$. $F/K(v)$ je tedy algebraické konečného stupně.
 
     Dle lemma F.9 je tedy $\text{N}_{F'/K(v)}(\text{div}_{F'/K}(x)) = 0$, protože dle e) $\text{N}_{F'/F}(\text{div}_{F'/K}(x)) = 0$ a zřejmě $\text{N}_{F/K(v)}(0) = 0$. 
 
-    Obdobně použitím proposition S.13 platí $N_{F'/K(v)}(x) = 1$, jelikož dle e) $N_{F'/F}(x) = 1$ a $N_{F/K(v)}(1) = 1$. Poté $\text{div}_{K(v)/K}(1) = 0$
+    Obdobně použitím proposition S.13 platí $N_{F'/K(v)}(x) = 1$, jelikož dle e) $N_{F'/F}(x) = b$ a $N_{F/K(v)}(b) = b$. Poté $\text{div}_{K(v)/K}(b) = 0$
 \end{enumerate}
 
 \section{}
@@ -134,8 +147,10 @@ Máme tedy 3 možnosti:
 
 Dle proposition F.6 platí (v našem případě $K'=K$), že pokud $P'|P$, pak $\deg_{F'/K}(P') = f(P'|P)\cdot \deg_{F/K}(P)$. Jelikož $f(P'|P) \geq 1$ a předpokládáme, že $\deg_{F'/K}(P')=1$, nezbývá nic jiného, než $\deg_{F/K}(P) = 1$.
 
-V předpokladech proposition F.6 je pouze, že $F'/F$ je algebraické rozšíření. 
+V předpokladech proposition F.6 je pouze, že $F'/F$ je algebraické rozšíření. Podíváme-li se ale na důkaz podtvrzení $\deg_{F'/K}(P')[K':K] = f(P'|P)\deg_{F/K}(P)$, tak se v důkazu nikde algebraičnost nepoužívá. Jediný bod, kde se využívá znalost tvrzení dokázaných pro algebraická, je $O_P \cap P' = P$. Toto ale platí obecně pro $P'|P$:
+\[O_P \cap P' = (P \cup O^*_P) \cap P' = (P \cap P') \cup (O^*_P \cap P') \]
 
+Zřejmě $P \cap P' = P$. Chceme tedy zjistit jestli $O^*_P \cap P' = \O$. Uvažujme pro spor $x \in O^*_P \cap P' \implies x \in F, v_{P'}(x) > 0$. Zvolme uniformující element $P$ označme ho $t$. Poté $x = u t^k, u \in O^*_P, k \in Z$. Ale $0<v_{P'}(x) = v_{P'}(ut^k)=v_{P'}(u)v_{P'}(t^k)$, ale zřejmě $k = 0$ tedy $0<v_{P'}(x) = v_{P'}(u)v_{P'}(1)= 0$, což je spor. Tedy je průnik prázdný.
 
 \end{document}
 
