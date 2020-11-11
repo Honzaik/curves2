@@ -1,0 +1,47 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8x]{inputenc}
+\usepackage{indentfirst} %indentace prvního odstavce
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage[czech]{babel}
+\usepackage{mathdots}
+\usepackage{slashbox}
+
+\begin{document}
+\begin{center}
+\large NMMB538 - DÚ5
+
+\normalsize Jan Oupický
+\end{center}
+\vspace{1\baselineskip}
+
+\section{}
+\begin{enumerate}
+    \item Použijeme lemma R.1. Využijeme předchozího úkolu, kde $F' = K(D)$. Pokud označíme $y_1 \coloneqq \frac{x_2^2 + (g)}{x_1^2 + (g)} = t^2 \in K(D),\frac{x_2(b-x_1^2) + (g)}{x_1^2 + (g)} = st \in K(D)$. $\phi$ dle R.1 existuje pokud $y_1$ nebo $y_2$ je transcendentní nad $K$ a $f(y_1,y_2)=0$. Z předchozího úkolu zřejmě platí, že oba prvky jsou transcendentní nad $K$. Dále jsme v minulém úkolu také ukázali, že platí $f(y_1,y_2)=f(u,v) \in F' = K(D)$.
+
+    \item Dle R.7 platí $\phi = \sigma^*$, kde $\sigma=(\sigma_1, \sigma_2)$, kde $\sigma_1 = y_1, \sigma_2 = y_2$. Zvolíme reprezentanty $(y_1,y_2)$ například jako $r_1 = \frac{x_2^2}{x_1^2}, r_2 = \frac{x_2(b-x_1^2)}{x_1^2}$. 
+
+    \item Víme, že $y_1,y_2$ jsou trans. nad $K$, tedy $\deg(\sigma) < \infty$. Zároveň jsme ukázali, že $K(y_1,y_2)=K(u,v)$ a v minulých úkolech jsme ukázali, že $[F':K(y_1,y_2)] = 2 \implies \text{ protože }F'=K(D): [K(D):K(y_1,y_2)]=2=\deg(\sigma)$.
+
+    \item Pro přehlednost označme $P_\infty$ ze zadání jako $M_\infty \in \mathbb{P}_{K(C)/K}$. Místo $M_\infty \in \mathbb{P}_{K(C)/K}$ zřejmě obsahuje $x_1^{-2}+(f)$, jelikož $v_{\infty}(x_1+(f))=-2$. Tento prvek se nám pomocí $\sigma^*$ zobrazí na $\frac{x_1^4+(g)}{x_2^4+(g)} = \frac{x_2^{-4}+(g)}{x_1^{-4}+(g)} = u^{-2} \in \text{Im}(\sigma^*) = F \subset F'$. Z minulého úkolu víme, že jediné místo $F/K$, co obsahuje $u^{-2}$ je $P_\infty \in \mathbb{P}_{F/K}$, tedy $\sigma^*(M_\infty)=P_\infty$. Dále jsme také ukázali, že pro $P'_0 \in \mathbb{P}_{K(D)/K}$ platí $P'_0 | P_\infty \implies P'_0 | \sigma^*(M_\infty)$.
+
+    \item $\Rightarrow$:
+
+    Opět použijeme značení $M_\alpha$ pro místo $K(C)/K$. Zvolme $\rho \in K(C)$. Víme, že platí $v_{M_\alpha}(\rho) > 0 \iff \rho(\alpha) = 0$. Z předpokladů platí obdobně, že $v_{P'_\beta}(\sigma^*(\rho)) > 0 \implies \sigma^*(\rho)(\beta) = 0$. Dle lemma R.8 pokud je $\rho(\sigma(\beta))$ definované, tak platí $\rho(\sigma(\beta))=\sigma^*(\rho)(\beta) \implies\rho(\sigma(\beta)) = 0 \implies \rho \in M_{\sigma(\beta)}$, $\sigma(\beta) \in C$ tedy musí platit $M_{\sigma(\beta)} = M_\alpha \iff \sigma(\beta) = \alpha$. 
+
+    Pokud $\rho(\sigma(\beta))$ není def. tak musí platit $\beta \notin \text{Dom}(\sigma) \implies \beta_1 = 0 \implies \beta_2 = 0$. Případ $\sigma(\beta) \notin \text{Dom}(\rho)$ nenastane, jelikož $\rho$ můžeme brat jako $\frac{x_1-\alpha_1+(f)}{1+(f)}$ nebo $\frac{x_2-\alpha_2+(f)}{1+(f)}$ tedy $\text{Dom}(\rho)=C$. Tedy v případě $\beta=(0,0)$ máme z 4) $P'_0 | P_\infty$. Dále by tedy $P'_0$ obsahovalo místo $P_\alpha$ což je spor.
+
+    $\Leftarrow$:
+
+    Obdobně zvolme $\rho \in M_\alpha \implies \rho(\alpha) = 0$. Platí tedy $0 = \rho(\alpha) = \rho(\sigma(\beta)) = \sigma^*(\rho)(\beta)$. Neboli $v_{P'_\beta}(\sigma^*(\rho)) > 0 \implies P'_\beta | \sigma^*(M_\alpha)$.
+\end{enumerate}
+
+\end{document}
+
