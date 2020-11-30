@@ -101,6 +101,10 @@
     \end{gather*}
 \end{enumerate}
 
+\section{}
+Věta C.15 nám říká, že pokud je $K$ perfektní, tak genus $K(V_f)/K$ a genus $\bar{K}(V_f)/\bar{K}$ jsou stejné. Můžeme uvažovat tedy $K$ algebraicky uzavřené. Polynom $f$ má tvar $ax^2+bxy+cy^2+dx+ey+f \in K[x,y]$. Uvažujme polynom $p(z)=az^2+bz+c$ a označme $\alpha \in K$ jeho kořen (předpokládejme, že $p(z) \neq c, c \neq 0$). Poté definujeme polynom $f' = f(x+\alpha y, y)$. Víme, že $K(V_f)/K = K(V_{f'})/K$ ($x \mapsto x+\alpha y, y \mapsto y$ je lineární zobrazení).
+
+Zároveň platí $f'(x,y) = a(x+\alpha y)^2 + b(x+\alpha y)y + cy^2 + d(x+\alpha y) + ey + f$. Roznásobením získáme $f'(x,y) = y^2(a \alpha^2 + b \alpha + c) + ax^2 + xy(b+2a\alpha) + dx + y(e+d\alpha)+f \implies\\f' = ax^2 + xy(b+2a\alpha) + dx + y(e+d\alpha)+f$. Tedy $f'$ lze napsat jako $f'= x^2+a'xy+b'x+c'y+d' \in K[x,y]$ neboli platí $y+(f') = \frac{x^2+bx+d+(f')}{-ax-c+(f')} \in K(V_{f'})$. Jinak řečeno $K(V_{f'}) = K(x+(f'),y+(f'))=K(x+(f'))$. 
 
 \end{document}
 
