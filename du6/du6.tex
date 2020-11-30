@@ -1,0 +1,106 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8x]{inputenc}
+\usepackage{indentfirst} %indentace prvního odstavce
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage[czech]{babel}
+\usepackage{mathdots}
+\usepackage{slashbox}
+
+\begin{document}
+\begin{center}
+\large NMMB538 - DÚ6
+
+\normalsize Jan Oupický
+\end{center}
+\vspace{1\baselineskip}
+
+\section{}
+\begin{enumerate}
+    \item $D = V_g, g(x_1,x_2) = x_2^2-x_1^3-ax_1^2-bx_1 \implies \hat{g}(X_1,X_2,X_3) = G(X_1,X_2,X_3)=X_3X_2^2-X_1^3-aX_1^2X_3 - bX_1X_3^2 \implies \hat{D}=V_G$\\
+    $C = V_f, f(x_1,x_2) = x_2^2-x_1^3-2ax_1^2-(a^2-4b)x_1 \implies \hat{f}(X_1,X_2,X_3) = F(X_1,X_2,X_3)=X_3X_2^2-X_1^3-2aX_1^2X_3 - (a^2-4b)X_1X_3^2 \implies \hat{C} = V_F$
+
+    \item Uvažujeme zobrazení $\sigma: D \rightarrow C$ z minulého úkolu. Dle lemma M.3 můžeme reprezentantovat $\mathbf{\Psi}$ jako $(A_1B_2:A_2B_1:B_1B_2)$, kde
+    \begin{gather*}
+    A_1 = X_2^2X_3^2, \;A_2 = X_2X_3^2(bX_3^2-X_1^2)\\
+    B_1 = X_1^2X_3^2, \;B_2 = X_1^2X_3^3 \implies\\
+    \mathbf{\Psi} = (X_1^2X_2^2X_3^5 : X_1^2X_2X_3^4(bX_3^2-X_1^2) : X_1^4X_3^5) \approx (X_2^2X_3 : X_2(bX_3^2-X_1^2) : X_1^2X_3)
+    \end{gather*}
+    Označme tyto polynomy $C_1, C_2, C_3$. Poslední ekvivalence platí, jelikož pokud (obecně) $A'_1 = \frac{A_1}{X_1}, A'_2 = \frac{A_2}{X_1} \implies A_1A'_2 - A_2A'_1 = \frac{1}{X_1}(A_1A_2-A_2A_1) = 0 \in (G)$. V posledním kroku jsme tuto vlastnost použili několikrát.
+
+    \item Chceme ukázat, že $\text{Dom}(\mathbf{\Psi}) = \hat{D}$. Zřejmě $\text{Dom}(\mathbf{\Psi}) \subseteq \hat{D}$. Chceme ukázat $\hat{D} \subseteq \text{Dom}(\mathbf{\Psi})$. Díky proposition M.4 víme, že všechny body $(a:b:1)$, kde $(a,b) \in D \setminus \{(0,0)\}$ jsou prvky $\text{Dom}(\mathbf{\Psi})$.
+
+    Zbývá tedy ukázat, že $P_1 = (0:0:1) \in \text{Dom}(\mathbf{\Psi})$ a $P_2 = (0:1:0) \in \text{Dom}(\mathbf{\Psi})$. $P_2$ je jediný bod $\hat{D}$, kde $X_3 = 0$ ($X_1$ musí být taky 0).
+
+    Nalezneme jiné reprezentanty $\mathbf{\Psi}$, pro které nebude obraz zmíněných bodů $(0:0:0)$. Pro $P_1$:
+
+    Nejprve vynásobíme původní tvar $X_2$ a využijeme toho, že $X_2^2X_3 = X_1^3+aX_1^2X_3 + bX_1X_3^2$ a zasubstituujeme a poté vydělíme $X_1$:
+    \begin{gather*}
+    \text{vynásobení $X_2$:}\\
+    (X_2^3X_3 : X_2^2(bX_3^2-X_1^2) : X_1^2X_2X_3)\\
+    \text{substituce do 1. a 2. členu:}\\
+    (X_2(X_1^3+aX_1^2X_3 + bX_1X_3^2) : bX_3(X_1^3+aX_1^2X_3 + bX_1X_3^2) - X_1^2X_2^2 : X_1^2X_2X_3)\\
+    \text{vydělení $X_1$:}\\
+    (X_2(X_1^2+aX_1X_3 + bX_3^2) : bX_3(X_1^2+aX_1X_3 + bX_3^2) - X_1X_2^2 : X_1X_2X_3)
+    \end{gather*}
+    Dělali jsme ekvivalentní úpravy. Tedy $\mathbf{\Psi}(0:0:1) = (0:b^2:0) = (0:1:0)$. Obdobně pro $P_2$:
+    \begin{gather*}
+    \text{substituce $bX_3^2-X_1^2 = \frac{X_2^2X_3-aX_1^2X_3-2X_1^3}{X_1}$ do 2. členu a následné vynásobení $X_1$ :}\\
+    (X_1X_2^2X_3 : X_2(X_2^2X_3-aX_1^2X_3-2X_1^3) : X_1^3X_3)\\
+    \text{substituce $X_1^3 = X_2^2X_3 - aX_1^2X_3 - bX_1X_3^2$ 2. členu:}\\
+    (X_1X_2^2X_3 : X_2(X_2^2X_3-aX_1^2X_3-2(X_2^2X_3 - aX_1^2X_3 - bX_1X_3^2)) : X_1^3X_3)\\
+    \text{vydělení $X_3$:}\\
+    (X_1X_2^2 : X_2(X_2^2-aX_1^2-2(X_2^2 - aX_1^2 - bX_1X_3)) : X_1^3)\\
+    \end{gather*}
+    A tedy $\mathbf{\Psi}(0:1:0) = (0:-1:0) = (0:1:0)$.
+\end{enumerate}
+
+\section{}
+\begin{enumerate}
+    \item $C_2 = V_g, g(x_1,x_2) = x_2^2-x_1^3+x_1-1 \implies \hat{g}(X_1,X_2,X_3) = G(X_1,X_2,X_3)=X_3X_2^2-X_1^3-X_1X_3^2 - X_3^3 \implies \hat{C_2}=V_G$\\
+    $C_1 = V_f, f(x_1,x_2) = x_2^2-x_1^3+x_1 \implies \hat{f}(X_1,X_2,X_3) = F(X_1,X_2,X_3)=X_3X_2^2-X_1^3+X_1X_3^2 \implies \hat{C_1} = V_F$
+
+    \item Obdobně jako v úloze 1 po zkrácení:
+    \begin{gather*}
+    A_1 = X_3(X_2^2-X_1^2+X_1X_3+X_3^2), \; A_2 = -X_2(X_1^2-X_1X_3-2X_3^2),\\
+    A_3 = X_3(X_1^2-X_1X_3-X_3^2) \implies \\
+    \tau = (X_3(X_2^2-X_1^2+X_1X_3+X_3^2) : -X_2(X_1^2-X_1X_3-2X_3^2) : X_3(X_1^2-X_1X_3-X_3^2))
+    \end{gather*}
+    \item Opět z prop. M.4 víme, že pro body $(a:b:1) \in \hat{C_2}$ tž. $(a,b) \in \text{Dom}(\sigma)$ platí, $\tau(a:b:1) = \widehat{\sigma(a,b)}$. Zbývají tedy opět 2 body $P_1 = (3:0:1)$ ($(3,0)$ jako jediný bod $C_2$ nebyl prvkem $\text{Dom}(\sigma)$) a $P_2 = (0:1:0)$ (jediný bod $\hat{C_2}$, kde $X_3=0$), které toto nespňují, ale jsou prvky $\hat{C_2}$.
+
+    Nalezneme obdobně tvary $\tau$, pro které můžeme spočítat obrazy těchto bodů. Pro $P_2$ lze použít následující tvar:
+    \begin{gather*}
+    \text{vynásobíme $X_1$:}\\
+    \scalebox{.8}{$(X_1X_3(X_2^2-X_1^2+X_1X_3+X_3^2) : -X_2(X_1^3-X_1^2X_3-2X_1X_3^2) : X_1X_3(X_1^2-X_1X_3-X_3^2))$}\\
+    \text{použijeme substituci $X_1^3 = X_2^2X_3 + X_1X_3^2-X_3^3$ do 2. členu:}\\
+    \scalebox{.8}{$(X_1X_3(X_2^2-X_1^2+X_1X_3+X_3^2) : -X_2((X_2^2X_3 + X_1X_3^2-X_3^3)-X_1^2X_3-2X_1X_3^2) : X_1X_3(X_1^2-X_1X_3-X_3^2))$}\\
+    \text{vydělíme $X_3$:}\\
+    \scalebox{.8}{$(X_1(X_2^2-X_1^2+X_1X_3+X_3^2) : -X_2((X_2^2 + X_1X_3-X_3^2)-X_1^2-2X_1X_3) : X_1(X_1^2-X_1X_3-X_3^2))$}\\
+    \end{gather*}
+    Nyní $\tau(0:1:0) = (0:-1:0) = (0:1:0)$. Pro $P_1:$
+    \begin{gather*}
+    \text{substituce $X_3^3 = X_2^2X_3-X_1^3-X_1X_3^2$ do 1. a 3. členu:}\\
+    \scalebox{.8}{$(X_1^3+2X_1X_3^2+2X_3^3-X_1^2X_3 : -X_2(X_1^2-X_1X_3-2X_3^2) : X_3X_1^2-X_1X_3^2-X_3X_2^2+X_1^3+X_1X_3^2)$}\\
+    \end{gather*}
+    Nyní $\tau(3:0:1) = (1:0:1)$. 
+    A pro zbylé body $\hat{C_2}$ viz minulý úkol:
+    \begin{gather*}
+        \tau(0:1:1) = (3:3:1)\\
+        \tau(0:4:1) = (3:2:1)\\
+        \tau(1:1:1) = (3:3:1)\\
+        \tau(1:4:1) = (3:3:1)\\
+        \tau(4:1:1) = (3:2:1)\\
+        \tau(4:4:1) = (0:0:1)\\
+    \end{gather*}
+\end{enumerate}
+
+
+\end{document}
+
