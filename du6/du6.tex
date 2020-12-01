@@ -102,9 +102,23 @@
 \end{enumerate}
 
 \section{}
-Věta C.15 nám říká, že pokud je $K$ perfektní, tak genus $K(V_f)/K$ a genus $\bar{K}(V_f)/\bar{K}$ jsou stejné. Můžeme uvažovat tedy $K$ algebraicky uzavřené. Polynom $f$ má tvar $ax^2+bxy+cy^2+dx+ey+f \in K[x,y]$. Uvažujme polynom $p(z)=az^2+bz+c$ a označme $\alpha \in K$ jeho kořen (předpokládejme, že $p(z) \neq c, c \neq 0$). Poté definujeme polynom $f' = f(x+\alpha y, y)$. Víme, že $K(V_f)/K = K(V_{f'})/K$ ($x \mapsto x+\alpha y, y \mapsto y$ je lineární zobrazení).
+Věta C.15 nám říká, že pokud je $K$ perfektní, tak genus $K(V_f)/K$ a genus $\bar{K}(V_f)/\bar{K}$ jsou stejné. Můžeme uvažovat tedy $K$ algebraicky uzavřené. 
 
-Zároveň platí $f'(x,y) = a(x+\alpha y)^2 + b(x+\alpha y)y + cy^2 + d(x+\alpha y) + ey + f$. Roznásobením získáme $f'(x,y) = y^2(a \alpha^2 + b \alpha + c) + ax^2 + xy(b+2a\alpha) + dx + y(e+d\alpha)+f \implies\\f' = ax^2 + xy(b+2a\alpha) + dx + y(e+d\alpha)+f$. Tedy $f'$ lze napsat jako $f'= x^2+a'xy+b'x+c'y+d' \in K[x,y]$ neboli platí $y+(f') = \frac{x^2+bx+d+(f')}{-ax-c+(f')} \in K(V_{f'})$. Jinak řečeno $K(V_{f'}) = K(x+(f'),y+(f'))=K(x+(f'))$. 
+Polynom $f$ má tvar $ax_1^2+bx_1x_2+cx_2^2+dx_1+ex_2+f \in K[x_1,x_2]$. Uvažujme polynom $p(z)=az^2+bz+c$ a označme $\alpha \in K$ jeho kořen (předpokládejme, že $p(z) \neq c, c \neq 0$, poté jistě $\alpha \in K$ existuje z alg. uzavřenosti $K$). 
 
+Definujeme polynom $f' = f(x_1+\alpha x_2, x_2)$. Víme, že $K(V_f)/K = K(V_{f'})/K$ ($x_1 \mapsto x_1+\alpha x_2, x_2 \mapsto x_2$ je lineární zobrazení).
+
+Zároveň platí $f'(x_1,x_2) = a(x_1+\alpha x_2)^2 + b(x_1+\alpha x_2)x_2 + cx_2^2 + d(x_1+\alpha x_2) + ex_2 + f$. Roznásobením získáme $f'(x_1,x_2) = x_2^2(a \alpha^2 + b \alpha + c) + ax_1^2 + x_1x_2(b+2a\alpha) + dx_1 + x_2(e+d\alpha)+f \implies f'(x_1,x_2) = ax_1^2 + x_1x_2(b+2a\alpha) + dx_1 + x_2(e+d\alpha)+f$. 
+
+Tedy $f'$ je tvaru $f'(x_1,x_2) = x_1^2+a'x_1x_2+b'x_1+c'x_2+d' \in K[x_1,x_2]$ (pokud $a\neq0$). Označíme-li $x = x_1+(f')$ a $y = x_2 + (f')$, pak platí $y = \frac{x^2+b'x+d'}{-a'x-c'} \in K(V_{f'})$. Uvažujme nyní, že $-a'x-c' \notin (f)$. Jinak řečeno $K(V_{f'}) = K(x,y)=K(x)$.
+
+Víme, že pro $K$ alg. uzavřené a $x$ transcendentní nad $K$ platí pro $(x)_+ \in \text{Div}(K(V_{f'})/K)$, že $\deg((x)_+) = [K(V_{f'}):K(x)] = 1$, tedy musí existovat místo $P \in \mathbb{P}_{K(V_{f'})/K}$, které je stupně 1.
+Poté víme, že pokud $K(V_{f'}) = K(x)$ ($x$ je zřejmě transcendentní nad $K$), tak genus $K(V_{f'})$ je 0.
+
+Nyní uvažujme, že $-a'x-c' \in (f) \implies a'=0=c'$. Poté $f'(x_1,x_2) = x_1^2+b'x_1+d'$ neboli zřejmě $K(V_{f'})=K(x)$.
+
+Nakonec jsme celou dobu předpokládali $a \neq 0$. Pokud $a = 0$, tak obdobně dokážeme vyjádřit $x$ pomocí $y$. 
+
+Také jsme předpokládali $p(z) \neq c, c \neq 0$. Pokud to platí, tak $a=0=b \implies dx = cy^2+ey+f$ a $K(V_f) = K(y)$ a toto AFF má obdobně genus 0.
 \end{document}
 
