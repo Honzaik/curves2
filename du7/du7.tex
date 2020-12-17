@@ -82,15 +82,15 @@ Všimneme si, že platí:
 \begin{gather*}
 \rho_1 = \frac{v^2}{4u^2} = \left( \frac{v}{2u} \right)^2
 \end{gather*}
-Kde $u = t^2, v = st$ z minulých úloh. Obdobně také $\rho_2$ jde vyjádřit pomocí $u,v$. 
+Kde $u = t^2, v = st, t = \frac{x_2}{x_1}, s = \frac{b-x_1^2}{x_1}$ z minulých úloh. Poněkud nepřesně zde ztotožňujeme $x_1 + (w) = x_1, x_2= x_2 + (w)$. Obdobně také $\rho_2$ jde vyjádřit pomocí $u,v$. 
 \begin{gather*}
 \rho_2 = \rho_2  \frac{x_1^2}{x_1^2} = \frac{(b-x_1^2)(-1)(x_1^6+2ax_1^5+6bx_1^4+2abx_1^3+b^2x_1^2)}{8x_1^2x_2^3} = \\
 \frac{v}{8} \frac{-(x_1^6+2ax_1^5+6bx_1^4+2abx_1^3+b^2x_1^2)}{x_2^3} \frac{x_2}{x_2} = \frac{v}{8} \frac{-((x_1^3+ax_1^2+bx_1)^2-a^2x_1^4+4bx_1^4)}{x_2^4} =\\
-\frac{v}{8} \frac{(-x_2^4+a^2x_1^4-4bx_1^4)}{x_2^4} \frac{x_1^4}{x_1^4} = \frac{v}{8} \frac{a^2-4b-\frac{x_2^4}{x_1^4}}{\frac{x_2^4}{x_1^4}} = \frac{v(a^2-4b-u^2)}{u^2}
+\frac{v}{8} \frac{(-x_2^4+a^2x_1^4-4bx_1^4)}{x_2^4} \frac{x_1^4}{x_1^4} = \frac{v}{8} \frac{a^2-4b-\frac{x_2^4}{x_1^4}}{\frac{x_2^4}{x_1^4}} = \frac{v(a^2-4b-u^2)}{8u^2}
 \end{gather*}
 Neboli $\text{Im}([2]^*) = K(\frac{v^2}{4u^2},\frac{v(a^2-4b-u^2)}{u^2})$. Ukažeme, že $[K(u,v):\text{Im}([2]^*)]=2$. 
 
-Zvolme $d = \sqrt{\frac{v^2}{u^2}} = \frac{v}{u}$. Ukážeme, že $K(\rho_1,\rho_2,d)=K(u,v)$. Poté zřejmě $min_{d,K(\rho_1,\rho_2)}(T)=T^2-\rho_1$, což je ireducibilní a separabilní polynom nad $K(\rho_1, \rho_2)$ (kořeny $\pm \rho_1$).
+Zvolme $d = \sqrt{\frac{v^2}{u^2}} = \frac{v}{u}$. Ukážeme, že $K(\rho_1,\rho_2,d)=K(u,v)$. Poté zřejmě $min_{d,K(\rho_1,\rho_2)}(T)=T^2-4\rho_1$, což je ireducibilní a separabilní polynom nad $K(\rho_1, \rho_2)$ (kořeny $\pm d$).
 
 \begin{gather*}
 \rho_2 d^{-1} = \frac{v(a^2-4b-u^2)}{u^2} \frac{u}{v} = \frac{a^2u-4bu-u^3}{u^2} = \frac{a^2u-4bu-(v^2+2au^2-a^2u+4bu)}{u^2} =\\
@@ -102,13 +102,35 @@ V úpravách jsme použili rovnost $v^2 = u^3-2au^2+u(a^2-4b)$, kterou jsme dok�
 
 Tedy $K(u,v)/\text{Im}([2]^*)$ je separabilní a stupně 2. Z minulých úkolů víme, že $K(D)/K(u,v)$ je galoisovo a stupně 2. Z toho vyplývá, že $K(D)/\text{Im}([2]^*)$ je stupně $2\cdot2$ a je separabilní. Ekvivalentně $[2]$ je separabilní isogeny a $\deg([2])=4$.
 
-V minulých úlohách jsme dokázali, že $D$ je smooth, tedy dle X.13 $\text{Im}[2]=D$.
+V minulých úlohách jsme dokázali, že $D$ je smooth, tedy dle X.13 $\text{Im}([2])=D$.
 
-Z definice isogeny víme, že $[2](\infty_D) = \infty_D$. Pro zjištění jádra chceme vědět, jaké body $\alpha \in D$ se zobrazí $[2]$ na $\infty$ neboli pro jaké body platí $\rho_1 = \frac{a_1}{b_1}, \rho_2 = \frac{a_2}{b_2}$ platí $b_i(\alpha)=0$. Vidíme, že $\alpha_2 = 0$. $D$ je smooth, tedy máme $3$ různé body $P_0,P_1,P_2 = (0,0),(\alpha_1,0),(\beta_1,0) \in D$, kde 2. souřadnice je 0.
+Z definice isogeny víme, že $[2](\infty) = \infty$. Pro zjištění jádra chceme vědět, jaké body $\alpha \in D$ se zobrazí $[2]$ na $\infty$ neboli pro jaké body platí $\rho_1 = \frac{a_1}{b_1}, \rho_2 = \frac{a_2}{b_2}$ platí $b_i(\alpha)=0$. Vidíme, že musí $\alpha_2 = 0$. $D$ je smooth, tedy máme $3$ různé body $P_0,P_1,P_2 = (0,0),(r_1,0),(r_2,0) \in D$, kde 2. souřadnice je 0.
 
-Dle T.15 ($K(D)/\text{Im}([2]^*)$ je separabilní, tedy $[K(D)/\text{Im}([2]^*)]_s = [K(D)/\text{Im}([2]^*)] = 4$), tedy $|\text{Ker}([2])|=4$. Našli jsme 4 různé body a tedy $\text{Ker}([2]) = \{\infty_D, P_0, P_1, P_2\}$. 
+$K(D)/\text{Im}([2]^*)$ je separabilní, tedy dle T.15 $[K(D)/\text{Im}([2]^*)]_s = [K(D)/\text{Im}([2]^*)] = 4$, tedy $|\text{Ker}([2])|=4$. Našli jsme 4 různé body a tedy $\text{Ker}([2]) = \{\infty, P_0, P_1, P_2\}$. 
+
+Přesně jsme neukázali, že $d \notin K(\rho_1, \rho_2)$. Pokud by to platilo, tak $\deg([2]) = 2$ a $[2]$ separabilní. Nalezli jsme ale 4 různé body, které jsou prvky $\text{Ker}([2])$, tedy spor s T.15.
 
 \section{}
 Zadání splňuje předpoklady T.17, tedy $\text{Gal}(K(D)|\text{Im}([2]^*)) = \{t^*_\alpha| \alpha \in \{\infty, P_1, P_2, P_3\}\}$.
+Z definice $t_\infty (\alpha) = \infty \oplus \alpha = \alpha$, neboli $t_\infty = [1] \iff t_\infty^* = (x,y), (X:Y:Z)$.
 
+Dále $P_1 = (0,0) \implies t_{(0,0)}(\alpha) = (0,0) \oplus \alpha$.
+
+Spočteme tedy afinní reprezentanty $t_{(0,0)}^*$, které jsou $t_{(0,0)}^* = \left( \frac{-x_1^3+x_2^2-ax_1^2}{x_1^2}, \frac{x_1^3x_2-x_2^3+ax_1^2x_2}{x_1^3} \right)$. Z toho dostaneme klasickým způsobem projektivní reprezentanty: 
+\[(X_1(-X_1^3+X_2^2X_3-aX_1^2X_3) : X_1^3X_2-X_2^3X_3+aX_1^2X_2X_3 : X_1^3X_3) \]
+
+Zbylé 2 translace korespondují s body $P_2,P_3$, kde $P_2 = (r_1, 0), P_3 = (r_2, 0)$ pro $r_1,r_2$ platí $r_i^2+ar_i+b = 0$ (jsou to kořeny $x_1^2+ax_1+b$). Opět z definice $t_{(r_1,0)}(\alpha) = (r_1,0) \oplus \alpha$. Pak jsou afinní reprezentanti $t_{(r_1,0)}^*$: 
+\begin{gather*}
+\left(\frac{r_1(a+r_1+x_1)}{x_1-r_1}, \frac{x_1^2x_2-2r_1x_1x_2 + bx_2}{(x_1-r_1)^2} \right )\\
+\text{a projektivní:}\\
+\left(r_1((a+r_1)X_3 + X_1)(X_1-r_1X_3)X_3 : X_1^2X_2-2r_1X_1X_2X_3+bX_2X_3^2 : (X_1-r_1X_3)^2X_3 \right)
+\end{gather*}
+Při úpravě 2. afinního reprezentanta jsme použili $x_2^2 = x_1^3+ax_1^2+bx_1$ a $r_1^2+ar_1 = -b$.
+
+Pro $P_3 = (r_2,0)$, $t_{(r_2,0)}(\alpha) = (r_2, 0) \oplus \alpha$ můžeme provést stejný postup. Reprezentanti $t_{(r_2,0)}^*$ jsou tedy:
+\begin{gather*}
+\left(\frac{r_2(a+r_2+x_1)}{x_1-r_2}, \frac{x_1^2x_2-2r_2x_1x_2 + bx_2}{(x_1-r_2)^2} \right )\\
+\text{a projektivní:}\\
+\left(r_2((a+r_2)X_3 + X_1)(X_1-r_2X_3)X_3 : X_1^2X_2-2r_2X_1X_2X_3+bX_2X_3^2 : (X_1-r_2X_3)^2X_3 \right)
+\end{gather*}
 \end{document}
