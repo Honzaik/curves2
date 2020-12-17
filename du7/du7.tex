@@ -35,7 +35,7 @@ Vyjádříme nejprve $\gamma_1(x_1,x_2)$. Ze vzorců pro součet stejného bodu 
 \end{gather*}
 Nyní spočteme $\gamma_2(x_1,x_2)$:
 \begin{gather*}
-\gamma_2(x_1,x_2) = \frac{3x_1^3+2ax_1^2+bx_1}{2x_2}-\frac{3x_1^3+2ax_1+b}{2x_2}\cdot \frac{x_1^4-2bx_1^2+b^2}{4x_2^2}-x_2\\
+\gamma_2(x_1,x_2) = \frac{3x_1^3+2ax_1^2+bx_1}{2x_2}-\frac{3x_1^2+2ax_1+b}{2x_2}\cdot \frac{x_1^4-2bx_1^2+b^2}{4x_2^2}-x_2\\
 \text{Převedení na společného jmenovatele a použití substituce za $x_2^2$ v čitateli:}\\
 \gamma_2(x_1,x_2) = \frac{x_1^6+2ax_1^5+5bx_1^4-5b^2x_1^2-2ab^2x_1-b^3}{8x_2^3}
 \end{gather*}
@@ -72,6 +72,43 @@ Bod $\infty = (0:1:0) \in D$. Zřejmě $A'_1,A'_3(\infty) = 0$ (násobky $X_3$) 
 Pokud ale definujeme $B'_i = \frac{B_i}{X_3^2}$. Poté $B'_2(\infty) = 1$.
 
 \section{}
+Označme
+\begin{gather*}
+\rho_1 = \left( \frac{x_1^2-b}{2x_2} \right)^2\\
+\rho_2 = \frac{x_1^6+2ax_1^5+5bx_1^4-5b^2x_1^2-2ab^2x_1-b^3}{8x_2^3}
+\end{gather*}
+
+Všimneme si, že platí:
+\begin{gather*}
+\rho_1 = \frac{v^2}{4u^2} = \left( \frac{v}{2u} \right)^2
+\end{gather*}
+Kde $u = t^2, v = st$ z minulých úloh. Obdobně také $\rho_2$ jde vyjádřit pomocí $u,v$. 
+\begin{gather*}
+\rho_2 = \rho_2  \frac{x_1^2}{x_1^2} = \frac{(b-x_1^2)(-1)(x_1^6+2ax_1^5+6bx_1^4+2abx_1^3+b^2x_1^2)}{8x_1^2x_2^3} = \\
+\frac{v}{8} \frac{-(x_1^6+2ax_1^5+6bx_1^4+2abx_1^3+b^2x_1^2)}{x_2^3} \frac{x_2}{x_2} = \frac{v}{8} \frac{-((x_1^3+ax_1^2+bx_1)^2-a^2x_1^4+4bx_1^4)}{x_2^4} =\\
+\frac{v}{8} \frac{(-x_2^4+a^2x_1^4-4bx_1^4)}{x_2^4} \frac{x_1^4}{x_1^4} = \frac{v}{8} \frac{a^2-4b-\frac{x_2^4}{x_1^4}}{\frac{x_2^4}{x_1^4}} = \frac{v(a^2-4b-u^2)}{u^2}
+\end{gather*}
+Neboli $\text{Im}([2]^*) = K(\frac{v^2}{4u^2},\frac{v(a^2-4b-u^2)}{u^2})$. Ukažeme, že $[K(u,v):\text{Im}([2]^*)]=2$. 
+
+Zvolme $d = \sqrt{\frac{v^2}{u^2}} = \frac{v}{u}$. Ukážeme, že $K(\rho_1,\rho_2,d)=K(u,v)$. Poté zřejmě $min_{d,K(\rho_1,\rho_2)}(T)=T^2-\rho_1$, což je ireducibilní a separabilní polynom nad $K(\rho_1, \rho_2)$ (kořeny $\pm \rho_1$).
+
+\begin{gather*}
+\rho_2 d^{-1} = \frac{v(a^2-4b-u^2)}{u^2} \frac{u}{v} = \frac{a^2u-4bu-u^3}{u^2} = \frac{a^2u-4bu-(v^2+2au^2-a^2u+4bu)}{u^2} =\\
+\frac{-v^2-2au^2+2a^2u-8bu}{u^2} = -\frac{v^2}{u^2} -2a + \frac{2a^2-8b}{u} \implies\\
+\rho_2 d^{-1} + d^2 +2a = \frac{2a^2-8b}{u} \implies u = \frac{2a^2-8b}{\rho_2 d^{-1} + d^2 +2a} \in K(\rho_1, \rho_2, d)\\
+d = \frac{v}{u} \implies d u = v \implies v \in K(\rho_1, \rho_2, d)
+\end{gather*}
+V úpravách jsme použili rovnost $v^2 = u^3-2au^2+u(a^2-4b)$, kterou jsme dokázali v úkolu 4.
+
+Tedy $K(u,v)/\text{Im}([2]^*)$ je separabilní a stupně 2. Z minulých úkolů víme, že $K(D)/K(u,v)$ je galoisovo a stupně 2. Z toho vyplývá, že $K(D)/\text{Im}([2]^*)$ je stupně $2\cdot2$ a je separabilní. Ekvivalentně $[2]$ je separabilní isogeny a $\deg([2])=4$.
+
+V minulých úlohách jsme dokázali, že $D$ je smooth, tedy dle X.13 $\text{Im}[2]=D$.
+
+Z definice isogeny víme, že $[2](\infty_D) = \infty_D$. Pro zjištění jádra chceme vědět, jaké body $\alpha \in D$ se zobrazí $[2]$ na $\infty$ neboli pro jaké body platí $\rho_1 = \frac{a_1}{b_1}, \rho_2 = \frac{a_2}{b_2}$ platí $b_i(\alpha)=0$. Vidíme, že $\alpha_2 = 0$. $D$ je smooth, tedy máme $3$ různé body $P_0,P_1,P_2 = (0,0),(\alpha_1,0),(\beta_1,0) \in D$, kde 2. souřadnice je 0.
+
+Dle T.15 ($K(D)/\text{Im}([2]^*)$ je separabilní, tedy $[K(D)/\text{Im}([2]^*)]_s = [K(D)/\text{Im}([2]^*)] = 4$), tedy $|\text{Ker}([2])|=4$. Našli jsme 4 různé body a tedy $\text{Ker}([2]) = \{\infty_D, P_0, P_1, P_2\}$. 
+
+\section{}
+Zadání splňuje předpoklady T.17, tedy $\text{Gal}(K(D)|\text{Im}([2]^*)) = \{t^*_\alpha| \alpha \in \{\infty, P_1, P_2, P_3\}\}$.
 
 \end{document}
-

@@ -1,0 +1,31 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8x]{inputenc}
+\usepackage{indentfirst} %indentace prvního odstavce
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage[czech]{babel}
+\usepackage{mathdots}
+\usepackage{slashbox}
+
+\begin{document}
+\begin{gather*}
+\frac{y^2-x^2+x+1}{-y(x^2-x-2)} = \frac{(x+2)^3-2(x+2)^2+(x+2)}{-y(x^2-x-2)} = \frac{-y((x+2)^3-2(x+2)^2+(x+2))}{((x+2)^3-(x+2)^2+(x+2))(x^2-x-2)}\\
+\frac{-y((x+2)^2-2(x+2)+1)}{((x+2)^2-(x+2)+1)(x^2-x-2)}
+\end{gather*}
+\begin{gather*}
+\text{vynásobíme všechny  $A_i$: $Z$}\\
+A_1 \rightarrow YZ^2(Y^2-X^2+XZ+Z^2) = YZ((X+2Z)^3 - 2(X+2Z)^2Z+(X+2Z)Z^2) \rightarrow\\
+YZ((X+2Z)^2 - 2(X+2Z)Z+Z^2)\\
+A_2 = -Y^2Z(X^2-XZ-2Z^2) = -((X+2Z)^3 - (X+2Z)^2Z+(X+2Z)Z^2)(X^2-XZ-2Z^2) \rightarrow\\
+-((X+2Z)^2 - (X+2Z)Z+Z^2)(X^2-XZ-2Z^2)\\
+A_3 = Z^2Y(X+2Z)^2 \rightarrow Z^2Y(X+2Z)
+\end{gather*}
+\end{document}
+
