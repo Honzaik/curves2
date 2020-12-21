@@ -49,12 +49,12 @@ B'_2 = 8X_2^3X_3^6\\
 \implies\\
 (A_1 : A_2 : A_3) = (A'_1B'_2 : A'_2B'_1 : B'_1B'_2)\\
 \text{dosazení a zkrácení:}\\
-(A_1 : A_2 : A_3) = (2(X_1^4-2bX_1^2X_3^2 + b^2X_3^4)X_2X_3 : \widehat{a_2} : 4X_2^3X_3^3)
+(A_1 : A_2 : A_3) = (2(X_1^4-2bX_1^2X_3^2 + b^2X_3^4)X_2X_3 : \widehat{a_2} : 8X_2^3X_3^3)
 \end{gather*}
 \section{}
 Pro reprezentaci $[2] = (A_1 : A_2 : A_3)$ výše platí $\deg_{X_2}(A_1) = 1, \deg_{X_2}(A_2) = 0$. V posledním členu $A_3$ nahradíme $X_2^2X_3$ za $X_1^3+aX_1^2X_3+bX_1X_3^2$. Máme tedy novou reprezentaci, která splňuje podmínky:
 \begin{gather*}
-(A'_1 : A'_2 : A'_3) = (2(X_1^4-2bX_1^2X_3^2 + b^2X_3^4)X_2X_3 : \widehat{a_2} : 4X_2X_3^2(X_1^3+aX_1^2X_3+bX_1X_3^2))
+(A'_1 : A'_2 : A'_3) = (2(X_1^4-2bX_1^2X_3^2 + b^2X_3^4)X_2X_3 : \widehat{a_2} : 8X_2X_3^2(X_1^3+aX_1^2X_3+bX_1X_3^2))
 \end{gather*}
 
 Pro reprezentaci $[2] = (B_1 : B_2 : B_3), \deg_{X_1}(B_i)\leq 2$ využijeme substituci $X_1^3 = X_2^2X_3-aX_1^2X_3-bX_1X_3^2$. Každá substituce sníží stupeň (v $X_1$) polynomu o 1. Zřejmě se dostaneme do tvaru, kde $\deg_{X_1}(B_i)\leq 2$. Substituce do 1. členu:
@@ -63,13 +63,23 @@ B_1 = 2X_2X_3^2((a^2-3b)X_1^2X_3+X_1X_2^2+abX_1X_3^2-aX_2^2X_3+b^2X_3^3)\\
 \end{gather*}
 $B_2$ získáme opakovanou substitucí za $X_1^3$. Polynom je tvaru:
 \begin{gather*}
-B_2 = -X_3^2(-X_2^4+X_2^2X_3f_1(X_1,X_2,X_3) + X_3^2f_2(X_1,X_2,X_3)), \deg_{X_1}(f_i) = i
+B_2 = -X_3^2(-X_2^4+X_2^2X_3f_1(X_1,X_2,X_3) + X_3^2f_2(X_1,X_2,X_3)), \deg_{X_1}(f_i) = i \text{ kde }\\
+f_1(X_1,X_2,X_3) = a^2 X_1 +a^3 (-X_3)+5 a b X_3-3 b X_1\\
+f_2(X_1,X_2,X_3) = -6 a^2 b X_1^2+a^3 b X_1 X_3+a^4 X_1^2-3 a b^2 X_1 X_3+b^2 \left(b X_3^2+9 X_1^2\right)
 \end{gather*}
 
 \section{}
 Bod $\infty = (0:1:0) \in D$. Zřejmě $A'_1,A'_3(\infty) = 0$ (násobky $X_3$) a $A'_2(\infty) = 0$ (jsou tam jen monočleny $X_1^iX_3^j$). Obdobně $B_i(\infty)=0$ (všechno to jsou násobky $X_3$).
 
 Pokud ale definujeme $B'_i = \frac{B_i}{X_3^2}$. Poté $B'_2(\infty) = 1$.
+
+Pro zbylé body nyní můžeme uvažovat $X_3 = 1$. Pokud 2. souřadnice bodu z $D$ není 0, tak $A'_3(\alpha) \neq 0$ pro každý takový bod $\alpha \in D$ (protože $X_2 \neq 0$ a $X_3 = 1$).
+
+Zbývají 3 body $D$ tvaru $\alpha = (\alpha_1, 0) \in D$. Možná $\alpha_1$ jsou $\{0, r_1, r_2\}$, kde $r_i, i=1,2$ jsou kořeny $x^2+ax+b$. Jelikož $X_2=0$, tak jsou relevantní jen polynomy $A'_2$ a $B_2$ (ostatní jsou $0$).
+
+Pro bod $(0,0)$ se to redukuje na zda $f_2(0,0,1) = 0$? Po dosazení platí $f_2(0,0,1) = b^3$ neboli $B'_2(\alpha) \neq 0$.
+
+Polynom $f_2(x,0,1)$ je stupně $2$ a není násobkem $x^2+ax+b$, tudíž $f_2(r_i,0,1) \neq 0$ pro $i=1,2$.
 
 \section{}
 Označme
@@ -116,8 +126,8 @@ Z definice $t_\infty (\alpha) = \infty \oplus \alpha = \alpha$, neboli $t_\infty
 
 Dále $P_1 = (0,0) \implies t_{(0,0)}(\alpha) = (0,0) \oplus \alpha$.
 
-Spočteme tedy afinní reprezentanty $t_{(0,0)}^*$, které jsou $t_{(0,0)}^* = \left( \frac{-x_1^3+x_2^2-ax_1^2}{x_1^2}, \frac{x_1^3x_2-x_2^3+ax_1^2x_2}{x_1^3} \right)$. Z toho dostaneme klasickým způsobem projektivní reprezentanty: 
-\[(X_1(-X_1^3+X_2^2X_3-aX_1^2X_3) : X_1^3X_2-X_2^3X_3+aX_1^2X_2X_3 : X_1^3X_3) \]
+Spočteme tedy afinní reprezentanty $t_{(0,0)}^*$, které jsou $t_{(0,0)}^* = \left( \frac{b}{x_1}, \frac{-bx_2}{x_1^2} \right)$. Z toho dostaneme klasickým způsobem projektivní reprezentanty: 
+\[(bX_1X_3 : -bX_2X_3 : X_1^2) \]
 
 Zbylé 2 translace korespondují s body $P_2,P_3$, kde $P_2 = (r_1, 0), P_3 = (r_2, 0)$ pro $r_1,r_2$ platí $r_i^2+ar_i+b = 0$ (jsou to kořeny $x_1^2+ax_1+b$). Opět z definice $t_{(r_1,0)}(\alpha) = (r_1,0) \oplus \alpha$. Pak jsou afinní reprezentanti $t_{(r_1,0)}^*$: 
 \begin{gather*}

@@ -1,0 +1,69 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8x]{inputenc}
+\usepackage{indentfirst} %indentace prvního odstavce
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage[czech]{babel}
+\usepackage{mathdots}
+\usepackage{slashbox}
+
+\newcommand{\qed}{\hfill\square}
+
+\begin{document}
+\begin{center}
+\large NMMB538 - Zkouška
+
+\normalsize Jan Oupický
+\end{center}
+\vspace{1\baselineskip}
+
+\textbf{Lemma Q.1.} \textit{Proof:}
+
+Denote $h = x_2^2 - f(x_1)$ and assume $h = u \cdot v$ where $u, v \in \bar{K}[x_1,x_2]$. 
+
+First assume $u,v \in \bar{K}[x_1,x_2] \setminus \bar{K}[x_1]$ i.e. $\deg_{x_2}(u) > 0, \deg_{x_2}(v) > 0$. Because $\deg_{x_2}(u) + \deg_{x_2}(v) = \deg_{x_2}(h) = 2 \implies \deg_{x_2}(u) = 1 = \deg_{x_2}(v)$. W.l.o.g assume $lc_{x_2}(u)=1=lc_{x_2}(v)$, we can do that since $lc_{x_2}(h)=1$. Therefore we can write $u = x_2 - s_1$ and $v = x_2 - s_2$ where $s_1, s_2 \in \bar{K}[x_1]$. This gives us
+\[
+x_2^2 - f(x_1) =h = (x_2 - s_1)(x_2 - s_2) = x_2^2 - (s_1+s_2)x_2 + s_1 s_2
+\]
+So it must hold that $s_1 = -s_2$ and then $h = x_2^2 + s_1(-s_1) \implies f(x_1) = s_1^2$. 
+
+Now assume w.l.o.g $u \in \bar{K}[x_1]$.We compare the leading coefficients.
+\[
+1 = lc_{x_2}(h) = lc_{x_2}(u) \cdot lc_{x_2}(v) = u \cdot lc_{x_2}(v)
+\]
+This shows that $u$ must be invertible in $\bar{K}[x_1,x_2] \implies u \in \bar{K}^*$. In other words $h$ is absolutely irreducible. 
+
+$\qed$
+
+\textbf{Sublemma Q.3.5} \textit{Let $F/K$ be an algebraic function field, $char(K) \neq 2$, that is given by $y^2 = f(x)$, $f$ being a quartic polynomial that is absolutely irreducible. Let $P \in \mathbb{P}_{F/K}$. If $x \notin P$ or $y \notin P$, then $x,y \notin P$ and $2v_P(x)=v_P(y)$}.
+
+\textit{Proof:}
+
+\textbf{Lemma Q.4.} \textit{Proof:}
+
+By sublemma Q.3.5 we know, that if $P \in \mathbb{P}_{F/K}: x^{-1} \in P \implies y^{-1} \in P$ and $2v_P(x)=v_P(y)$. Therefore $2 | v_P(y^{-1}) \implies v_P(y^{-1}) \geq 2$. 
+\begin{gather*}
+(y)_{-} = \sum\limits_{y^{-1} \in P} v_P(y^{-1}) P \implies\\
+\deg((y)_{-}) = \sum\limits_{y^{-1} \in P} v_P(y^{-1}) \deg(P) = [F:K(y^{-1})]=[F:K(y)]=\deg(f)=4
+\end{gather*}
+We know $v_P(y^{-1}) \geq 2$, this means there are 3 possibilities.
+\begin{enumerate}
+    \item There is only one place $P$ s.t. $\deg(P)=1$ and $v_P(y^{-1})=4$.
+    \item There is only one place $P$ s.t. $\deg(P)=2$ and $v_P(y^{-1})=2$.
+    \item There are 2 distinct places $P_1, P_2$ s.t. $\deg(P_1)=1=\deg(P_2)$ and $v_{P_1}(y^{-1})=2=v_{P_2}(y^{-1})$.
+\end{enumerate}
+
+
+For every possibility it holds that $(y)_{-} = 2(x)_{-}$. And also that $\deg((x)_{-})=2$.
+
+
+When determining the genus we can assume $K = \bar{K}$. Denote the genus of $F/K$ as $g > 0$. By the Riemann theorem we get that for $D \in \text{Div}(F/K): \deg(D) - l(D) < g$. Since $\deg_{\bar{K}}(D) = [F:K(x)] = 2 \implies 2 - l(D) < g$. $D \geq 0 \implies l(D) \geq 1 \implies l(D) \geq 2-g$. Therefore $g = 1$ or $g=0$.  
+
+\end{document}
