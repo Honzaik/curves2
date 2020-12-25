@@ -1,0 +1,28 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8x]{inputenc}
+\usepackage{indentfirst} %indentace prvního odstavce
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage[czech]{babel}
+\usepackage{mathdots}
+\usepackage{slashbox}
+
+\begin{document}
+
+nechť $f(x_1,x_2)$ značí 1. reprezentanta
+\begin{gather*}
+r^2 + ar+b = 0\\
+\lambda = \frac{x_2}{x_1-r} \implies f(x_1,x_2) = - r - x_1 + \frac{x_2^2}{(x_1-r)^2} - a \implies\\
+f(x_1,x_2) = \frac{(-r-x_1)(x_1-r)^2+x_2^2-a(x_1-r)^2}{(x_1-r)^2} \text{ roznásobení a sub. za $x_2^2$} =\\
+\frac{x_1^2r+x_1r^2-r^3+2x_1ar-ar^2+bx_1}{(x_1-r)^2} = \frac{-ar^2-r^3+arx_1+x_1(b+ar+r^2)+rx_1^2}{(x_1-r)^2} \implies\\
+b+ar+r^2 = 0 \implies\\
+\frac{-ar^2-r^3+arx_1+rx_1^2}{(x_1-r)^2} = \frac{r(x_1-r)(a+r+x_1)}{(x_1-r)^2} = \frac{r(a+r+x_1)}{x_1-r}
+\end{gather*}
+\end{document}

@@ -1,0 +1,67 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8x]{inputenc}
+\usepackage{indentfirst} %indentace prvního odstavce
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage[czech]{babel}
+\usepackage{mathdots}
+\usepackage{slashbox}
+
+\begin{document}
+\begin{center}
+\large NMMB538 - DÚ8
+
+\normalsize Jan Oupický
+\end{center}
+\vspace{1\baselineskip}
+
+\section{}
+Najdeme reprezentanty $(B_1, B_2, B_3)$ a pomocí nich následně nalezneme $(C_1, C_2, C_3)$.
+\begin{gather*}
+(bXZ : -bYZ : X^2)\\
+\text{vynásobení $Y$ a substituce do 2. členu za $Y^2Z = X^3+aX^2Z+bXZ^2$}\\
+(bXYZ : -b(X^3+aX^2Z+bXZ^2) : X^2Y)\\
+\text{vydělení $X$}\\
+(B_1, B_2, B_3) = (bYZ : -b(X^2+aXZ+bZ^2) : XY) = (bYZ : -bX(X+aZ)-b^2Z^2) : XY)
+\end{gather*}
+Vidíme, že $t_{(0,0)}(0:0:1) = (0:-b^2 : 0) = (0:1:0)$ což odpovídá tomu, na co jsme přišli v minulém úkolu, že $(0:0:1) \in \text{Ker}([2])$. Protože $t_{(0,0)}(0:0:1) = [2](0:0:1) = \infty$.
+
+Nyní budeme pracovat s $(B_1, B_2, B_3)$.
+\begin{gather*}
+(bYZ : -bX(X+aZ)-b^2Z^2) : XY)\\
+\text{vynásobení $Y^2$}\\
+(bY(Y^2Z) : -bXY^2(X+aZ)-b^2Z(Y^2Z) : XY^3)\\
+\text{substituce za $Y^2Z = X(X^2+aXZ+bZ^2)$}\\
+(bXY(X^2+aXZ+bZ^2) : -bXY^2(X+aZ) - b^2XZ(X^2+aXZ+bZ^2) : XY^3)\\
+\text{vydělení $X$}\\
+(C_1:C_2:C_3) = (bY(X^2+aXZ+bZ^2) : -bY^2(X+aZ) - b^2Z(X^2+aXZ+bZ^2) : Y^3)
+\end{gather*}
+Vidíme, že $t_{(0,0)}(0:1:0) = (0:0:1)$. Což odpovídá, jelikož $\infty$ je neutrální prvek grupy $D(K)$ tedy $(0,0) \oplus \infty = (0,0)$.
+
+\section{}
+
+\section{}
+Ztotožníme-li $D = \hat{D}, C = \hat{C}$. Nejprve ukážeme, že $\psi: D \rightarrow C$ je isogenie. Z úkolu 6 víme, že $\psi \in \text{Mor}(D, C)$. Zároveň jsme úkazali, že $\psi((0:1:0)) = (0:1:0)$. 
+
+Bod $(0:1:0) \in D, C \implies \psi(\omega_D)=\omega_C$. $\psi$ je tedy isogenie $D \rightarrow C$.
+
+Aplikujeme větu T.18., kde $\tau = \psi: D \rightarrow C$ a $\sigma = [2]: D \rightarrow D$. Z úkolu 4 víme, že $C$ je hladké. $D$ je také hladké dle předchozích úkolů. 
+
+Dále víme z úkolu 4, že $\psi$ je separabilní, jelikož $\text{Im}(\psi^*) = F$ z úkolu 4 a $F \cong K(C)$ dle definice $\psi^*$.
+
+Ověříme ještě, že $\text{Ker}(\psi) \subseteq \text{Ker}([2])$. Z úkolu 5 víme, že $\deg(\psi) = 2$. $\psi$ je separabilní isogenie, a proto $|\text{Ker}(\psi)| = 2$. Už víme, že $(0:1:0) \in \text{Ker}(\psi) \cap \text{Ker}([2])$. V úkolu 6 jsme také nalezli další bod $(0:0:1) \in \text{Ker}(\psi)$ a v minulém úkolu jsme spočetli, že také $(0:0:1) \in \text{Ker}([2])$. Podmínka na jádra tedy platí.
+
+Dle věty T.18 existuje právě jedna isogenie $\gamma: C \rightarrow D: \gamma \circ \psi = [2]$.
+
+V minulém úkolu, jsme zjistili, že $[2]=(\frac{v^2}{4u^2}, \frac{v(a^2-4b-u^2)}{8u^2})$, kde $u = \frac{y^2}{x^2}, v = \frac{y(b^2-x)}{x^2}$. Zárověň zřejmě z definice $\psi(x,y)=(u,v)$. Stačí definovat $\gamma(x,y) = (\frac{y^2}{4x^2}, \frac{y(a^2-4b-x^2)}{8x^2})$. Poté zřejmě platí $[2] = \gamma \circ \psi$.
+
+Tento tvar jsme nalezli tak, že jsme se snažili vyjádřit reprezentanty $[2]$ pomocí $u,v$.
+
+\end{document}
