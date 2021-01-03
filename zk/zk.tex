@@ -79,6 +79,18 @@ $\qed$
 \textbf{Proposition Q.5.} \textit{Proof:}
 In the proof of lemma Q.4 we have established there are 2 possibilities for the structure of $(x)_{-}$ either $(x)_{-}=2P_\infty$ or $(x)_{-} = P + Q$, $P,Q$ distinct. 
 
+We also know that genus is 0 or 1. First we show that the existence of a place s.t. $(x)_{-}=2P_\infty$ is impossible if $f(x)$ has one (and therefore also a 2nd) simple root. 
+
+First assume genus 1. Then $l(P_\infty) = \deg(P_\infty)+1-1=1$. There exists $t \in F$ s.t. $(t)=P_\infty$. $l(P_\infty) = 1$ implies $t \in K$ and this also implies $x,y \in K$ which is a contradiction.
+
+Assume genus 0. Then $l(P_\infty) = 2$. Again let $t \in F$ s.t. $(t)=P_\infty$. Then $\{1, t, t^2\}$ forms a basis of $\mathcal{L}(2P_\infty)$. Then there exists $u(t) \in K[t], \deg(u)=2: x = u(t)$ and same for $y$ there exists $v(t) \in K[t]: \deg(v)=4, y=v(t)$. 
+
+Then $y^2=f(x) \implies v^2(t)=f(u(t))$. $v(t)$ is a polynomial of degree 4 therefore $v^2(t)$ has at most 4 different roots. Then $f(u(t)) = (u(t)-\alpha_1) (u(t)-\alpha_2) (u(t)-\alpha_3) (u(t)-\alpha_4)$ where $\alpha_i$s are 4 distinct roots of $f(x)$ since it is separable. There is only 1 $c$ s.t. $u(t)-c$ has a multiple root because $u(t)-c$ is a of degree 2 and the discrimant has to be 0 and $c$ is determined by the coeficients of $u(t)$. Also $u(t)-\alpha_i$ doesnt share roots with $u(t)-\alpha_j$. This gives us $2+2+2+1$ different roots. This is a contradiction.
+
+So now we know $(x)_{-} = P+Q$ and $P,Q$ distinct.
+
+From now on we assume genus being 1. Denote $g(x)=f(x)-x^4 \implies y^2-x^4=g(x) \implies v_P(y^2-x^4)=v_P(y+x^2)+v_P(y-x^2)=\deg(g)v_P(x) = -\deg(g)$. Since $f$ is separable we can assume $\deg(g) \geq 1$. This means at least one $y \pm x^2$ has a negative valuation at $P$. Denote it as $z$ then $v_P(z) \leq v_P(x) = -1$. 
+
 $\qed$
 
 
@@ -108,5 +120,60 @@ Denote $w=x_2^2-f(x_1)$.
 For a singularity $\alpha = (\alpha_1, \alpha_2), \alpha_2$ must be $0$ and $\alpha_1$ must be a root of $f(x_1)$ and also of $f'(x_1)$ this is true iff $f(x_1)$ is separable. If $f(x_1)$ is not separable then it shares a common root $\alpha_1$ with $f'(x_1)$ and this gives us singularity at $(\alpha_1, 0)$. This proves the rest of the theorem.
 
 $\qed$
+
+\textbf{Theorem Q.7.} \textit{Proof:}
+Denote $D = P + Q$ a divisor. Due to genus being 1 $\forall k\geq 1: l(kD) = 2k$. $l(D)=2$ and that means there exists $x \notin K$ s.t. $\{1,x\}$ is a basis of $\mathcal{L}(D)$ and also $(x)_{-} \leq P+Q$. Then $(x)^2 = 2(x) = 2(x)_{+}-2(x)_{-} \implies x^2 \in \mathcal{L}(2D),\{1,x,x^2\}$ is linearly independent in $\mathcal{L}(2D)$ but $l(2D)=4$ that means there exists $y \in \mathcal{L}(2D)\setminus \mathcal{L}(D)$ such that $\{1,x,x^2,y\}$ is a basis of $\mathcal{L}(2D)$. 
+
+Denote $B = \{1,x,x^2,x^3,x^4,y,yx,yx^2,y^2\}$, clearly $B \subseteq \mathcal{L}(4D), l(4D)=8$ and $|B|=8 \implies 1 \leq i \leq 8: \exists a_i \in K:$
+\begin{gather*}
+y^2 = a_1y + a_2yx + a_3yx^2 + a_4x^4 + a_5x^3 + a_6x^2 + a_7x+ a_8
+\end{gather*}
+
+Denote $C = \{1,x,x^2,x^3,y,yx\}$. $C$ is a basis of $\mathcal{L}(3D)$, $C \cup \{yx^2,y^2\}$ is also a basis of $\mathcal{L}(4D)$. If $a_4=0$ that would be a contradiction to $C \cup \{yx^2,y^2\}$ being a basis of $\mathcal{L}(4D)$ since $y^2$ would be a linear combination of 7 elements.
+
+Now we make a substitution $y \rightarrow y - \frac{a_1+a_2x+a_3x^2}{2}$. This gives us form:
+\begin{gather*}
+y^2 =b_1x^4 + b_2x^3 + b_3x^2 + b_4x+ b_5
+\end{gather*}
+where $b_1 = a_4+\frac{a_3^2}{4}$. We need to show $a_4 \neq -\frac{a_3^2}{4}$. This is satisfied always if
+
+$\qed$
+
+\textbf{Theorem Q.8.} \textit{Proof:}
+Denote $f(x) = g(x^2)$. $F$ is EFF therefore genus is 1 and there exists a place of degree $1$. Also $K$ can be assumed algebraically closed.
+
+If $g(x)$ has a multiple root $\alpha$, then $f(x)=g(x^2)$ has also a multiple root because $g(x)=(x-\alpha)^2 \implies g(x^2) = (x-\sqrt{\alpha})^2(x+\sqrt{\alpha})^2$. Set $z = \frac{y}{x-\sqrt{\alpha}}$. Then $F$ is given by $z^2=(x+\sqrt{\alpha})^2$. This means $x \in K(z)$ and from the definition of $y$ also $y \in K(z)$ which means $F$ has genus 0, a contradiction.
+
+From now on we can assume $g(x)$ has 2 distinct roots. If $f(x)=g(x^2)$ would have a multiple root then it's genus would not be $1$ by Q.6. So we can assume $g(x^2)$ separable. 
+
+First we will prove the second part of the theorem. We have shown that $g(x^2)$ must be separable. Therefore by Q.5 we have places of degree 1 ($P\neq Q$), $(x)_{-} = P+Q$ and $(y+x^2)_{-}=2Q, (y-x^2)_{-} = 2P$.
+\begin{gather*}
+y^2=g(x^2) = x^4+2bx^2+c \iff y^2-(x^4-2bx^2-b^2) = c - b^2 \implies \\
+(y-(x^2+b))(y+(x^2+b))=c-b^2
+\end{gather*}
+
+Since $g(x^2)$ is separable $g(x)$ must have simple roots. If $g(x)$ has a multiple root then it's discriminant is 0 and that happens iff $c-b^2=0$. So we know $0 \neq c-b^2 \in K$.
+
+\begin{gather*}
+0=v_P(c-b^2)=v_P(y-(x^2+b)) + v_P(y+(x^2+b))\\
+v_P(y-(x^2+b)) = v_P(y-x^2) = -2 \implies v_P(y+(x^2+b)) = 2
+\end{gather*}
+
+Similarly we can show $v_Q(y-(x^2+b)) = 2$ and $v_Q(y+x^2+b)=-2$. 
+
+Since $\deg((y+x^2+b)_{+}) = \deg((y+x^2+b)_{-}) = \deg((y+x^2)_{-}) = 2 \implies \text{div}(y+x^2+b) = 2P - 2Q$ and similarly $\text{div}(y+x^2+b) = 2Q - 2P$.
+
+We have proven the last part of the theorem. Now let's prove the equivalence.
+
+As we have shown before. We can assume $g(x^2)$ separable and then we have involution $P-Q$ as shown above since $2P-2Q = (t)$ for $t \in F$. We only have to show that $P-Q \neq (t)$ for some $t \in F$. 
+
+If $t \in F$ s.t. $(t) = P - Q \implies \deg((t)_{+}) = 1 = [F:K(t)]$ and that would be contradiction with F being EFF.
+
+Now we assume we have involution. We can always find $t \in F \setminus K$ s.t. $(t) = 2P-2Q$ where $P,Q$ distinct places of degree 1 and $P-Q$ is involution.
+
+Then $l(2P) = 2 = l(2Q) \implies \{1,t\}$ is a basis of $\mathcal{L}(2P)$ and $\{1,t^{-1}\}$ is a basis of $\mathcal{L}(2Q)$.
+
+
+
 
 \end{document}
