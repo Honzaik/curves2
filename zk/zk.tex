@@ -77,19 +77,6 @@ We know that for a sufficiently large $k$ (if $l(kD) \geq 2g-1$, $g$ genus) we h
 $\qed$
 
 \textbf{Proposition Q.5.} \textit{Proof:}
-In the proof of lemma Q.4 we have established there are 2 possibilities for the structure of $(x)_{-}$ either $(x)_{-}=2P_\infty$ or $(x)_{-} = P + Q$, $P,Q$ distinct. 
-
-We also know that genus is 0 or 1. First we show that the existence of a place s.t. $(x)_{-}=2P_\infty$ is impossible if $f(x)$ has one (and therefore also a 2nd) simple root. 
-
-First assume genus 1. Then $l(P_\infty) = \deg(P_\infty)+1-1=1$. There exists $t \in F$ s.t. $(t)=P_\infty$. $l(P_\infty) = 1$ implies $t \in K$ and this also implies $x,y \in K$ which is a contradiction.
-
-Assume genus 0. Then $l(P_\infty) = 2$. Again let $t \in F$ s.t. $(t)=P_\infty$. Then $\{1, t, t^2\}$ forms a basis of $\mathcal{L}(2P_\infty)$. Then there exists $u(t) \in K[t], \deg(u)=2: x = u(t)$ and same for $y$ there exists $v(t) \in K[t]: \deg(v)=4, y=v(t)$. 
-
-Then $y^2=f(x) \implies v^2(t)=f(u(t))$. $v(t)$ is a polynomial of degree 4 therefore $v^2(t)$ has at most 4 different roots. Then $f(u(t)) = (u(t)-\alpha_1) (u(t)-\alpha_2) (u(t)-\alpha_3) (u(t)-\alpha_4)$ where $\alpha_i$s are 4 distinct roots of $f(x)$ since it is separable. There is only 1 $c$ s.t. $u(t)-c$ has a multiple root because $u(t)-c$ is a of degree 2 and the discrimant has to be 0 and $c$ is determined by the coeficients of $u(t)$. Also $u(t)-\alpha_i$ doesnt share roots with $u(t)-\alpha_j$. This gives us $2+2+2+1$ different roots. This is a contradiction.
-
-So now we know $(x)_{-} = P+Q$ and $P,Q$ distinct.
-
-From now on we assume genus being 1. Denote $g(x)=f(x)-x^4 \implies y^2-x^4=g(x) \implies v_P(y^2-x^4)=v_P(y+x^2)+v_P(y-x^2)=\deg(g)v_P(x) = -\deg(g)$. Since $f$ is separable we can assume $\deg(g) \geq 1$. This means at least one $y \pm x^2$ has a negative valuation at $P$. Denote it as $z$ then $v_P(z) \leq v_P(x) = -1$. 
 
 $\qed$
 
@@ -135,7 +122,7 @@ Now we make a substitution $y \rightarrow y - \frac{a_1+a_2x+a_3x^2}{2}$. This g
 \begin{gather*}
 y^2 =b_1x^4 + b_2x^3 + b_3x^2 + b_4x+ b_5
 \end{gather*}
-where $b_1 = a_4+\frac{a_3^2}{4}$. We need to show $a_4 \neq -\frac{a_3^2}{4}$. This is satisfied always if
+where $b_1 = a_4+\frac{a_3^2}{4}$. If $b_1=0$ then $y^2$ would be a linear combination of elements in $\mathcal{L}(3D)$ but 
 
 $\qed$
 
