@@ -77,6 +77,45 @@ We know that for a sufficiently large $k$ (if $l(kD) \geq 2g-1$, $g$ genus) we h
 $\qed$
 
 \textbf{Proposition Q.5.} \textit{Proof:}
+Denote $ax^3+bx^2+cx+d = g(x)=f(x)-x^4$. First we will prove that for both $z \in Z = \{y+x^2, y-x^2\}: [F:K(z)]=2$. Denote $z_1=y+x^2, z_2=y-x^2$ We have tower of field extensions $F \supseteq K(z_1,z_2) \supseteq K(z_1)$:
+\begin{gather*}
+[F:K(z_1)] = [F:K(z_1,z_2)][K(z_1,z_2):K(z_1)]
+\end{gather*}
+Clearly $K(x^2,y) \supseteq K(z_1,z_2)$ and conversely $x^2 = \frac{z_1-z_2}{2}, y = \frac{z_1+z_2}{2} \implies K(z_1,z_2) \supseteq K(x^2,y)$ therefore $K(z_1,z_2)=K(x^2,y)$.
+
+Also $K(x^2,y) =F$ since $x = \frac{y^2-x^4-bx^2-d}{ax^2+c} \in K(x^2,y)$ if $a\neq 0$ and $c\neq 0$ ($F=K(x,y)$). If $a=0=c$ then $F$ is given by $y^2=g'(x^2)$ where $g'(x)=x^2+a'x+b$ separable. Then $K(x^2,y)=F$ as well.
+
+Choose $P \leq D$ a place. We will prove that for at least one $z \in Z: v_P(z) < v_P(x)$.
+\begin{gather*}
+y^2 = f(x) \iff y^2 - x^4 = g(x), 0 \leq \deg(g) \leq 3 \implies\\
+(y+x^2)(y-x^2)=g(x) \implies v_P(y+x^2)+v_P(y-x^2) = v_P(g(x)) = \deg(g)v_P(x)
+\end{gather*}
+Denote $z_1 = y+x^2, z_2=y-x^2$. Assume to contrary $v_P(z_1) \geq v_P(x)$ and $v_P(z_2) \geq v_P(x)$. We will look at all possible cases.
+
+$\deg(g)=3$: $3v_P(x)=v_P(z_1)+v_P(z_2) \geq v_P(x)+v_P(x) \implies v_P(x) > 0$ which is a contradiction since $v_P(x)<0$.
+
+$\deg(g)=2$: $2v_P(x)=v_P(z_1)+v_P(z_2)$. 
+
+First consider $v_P(x)=v_P(z_1)=v_P(z_2)$ and $v_P(x)=-2$, then $2P = (x)_{-}= (z_1)_{-} = (z_2)_{-}$. Then $z_1, z_2 \in \mathcal{L}(D)$ but then also $\frac{z_1+z_2}{2} = y \in \mathcal{L}(D)$ which is a contradiction since $(y)_{-}=2(x)_{-}$.
+
+Now let's assume $v_P(x)=-1$ and then there also exist a different place $Q$ s.t. $v_Q(x)=v_Q(z_1)=v_Q(z_2)=-1$. Since $\deg((z)_{-})=2$ then again $P+Q = (x)_{-}= (z_1)_{-} = (z_2)_{-}$ and we have the same contradiction.
+
+We have proven that $v_P(x)=v_P(z_1)=v_P(z_2)$ is impossible therefore for one $z$ it must hold $v_P(z)<v_P(x)$.
+
+$\deg(g)=1$: $v_P(x)=v_P(z_1)+v_P(z_2)$. First assume $v_P(x)=-2$. And also $v_P(z_1)=v_P(z_2)=-1$. This is impossible since $\deg((z)_{-})=2$ but for every other place $Q \neq P: 0 = v_Q(z_1)+v_Q(z_2) \implies v_Q(z_1)=-v_Q(z_2)$. If there was $Q_1: v_{Q_1}(z_1)=-1 \implies v_{Q_1}(z_2)=1$ and $Q_2: v_{Q_2}(z_2)=-1 \implies v_{Q_2}(z_1)=1$. Then for some $P_1,P_2$ places of degree 1: $(z_1)=(P_1+Q_2)-(P+Q_1), (z_2)=(P_2+Q_1)-(P+Q_2)$. Set $D'=P+Q_1+Q_2$ then $z_1,z_2 \in \mathcal{L}(D')$ and as before this means that $y \in \mathcal{L}(D')$ which is a contradiction.
+
+Now if $v_P(x)=-1$ then either $v_P(z) < v_P(x)$ for a $z \in Z$ or w.l.o.g $v_P(z_1)=-1$ and $v_P(z_2)=0$. Then also assume first $v_Q(z_1)=-1 \implies v_Q(z_2)=0$. But since $\deg((z)_{+})=2$ there must be a place $P'$ s.t. $v_{P'}(z_2)>0$ and $v_{P'}(x)=0$ since $P'\neq P,Q$ but it must be $v_{P'}(z_1) < 0$. This again contradicts the degree of the divisor. 
+
+If $v_Q(z_1)=0$ and $v_Q(z_2)=-1$. Then again there must be a place $P_1$ s.t. $v_{P_1}(z_1)=-1$ and $v_{P_1}(z_2)=1$ and a place $v_{P_2}(z_2)=1 \implies v_{P_2}(z_1)=-1$. This also contradicts divisor degree.
+
+The last case is $\deg(g)=0$: $v_P(z_1)=-v_P(z_2) \implies (z_1) = -(z_2)$. First assume $v_P(z_1)=0 \implies v_P(z_2)=0$ and same for $v_Q$ ($Q$ not necessarly different from $P$). Then there exist places $P_1,P_2,Q_1,Q_2 \neq P,Q$ s.t. $(z_1)=P_1+P_2-(Q_1+Q_2), (z_2)=-(z_1)$. Set $D' = P_1+P_2+Q_1+Q_2$ then $z_1,z_2 \in \mathcal{L}(D')$ but also $y \in \mathcal{L}(D')$ which is again contradiction since $(y)_{-}=2(x)_{-}$.
+
+If $v_P(z_1)=1 \implies v_P(z_2)=-1$. There exists another place $P'$ s.t. $v_{P'}(z_1)=1 \implies v_{P'}(z_2)=-1$. There must be again two places $Q_1,Q_2$ s.t. $(z_1)=P+P'-(Q_1+Q_2), (z_2) = -(z_1)$. Put $D' = P+P'+Q_1+Q_2$ then again $y \in \mathcal{L}(D')$ which is a contradiction.
+\\
+
+We have proven that for each place $P \leq D$ at least one $z \in Z$ must have $v_P(z)<v_P(x)$. This shows also that $(x)_{-}=P+Q$ for distinct $P,Q$. If $P=Q$ then $v_P(x)=-2 \implies v_P(z)\leq -3$ which contradicts $[F:K(z)]=2$. Since $\deg((z)_{-})=2$ and $v_P(z) < -1$ it must be that $(z)_{-}=2P, (z')_{-}=2Q$ for $z,z' \in Z$. Since we have not distinguished $P$ and $Q$ we can say $(z_1)_{-}=2P$ and $(z_2)_{-}=2Q$.
+
+
 
 $\qed$
 
