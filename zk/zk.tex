@@ -14,148 +14,221 @@
 \usepackage{mathdots}
 \usepackage{slashbox}
 
+\newcommand{\qed}{\hfill\square}
+
 \begin{document}
 \begin{center}
-\large NMMB538 - DÚ7
+\large NMMB538 - Zkouška
 
 \normalsize Jan Oupický
 \end{center}
 \vspace{1\baselineskip}
 
-\section{}
-Z definice $[2]$ víme, že $\forall \alpha \in D: [2](\alpha) = \alpha \oplus \alpha$. Vyjádříme tedy vzorec pro výpočet bodu $\alpha \oplus \alpha \in D$ křivky $V_w$.
+\textbf{Lemma Q.1.} \textit{Proof:}
 
-Nejprve vyjádříme racionální funkci. Použijeme vzorec pro součet bodů a to, že pro body $(\alpha_1, \alpha_2) \in D$ platí $\alpha_2^2 = \alpha_1^3+a \alpha_1^2 + b \alpha$. $\gamma$ bude značit reprezentanta rac. zobrazení $\gamma(\alpha) = [2](\alpha), \gamma = (\gamma_1, \gamma_2), \gamma_i \in K(x_1, x_2)$. 
+Denote $h = x_2^2 - f(x_1)$ and assume $h = u \cdot v$ where $u, v \in \bar{K}[x_1,x_2]$. 
 
-Vyjádříme nejprve $\gamma_1(x_1,x_2)$. Ze vzorců pro součet stejného bodu vyjde, že:
+First assume $u,v \in \bar{K}[x_1,x_2] \setminus \bar{K}[x_1]$ i.e. $\deg_{x_2}(u) > 0, \deg_{x_2}(v) > 0$. Because $\deg_{x_2}(u) + \deg_{x_2}(v) = \deg_{x_2}(h) = 2 \implies \deg_{x_2}(u) = 1 = \deg_{x_2}(v)$. W.l.o.g assume $lc_{x_2}(u)=1=lc_{x_2}(v)$, we can do that since $lc_{x_2}(h)=1$. Therefore we can write $u = x_2 - s_1$ and $v = x_2 - s_2$ where $s_1, s_2 \in \bar{K}[x_1]$. This gives us
+\[
+x_2^2 - f(x_1) =h = (x_2 - s_1)(x_2 - s_2) = x_2^2 - (s_1+s_2)x_2 + s_1 s_2
+\]
+So it must hold that $s_1 = -s_2$ and then $h = x_2^2 + s_1(-s_1) \implies f(x_1) = s_1^2$. 
+
+Now assume w.l.o.g $u \in \bar{K}[x_1]$.We compare the leading coefficients.
+\[
+1 = lc_{x_2}(h) = lc_{x_2}(u) \cdot lc_{x_2}(v) = u \cdot lc_{x_2}(v)
+\]
+This shows that $u$ must be invertible in $\bar{K}[x_1,x_2] \implies u \in \bar{K}^*$. In other words $h$ is absolutely irreducible. 
+
+$\qed$
+
+\textbf{Sublemma Q.3.5} \textit{Let $F/K$ be an algebraic function field, $char(K) \neq 2$, that is given by $y^2 = f(x)$, $f$ being a quaternary polynomial that posseses a simple root. Let $P \in \mathbb{P}_{F/K}$. If $x \notin P$ or $y \notin P$, then $x,y \notin P$ and $2v_P(x)=v_P(y)$}.
+
+\textit{Proof:}
+In $F$ it holds $y^2 = f(x)$ by definition which implies that for every $P \in \mathbb{P}_{F/K}$ $v_P(y^2) = 2v_P(y)=v_P(f(x))$.
+
+Assume $v_P(x) < 0 \leq v_P(y)$. By properties of valution we have $\deg(f)v_P(x) = v_P(f(x)) = 2v_P(y) \implies 2v_P(x)=v_P(y)$ and by assumption $v_P(y) > v_P(x) \implies 2v_P(x) > v_P(x) \iff v_P(x) > 0$. That's a contradiction.
+
+Now assume $v_P(x) \geq 0 > v_P(y)$. $v_P(x) \geq 0 \implies v_P(f(x)) \geq 0$ then $0 \leq v_P(f(x)) = 2v_P(y) < 0$ which is again a contradiction.
+
+We have proven $v_P(x) < 0 \iff v_P(y) < 0$. Therefore we have the equality $4v_P(x) = 2v_P(y) \iff 2v_P(x) = v_P(y)$ assuming $v_P(x) < 0$ or $v_P(y) < 0$. 
+
+$\qed$
+
+\textbf{Lemma Q.4.} \textit{Proof:}
+By sublemma Q.3.5 we know, that if $P \in \mathbb{P}_{F/K}: x^{-1} \in P \implies y^{-1} \in P$ and $2v_P(x)=v_P(y)$. This proves $(y)_{-}=2(x)_{-}$ ($x^{-1},y^{-1}$ "share" places and the valuation is 2:1).
+
+Let's first assume that $f$ possesses a multiple root. Therefore $f(x_1) = (x_1-\alpha)^2g(x_1)$ where $\deg(g) = 2$ and $g$ is not a square. By Q.3 $F$ is given by $z^2 = g(x)$ i.e. $F=K(x,z)$. $[F:K(x)]=2$ since $min_{z,K(x)}(T) = T^2 - g(x)$, that polynomial has $z$ as a root in $F$ and it is absolutely irreducible (as a polynomial in $K[x,T]$) since $g$ is not a square. We can then assume $\bar{K}=K$ since $[F:\bar{K}(x)] = 2$ (same polynomial) and $[F:K(x)] = [F:\bar{K}(x)][\bar{K}:K] = 2 \implies [\bar{K}:K] = 1$.
+
+Then we know $\deg((x)_{-}) = [F:K(x^{-1})] = [F:K(x)] = 2$ i.e. $\deg(D)=2$.
+
+Now assume $f$ is separable. We can then use the same argument for $K=\bar{K}$ since $min_{y,K(x)}(T) = T^2-f(x)$ and by Q.1 this one is also absolutely irreducible. $F=K(x,y) \implies [F:K(x)] = [F:\bar{K}(x)][\bar{K}:K] = 2 \implies [\bar{K}:K]=1$. And again $\deg(D)=2$.
+
+Now let's prove that the genus is at most 1. Since $\deg(D)=2 \implies \sum\limits_{P: x^{-1}\in P} v_P(x)\deg(P) = 2$ means we have 2 possibilities (we are assuming $K=\bar{K}$ which implies $\forall P \in \mathbb{P}_{F/K}: \deg(P)=1$:
+\begin{enumerate}
+    \item There exists a unique place $P_\infty: v_{P_\infty}(x)=-2, v_{P_\infty}(y)=-4$ and $D = 2P_\infty$
+    \item There are 2 distinct places $P,Q$ s.t. $v_P(x)=-1=v_Q(x), v_P(y)=-2=v_Q(y)$ and $D = P + Q$.
+\end{enumerate}
+
+In both cases we can see that for $k \geq 2: \{1,x,\dots,x^k, y, yx, \dots, yx^{k-2}\} \subset \mathcal{L}(kD)$ because $(x^k) + kD = k((x)_{+}-(x)_{-})+k(x)_{-} = k(x)_{+} \geq 0$ and also $(y)_{-}=2(x)_{-}$ so it holds if we substitute $x^2$ for $y$. This subset is linearly indepent over $K$ because $y$ cannot be expressed as a linear combination of $x^i$ since $f$ has one simple root (if $f(x)=g^2(x) \implies y=g(x)$). The set also contains $2k$ elements. Therefore $l(kD) \geq 2k$. 
+
+We know that for a sufficiently large $k$ (if $l(kD) \geq 2g-1$, $g$ genus) we have $l(kD) = \deg(kD)-g+1$ having $\deg(kD)=2k, l(kD) \geq 2k \implies 0 \leq l(kD)-\deg(kD) = -g + 1 \iff g \leq 1$.
+
+$\qed$
+
+\textbf{Proposition Q.5.} \textit{Proof:}
+Denote $ax^3+bx^2+cx+d = g(x)=f(x)-x^4$. First we will prove that for both $z \in Z = \{y+x^2, y-x^2\}: [F:K(z)]=2$. Denote $z_1=y+x^2, z_2=y-x^2$. 
+
+First we show that $F=K(x,z_i)$ for $i=1,2$. $F$ can be expressed as $K(x,y)$ or $K(x,z)$ (different $z$ from the proof Q.3). In both cases $y\in K(x,z_i)$ since $z_i \pm x^2 = y$ (and $z \in K(x,y)$). This shows $F \subseteq K(x,z_i)$ and the converse is obvious. Also $K(x,z_i) \neq K(z_i)$ because for genus 1 it is a contradiction and for genus 0 this would mean .... todo
+
+We will find minimal polynomial $m(T)$ of $x$ over $K(z_1)$ then $\deg(m) = [F:K(z_1)]=[K(x,z_1):K(z_1)]$. $z_2 = z_1 - 2x^2$ and $z_1z_2=y^2-x^4=g(x)$. Then:
 \begin{gather*}
-\gamma_1(x_1,x_2) = \frac{-8x_1x_2^2 - 4ax_2^2 + 9x_1^4+12ax_1^3+6bx_1^2+4a^2x_1^2+4abx_1+b^2}{4x_2^2}\\
-\text{zasubstituujeme za $x_2^2$ v čitateli a vyjde:}\\
-\gamma_1(x_1,x_2) = \frac{x_1^4-2bx_1^2+b^2}{4x_2^2} = \left( \frac{x_1^2-b}{2x_2} \right)^2
+z_1(z_1-2x^2) = g(x) = ax^3+bx^2+cx+d
 \end{gather*}
-Nyní spočteme $\gamma_2(x_1,x_2)$:
+If $a=0$ then set $m(T)=z_1(z_1-2T^2)-bT^2-cT-d \in K(z_1)[T]$. 
+
+If $a\neq 0$ then we have:
 \begin{gather*}
-\gamma_2(x_1,x_2) = \frac{3x_1^3+2ax_1^2+bx_1}{2x_2}-\frac{3x_1^2+2ax_1+b}{2x_2}\cdot \frac{x_1^4-2bx_1^2+b^2}{4x_2^2}-x_2\\
-\text{Převedení na společného jmenovatele a použití substituce za $x_2^2$ v čitateli:}\\
-\gamma_2(x_1,x_2) = \frac{x_1^6+2ax_1^5+5bx_1^4-5b^2x_1^2-2ab^2x_1-b^3}{8x_2^3}
+x^3 = \frac{y^2-x^4-bx^2-cx-d}{a}\\
+y^2 -x^4 = z_1^2-2x^2z_1 \implies \\
+m(T) = z_1(z_1-2T^2) - a \frac{z_1^2-2T^2z_1-bT^2-cT-d}{a} - bT^2 - cT -d \in K(z_1)[T]
 \end{gather*}
-Máme tedy reprezentanty $K-$racionálního zobrazení $[2]: D \rightarrow D$, kde \\$[2] = (\gamma_1+(w), \gamma_2+(w))$. Sestrojíme nyní projektivní reprezentaci zobrazení $[2]$ jako v předchozím úkolu pomocí lemma M.3.
+$m(x)=y^2-x^4-g(x)=0$ and $F \neq K(z_1) \implies [F:K(z_1)]=2$.
+
+
+
+Choose $P \leq D$ a place. We will prove that for at least one $z \in Z: v_P(z) < v_P(x)$.
 \begin{gather*}
-\gamma_i = \frac{a_i}{b_i}, a_i, b_i \in K[x_1,x_2], b_i \neq 0\\
-A'_1 = \widehat{a_1} X_3^2 = (X_1^4-2bX_1^2X_3^2 + b^2X_3^4)X_3^2\\
-A'_2 = \widehat{a_2} X_3^3 = (X_1^6+2aX_1^5X_3+5bX_1^4X_3^2-5b^2X_1^2X_3^4-2ab^2X_1X_3^5-b^3X_3^6) X_3^3\\
-B'_1 = 4X_2^2X_3^4\\
-B'_2 = 8X_2^3X_3^6\\
-\implies\\
-(A_1 : A_2 : A_3) = (A'_1B'_2 : A'_2B'_1 : B'_1B'_2)\\
-\text{dosazení a zkrácení:}\\
-(A_1 : A_2 : A_3) = (2(X_1^4-2bX_1^2X_3^2 + b^2X_3^4)X_2X_3 : \widehat{a_2} : 8X_2^3X_3^3)
+y^2 = f(x) \iff y^2 - x^4 = g(x), 0 \leq \deg(g) \leq 3 \implies\\
+(y+x^2)(y-x^2)=g(x) \implies v_P(y+x^2)+v_P(y-x^2) = v_P(g(x)) = \deg(g)v_P(x)
 \end{gather*}
-\section{}
-Pro reprezentaci $[2] = (A_1 : A_2 : A_3)$ výše platí $\deg_{X_2}(A_1) = 1, \deg_{X_2}(A_2) = 0$. V posledním členu $A_3$ nahradíme $X_2^2X_3$ za $X_1^3+aX_1^2X_3+bX_1X_3^2$. Máme tedy novou reprezentaci, která splňuje podmínky:
+Denote $z_1 = y+x^2, z_2=y-x^2$. Assume to contrary $v_P(z_1) \geq v_P(x)$ and $v_P(z_2) \geq v_P(x)$. We will look at all possible cases.
+
+$\deg(g)=3$: $3v_P(x)=v_P(z_1)+v_P(z_2) \geq v_P(x)+v_P(x) \implies v_P(x) > 0$ which is a contradiction since $v_P(x)<0$.
+
+$\deg(g)=2$: $2v_P(x)=v_P(z_1)+v_P(z_2)$. 
+
+First consider $v_P(x)=v_P(z_1)=v_P(z_2)$ and $v_P(x)=-2$, then $2P = (x)_{-}= (z_1)_{-} = (z_2)_{-}$. Then $z_1, z_2 \in \mathcal{L}(D)$ but then also $\frac{z_1+z_2}{2} = y \in \mathcal{L}(D)$ which is a contradiction since $(y)_{-}=2(x)_{-}$.
+
+Now let's assume $v_P(x)=-1$ and then there also exist a different place $Q$ s.t. $v_Q(x)=v_Q(z_1)=v_Q(z_2)=-1$. Since $\deg((z)_{-})=2$ then again $P+Q = (x)_{-}= (z_1)_{-} = (z_2)_{-}$ and we have the same contradiction.
+
+We have proven that $v_P(x)=v_P(z_1)=v_P(z_2)$ is impossible therefore for one $z$ it must hold $v_P(z)<v_P(x)$.
+
+$\deg(g)=1$: $v_P(x)=v_P(z_1)+v_P(z_2)$. First assume $v_P(x)=-2$. And also $v_P(z_1)=v_P(z_2)=-1$. This is impossible since $\deg((z)_{-})=2$ but for every other place $Q \neq P: 0 = v_Q(z_1)+v_Q(z_2) \implies v_Q(z_1)=-v_Q(z_2)$. If there was $Q_1: v_{Q_1}(z_1)=-1 \implies v_{Q_1}(z_2)=1$ and $Q_2: v_{Q_2}(z_2)=-1 \implies v_{Q_2}(z_1)=1$. Then for some $P_1,P_2$ places of degree 1: $(z_1)=(P_1+Q_2)-(P+Q_1), (z_2)=(P_2+Q_1)-(P+Q_2)$. Set $D'=P+Q_1+Q_2$ then $z_1,z_2 \in \mathcal{L}(D')$ and as before this means that $y \in \mathcal{L}(D')$ which is a contradiction.
+
+Now if $v_P(x)=-1$ then either $v_P(z) < v_P(x)$ for a $z \in Z$ or w.l.o.g $v_P(z_1)=-1$ and $v_P(z_2)=0$. Then also assume first $v_Q(z_1)=-1 \implies v_Q(z_2)=0$. But since $\deg((z)_{+})=2$ there must be a place $P'$ s.t. $v_{P'}(z_2)>0$ and $v_{P'}(x)=0$ since $P'\neq P,Q$ but it must be $v_{P'}(z_1) < 0$. This again contradicts the degree of the divisor. 
+
+If $v_Q(z_1)=0$ and $v_Q(z_2)=-1$. Then again there must be a place $P_1$ s.t. $v_{P_1}(z_1)=-1$ and $v_{P_1}(z_2)=1$ and a place $v_{P_2}(z_2)=1 \implies v_{P_2}(z_1)=-1$. This also contradicts divisor degree.
+
+The last case is $\deg(g)=0$: $v_P(z_1)=-v_P(z_2) \implies (z_1) = -(z_2)$. First assume $v_P(z_1)=0 \implies v_P(z_2)=0$ and same for $v_Q$ ($Q$ not necessarly different from $P$). Then there exist places $P_1,P_2,Q_1,Q_2 \neq P,Q$ s.t. $(z_1)=P_1+P_2-(Q_1+Q_2), (z_2)=-(z_1)$. Set $D' = P_1+P_2+Q_1+Q_2$ then $z_1,z_2 \in \mathcal{L}(D')$ but also $y \in \mathcal{L}(D')$ which is again contradiction since $(y)_{-}=2(x)_{-}$.
+
+If $v_P(z_1)=1 \implies v_P(z_2)=-1$. There exists another place $P'$ s.t. $v_{P'}(z_1)=1 \implies v_{P'}(z_2)=-1$. There must be again two places $Q_1,Q_2$ s.t. $(z_1)=P+P'-(Q_1+Q_2), (z_2) = -(z_1)$. Put $D' = P+P'+Q_1+Q_2$ then again $y \in \mathcal{L}(D')$ which is a contradiction.
+\\
+
+We have proven that for each place $P \leq D$ at least one $z \in Z$ must have $v_P(z)<v_P(x)$. This shows also that $(x)_{-}=P+Q$ for distinct $P,Q$. If $P=Q$ then $v_P(x)=-2 \implies v_P(z)\leq -3$ which contradicts $[F:K(z)]=2$. Since $\deg((z)_{-})=2$ and $v_P(z) < -1$ it must be that $(z)_{-}=2P, (z')_{-}=2Q$ for $z,z' \in Z$. Since we have not distinguished $P$ and $Q$ we can say $(z_1)_{-}=2P$ and $(z_2)_{-}=2Q$.
+
+
+
+$\qed$
+
+
+\textbf{Theorem Q.6.} \textit{Proof:}
+Assume genus 0. There exists $t \in F$ s.t. $(t)=P-Q$ and also $(t^{-1})=-(t)=Q-P$. Also $l(D)=\deg(D)+1 = 3$. 
+
+$t \in \mathcal{L}(D)$ since $(t)+D = P-Q+P+Q=2P \geq 0$. Also $t^{-1} \in \mathcal{L}(D): (t^{-1})+D=Q-P+P+Q = 2Q \geq 0$. $t$ and $t^{-1}$ are linearly independent since $t \notin K$. This means $\{1,t,t^{-1}\}$ is a basis of $\mathcal{L}(D)$.
+
+$x \in \mathcal{L}(D) \implies x = c_0+c_1t+c_2t^{-1}$ for some $c_i \in K$. This is equivalent to saying $tx = u(t), u(t) \in K[t], \deg(u)=2$.
+
+In the same way we see $\{1,t,t^{-1},t^2,t^{-2}\}$ for a basis of $\mathcal{L}(2D)$. Again $y \in \mathcal{L}(2D): (y) + 2D = (y)_{+} - (y)_{-} + 2(x)_{-} = (y)_{+} \geq 0$. This means $t^2y = v(t)$ where $v(t) \in K[t], \deg(v)=4$.
+
+$y^2 = f(x) \iff t^4y^2=t^4f(x)$. Substitute $yt=v(t)$ and $xt^2=u(t)$ then we have equality $v^2(t)=t^4f(\frac{u(t)}{t})$. $f$ is a polynomial of degree $4$ therefore it has up to $4$ different roots $1 \leq i \leq 4: \alpha_i \implies v^2(t)=t^4(\frac{u(t)}{t}-\alpha_1)(\frac{u(t)}{t}-\alpha_2)(\frac{u(t)}{t}-\alpha_3)(\frac{u(t)}{t}-\alpha_4)$ we can rewrite this as 
 \begin{gather*}
-(A'_1 : A'_2 : A'_3) = (2(X_1^4-2bX_1^2X_3^2 + b^2X_3^4)X_2X_3 : \widehat{a_2} : 8X_2X_3^2(X_1^3+aX_1^2X_3+bX_1X_3^2))
+v^2(t)=(u(t)-t\alpha_1)(u(t)-t\alpha_2)(u(t)-t\alpha_3)(u(t)-t\alpha_4)
 \end{gather*}
+$v^2(t)=v(t)v(t)$ is a polynomial of degree $8$, which has at most 4 different roots. Also $u(t)-t\alpha_i$ is a polynomial of degree 2. There exist at most two $\alpha \in K$ s.t. $u(t)-t\alpha$ has a root of multiplicity 2. This is because the root of a quadratic polynomial has multiplicity 2 when the discriminant D is 0. If $g(x)-\alpha x=ax^2+(b-\alpha)x+c \implies 0 = \text{D} = (b-\alpha)^2-4ac \iff \alpha = \pm 2\sqrt{ac}+b$.
 
-Pro reprezentaci $[2] = (B_1 : B_2 : B_3), \deg_{X_1}(B_i)\leq 2$ využijeme substituci $X_1^3 = X_2^2X_3-aX_1^2X_3-bX_1X_3^2$. Každá substituce sníží stupeň (v $X_1$) polynomu o 1. Zřejmě se dostaneme do tvaru, kde $\deg_{X_1}(B_i)\leq 2$. Substituce do 1. členu:
+Also if $i\neq j: \alpha_i \neq \alpha_j$ the polynomials $u(t)-t\alpha_i$ and $u(t)-t\alpha_j$ do not have common roots. This means that if $1 \leq i \leq 4: \alpha_i$ are all different then $v^2(t)$ has at least $6 = 2+2+1+1$ different roots. This a contradiction.
+
+Therefore if genus is $0$ then $f$ cannot be separable. We have shown that genus of $F$ is 0 or 1, this means that for $f$ separable we must have genus 1.
+
+Denote $w=x_2^2-f(x_1)$.
+\begin{gather}
+\frac{\partial w}{\partial x_1} = -f'(x_1), \frac{\partial w}{\partial x_1} = 2x_2
+\end{gather}
+For a singularity $\alpha = (\alpha_1, \alpha_2), \alpha_2$ must be $0$ and $\alpha_1$ must be a root of $f(x_1)$ and also of $f'(x_1)$ this is true iff $f(x_1)$ is separable. If $f(x_1)$ is not separable then it shares a common root $\alpha_1$ with $f'(x_1)$ and this gives us singularity at $(\alpha_1, 0)$. This proves the rest of the theorem.
+
+$\qed$
+
+\textbf{Theorem Q.7.} \textit{Proof:}
+Denote $D = P + Q$ a divisor. Due to genus being 1 $\forall k\geq 1: l(kD) = 2k$. $l(D)=2$ and that means there exists $x \notin K$ s.t. $\{1,x\}$ is a basis of $\mathcal{L}(D)$ and also $(x)_{-} \leq P+Q$. Then $(x)^2 = 2(x) = 2(x)_{+}-2(x)_{-} \implies x^2 \in \mathcal{L}(2D),\{1,x,x^2\}$ is linearly independent in $\mathcal{L}(2D)$ but $l(2D)=4$ that means there exists $y \in \mathcal{L}(2D)\setminus \mathcal{L}(D)$ such that $\{1,x,x^2,y\}$ is a basis of $\mathcal{L}(2D)$. 
+
+Denote $B = \{1,x,x^2,x^3,x^4,y,yx,yx^2,y^2\}$, clearly $B \subseteq \mathcal{L}(4D), l(4D)=8$ and $|B|=9 \implies 1 \leq i \leq 8: \exists a_i \in K:$
 \begin{gather*}
-B_1 = 2X_2X_3^2((a^2-3b)X_1^2X_3+X_1X_2^2+abX_1X_3^2-aX_2^2X_3+b^2X_3^3)\\
+y^2 = a_1y + a_2yx + a_3yx^2 + a_4x^4 + a_5x^3 + a_6x^2 + a_7x+ a_8
 \end{gather*}
-$B_2$ získáme opakovanou substitucí za $X_1^3$. Polynom je tvaru:
+
+Denote $C = \{1,x,x^2,x^3,y,yx\}$. $C$ is a basis of $\mathcal{L}(3D)$, $C \cup \{yx^2,y^2\}$ is also a basis of $\mathcal{L}(4D)$. If $a_4=0$ that would be a contradiction to $C \cup \{yx^2,y^2\}$ being a basis of $\mathcal{L}(4D)$ since $y^2$ would be a linear combination of 7 elements.
+
+Now we make a substitution $y \rightarrow y - \frac{a_1+a_2x+a_3x^2}{2}$. This gives us form:
 \begin{gather*}
-B_2 = -X_3^2(-X_2^4+X_2^2X_3f_1(X_1,X_2,X_3) + X_3^2f_2(X_1,X_2,X_3)), \deg_{X_1}(f_i) = i \text{ kde }\\
-f_1(X_1,X_2,X_3) = a^2 X_1 +a^3 (-X_3)+5 a b X_3-3 b X_1\\
-f_2(X_1,X_2,X_3) = -6 a^2 b X_1^2+a^3 b X_1 X_3+a^4 X_1^2-3 a b^2 X_1 X_3+b^2 \left(b X_3^2+9 X_1^2\right)
+y^2 =b_1x^4 + b_2x^3 + b_3x^2 + b_4x+ b_5
 \end{gather*}
+where $b_1 = a_4+\frac{a_3^2}{4}$. If $b_1=0$ then $y^2$ would be a linear combination of elements in $\mathcal{L}(3D)$ but 
 
-\section{}
-Bod $\infty = (0:1:0) \in D$. Zřejmě $A'_1,A'_3(\infty) = 0$ (násobky $X_3$) a $A'_2(\infty) = 0$ (jsou tam jen monočleny $X_1^iX_3^j$). Obdobně $B_i(\infty)=0$ (všechno to jsou násobky $X_3$).
+$\qed$
 
-Pokud ale definujeme $B'_i = \frac{B_i}{X_3^2}$. Poté $B'_2(\infty) = 1$.
+\textbf{Theorem Q.8.} \textit{Proof:}
+Denote $f(x) = g(x^2)$. $F$ is EFF therefore genus is 1 and there exists a place of degree $1$. Also $K$ can be assumed algebraically closed.
 
-Pro zbylé body nyní můžeme uvažovat $X_3 = 1$. Pokud 2. souřadnice bodu z $D$ není 0, tak $A'_3(\alpha) \neq 0$ pro každý takový bod $\alpha \in D$ (protože $X_2 \neq 0$ a $X_3 = 1$).
+If $g(x)$ has a multiple root $\alpha$, then $f(x)=g(x^2)$ has also a multiple root because $g(x)=(x-\alpha)^2 \implies g(x^2) = (x-\sqrt{\alpha})^2(x+\sqrt{\alpha})^2$. Set $z = \frac{y}{x-\sqrt{\alpha}}$. Then $F$ is given by $z^2=(x+\sqrt{\alpha})^2$. This means $x \in K(z)$ and from the definition of $y$ also $y \in K(z)$ which means $F$ has genus 0, a contradiction.
 
-Zbývají 3 body $D$ tvaru $\alpha = (\alpha_1, 0) \in D$. Možná $\alpha_1$ jsou $\{0, r_1, r_2\}$, kde $r_i, i=1,2$ jsou kořeny $x^2+ax+b$. Jelikož $X_2=0$, tak jsou relevantní jen polynomy $A'_2$ a $B_2$ (ostatní jsou $0$).
+From now on we can assume $g(x)$ has 2 distinct roots. If $f(x)=g(x^2)$ would have a multiple root then it's genus would not be $1$ by Q.6. So we can assume $g(x^2)$ separable. 
 
-Pro bod $(0,0)$ se to redukuje na zda $f_2(0,0,1) = 0$? Po dosazení platí $f_2(0,0,1) = b^3$ neboli $B'_2(\alpha) \neq 0$.
-
-Polynom $f_2(x,0,1) = x^2(a^4-6a^2+9b^2)+x(a^3b-3ab^2)+b^3$ . Tento polynom nemá žádné společné kořeny s polynomem $x^2+ax+b$. Takže $f_2(r_i,0,1) \neq 0, i = 1,2 \implies B'_2((r_i:0:1)) \neq 0, i = 1,2$.
-
-\section{}
-Označme
+First we will prove the second part of the theorem. We have shown that $g(x^2)$ must be separable. Therefore by Q.5 we have places of degree 1 ($P\neq Q$), $(x)_{-} = P+Q$ and $(y+x^2)_{-}=2Q, (y-x^2)_{-} = 2P$.
 \begin{gather*}
-\rho_1 = \left( \frac{x_1^2-b}{2x_2} \right)^2\\
-\rho_2 = \frac{x_1^6+2ax_1^5+5bx_1^4-5b^2x_1^2-2ab^2x_1-b^3}{8x_2^3}
+y^2=g(x^2) = x^4+2bx^2+c \iff y^2-(x^4-2bx^2-b^2) = c - b^2 \implies \\
+(y-(x^2+b))(y+(x^2+b))=c-b^2
 \end{gather*}
 
-Všimneme si, že platí:
-\begin{gather*}
-\rho_1 = \frac{v^2}{4u^2} = \left( \frac{v}{2u} \right)^2
-\end{gather*}
-Kde $u = t^2, v = st, t = \frac{x_2}{x_1}, s = \frac{b-x_1^2}{x_1}$ z minulých úloh. Poněkud nepřesně zde ztotožňujeme $x_1 + (w) = x_1, x_2= x_2 + (w)$. Obdobně také $\rho_2$ jde vyjádřit pomocí $u,v$. 
-\begin{gather*}
-\rho_2 = \rho_2  \frac{x_1^2}{x_1^2} = \frac{(b-x_1^2)(-1)(x_1^6+2ax_1^5+6bx_1^4+2abx_1^3+b^2x_1^2)}{8x_1^2x_2^3} = \\
-\frac{v}{8} \frac{-(x_1^6+2ax_1^5+6bx_1^4+2abx_1^3+b^2x_1^2)}{x_2^3} \frac{x_2}{x_2} = \frac{v}{8} \frac{-((x_1^3+ax_1^2+bx_1)^2-a^2x_1^4+4bx_1^4)}{x_2^4} =\\
-\frac{v}{8} \frac{(-x_2^4+a^2x_1^4-4bx_1^4)}{x_2^4} \frac{x_1^4}{x_1^4} = \frac{v}{8} \frac{a^2-4b-\frac{x_2^4}{x_1^4}}{\frac{x_2^4}{x_1^4}} = \frac{v(a^2-4b-u^2)}{8u^2}
-\end{gather*}
-Neboli $\text{Im}([2]^*) = K(\frac{v^2}{4u^2},\frac{v(a^2-4b-u^2)}{u^2})$. Ukažeme, že $[K(u,v):\text{Im}([2]^*)]=2$. 
-
-Zvolme $d = \sqrt{\frac{v^2}{u^2}} = \frac{v}{u}$. Ukážeme, že $K(\rho_1,\rho_2,d)=K(u,v)$. Poté zřejmě $min_{d,K(\rho_1,\rho_2)}(T)=T^2-4\rho_1$, což je ireducibilní a separabilní polynom nad $K(\rho_1, \rho_2)$ (kořeny $\pm d$).
+Since $g(x^2)$ is separable $g(x)$ must have simple roots. If $g(x)$ has a multiple root then it's discriminant is 0 and that happens iff $c-b^2=0$. So we know $0 \neq c-b^2 \in K$.
 
 \begin{gather*}
-\rho_2 d^{-1} = \frac{v(a^2-4b-u^2)}{u^2} \frac{u}{v} = \frac{a^2u-4bu-u^3}{u^2} = \frac{a^2u-4bu-(v^2+2au^2-a^2u+4bu)}{u^2} =\\
-\frac{-v^2-2au^2+2a^2u-8bu}{u^2} = -\frac{v^2}{u^2} -2a + \frac{2a^2-8b}{u} \implies\\
-\rho_2 d^{-1} + d^2 +2a = \frac{2a^2-8b}{u} \implies u = \frac{2a^2-8b}{\rho_2 d^{-1} + d^2 +2a} \in K(\rho_1, \rho_2, d)\\
-d = \frac{v}{u} \implies d u = v \implies v \in K(\rho_1, \rho_2, d)
+0=v_P(c-b^2)=v_P(y-(x^2+b)) + v_P(y+(x^2+b))\\
+v_P(y-(x^2+b)) = v_P(y-x^2) = -2 \implies v_P(y+(x^2+b)) = 2
 \end{gather*}
-V úpravách jsme použili rovnost $v^2 = u^3-2au^2+u(a^2-4b)$, kterou jsme dokázali v úkolu 4.
 
-Tedy $K(u,v)/\text{Im}([2]^*)$ je separabilní a stupně 2. Z minulých úkolů víme, že $K(D)/K(u,v)$ je galoisovo a stupně 2. Z toho vyplývá, že $K(D)/\text{Im}([2]^*)$ je stupně $2\cdot2$ a je separabilní. Ekvivalentně $[2]$ je separabilní isogeny a $\deg([2])=4$.
+Similarly we can show $v_Q(y-(x^2+b)) = 2$ and $v_Q(y+x^2+b)=-2$. 
 
-V minulých úlohách jsme dokázali, že $D$ je smooth, tedy dle X.13 $\text{Im}([2])=D$.
+Since $\deg((y+x^2+b)_{+}) = \deg((y+x^2+b)_{-}) = \deg((y+x^2)_{-}) = 2 \implies \text{div}(y+x^2+b) = 2P - 2Q$ and similarly $\text{div}(y+x^2+b) = 2Q - 2P$.
 
-Z definice isogeny víme, že $[2](\infty) = \infty$. Pro zjištění jádra chceme vědět, jaké body $\alpha \in D$ se zobrazí $[2]$ na $\infty$ neboli pro jaké body platí $\rho_1 = \frac{a_1}{b_1}, \rho_2 = \frac{a_2}{b_2}$ platí $b_i(\alpha)=0$. Vidíme, že musí $\alpha_2 = 0$. $D$ je smooth, tedy máme $3$ různé body $P_0,P_1,P_2 = (0,0),(r_1,0),(r_2,0) \in D$, kde 2. souřadnice je 0.
+We have proven the last part of the theorem. Now let's prove the equivalence.
 
-$K(D)/\text{Im}([2]^*)$ je separabilní, tedy dle T.15 $[K(D)/\text{Im}([2]^*)]_s = [K(D)/\text{Im}([2]^*)] = 4$, tedy $|\text{Ker}([2])|=4$. Našli jsme 4 různé body a tedy $\text{Ker}([2]) = \{\infty, P_0, P_1, P_2\}$. 
+As we have shown before. We can assume $g(x^2)$ separable and then we have involution $P-Q$ as shown above since $2P-2Q = (t)$ for $t \in F$. We only have to show that $P-Q \neq (t)$ for some $t \in F$. 
 
-Přesně jsme neukázali, že $d \notin K(\rho_1, \rho_2)$. Pokud by to platilo, tak $\deg([2]) = 2$ a $[2]$ separabilní. Nalezli jsme ale 4 různé body, které jsou prvky $\text{Ker}([2])$, tedy spor s T.15.
+If $t \in F$ s.t. $(t) = P - Q \implies \deg((t)_{+}) = 1 = [F:K(t)]$ and that would be contradiction with F being EFF.
 
-\section{}
-Zadání splňuje předpoklady T.17, tedy $\text{Gal}(K(D)|\text{Im}([2]^*)) = \{t^*_\alpha| \alpha \in \{\infty, P_1, P_2, P_3\}\}$.
-Z definice $t_\infty (\alpha) = \infty \oplus \alpha = \alpha$, neboli $t_\infty = [1] \iff t_\infty^* = (x,y), (X:Y:Z)$.
+Now we assume we have involution. We can always find $t \in F \setminus K$ s.t. $(t) = 2P-2Q$ where $P,Q$ distinct places of degree 1 and $P-Q$ is involution.
 
-Dále $P_1 = (0,0) \implies t_{(0,0)}(\alpha) = (0,0) \oplus \alpha$.
+Then $l(2P) = 2 = l(2Q) \implies \{1,t\}$ is a basis of $\mathcal{L}(2P)$ and $\{1,t^{-1}\}$ is a basis of $\mathcal{L}(2Q)$.
 
-Spočteme tedy afinní reprezentanty $t_{(0,0)}^*$, které jsou $t_{(0,0)}^* = \left( \frac{-b}{x_1}, \frac{-bx_2}{x_1^2} \right)$. Z toho dostaneme klasickým způsobem projektivní reprezentanty: 
-\[(-bX_1X_3 : -bX_2X_3 : X_1^2) \]
+$\qed$
 
-Zbylé 2 translace korespondují s body $P_2,P_3$, kde $P_2 = (r_1, 0), P_3 = (r_2, 0)$ pro $r_1,r_2$ platí $r_i^2+ar_i+b = 0$ (jsou to kořeny $x_1^2+ax_1+b$). Opět z definice $t_{(r_1,0)}(\alpha) = (r_1,0) \oplus \alpha$. Pak jsou afinní reprezentanti $t_{(r_1,0)}^*$: 
+
+\textbf{Proposition G.3} \textit{Proof:}
+Denote $\alpha, \beta \in \bar{K}$ the roots of $g(x)$. The roots of $g(x^2)$ are $\pm \sqrt{\alpha}, \pm \sqrt{\beta}$. First we will show that $g(x^2)$ is either separable or it has only multiple roots. Assume for contradiction $+\sqrt{\alpha}$ is a simple root and $g(x^2)$ has a multiple root. Then $\sqrt{\alpha} \neq -\sqrt{\alpha}$. If $-\sqrt{\alpha}$ is also a simple root then $\sqrt{\beta} = -\sqrt{\beta} \implies \beta = 0$. This means $0$ is double root of $g(x^2)$ this contradicts $c \neq 0$. Now if $-\sqrt{\alpha}$ is not a simple root then $-\sqrt{\alpha}=\sqrt{\beta}$ or $-\sqrt{\alpha}=-\sqrt{\beta}$. Both cases imply $+\sqrt{\alpha} = \sqrt{\beta}$ or $+\sqrt{\alpha} =-\sqrt{\beta}$ which contradicts $+\sqrt{\alpha}$ being a simple root.
+
+So if $g(x^2)$ is separable we can assume $F/K$ is EFF. If not then $F/K$ is genus 0 and it is given by $z^2=(x-\gamma_2)^2$ where $\gamma_2$ is a multiple root of $g(x^2)$, $z = \frac{y}{x-\gamma_1}$ ($g(x^2)=(x-\gamma_1)^2(x-\gamma_2)^2$) and then $\frac{z}{x-\gamma_2} = \pm 1 \iff z = \pm (x-\gamma_2)$. 
+
+First assume $F/K$ is EFF.
+Then $F=K(x,y)$. Clearly $K(\tilde{x},\tilde{y}) \subseteq K(x,y)$. The other inclusion is also clear since $x = \tilde{x}^{-1}\tilde{y}$ and $y = 2\tilde{x}-x^2-b$. Using Q.8 we know there are places $P,Q$ of degree 1 distinct s.t $(u)=(y+x^2+b)=2Q-2P$ and $(y-x^2-b)=2P-2Q$.
+
+We have shown $F=K(x,y)=K(\tilde{x},\tilde{y})$, now let's show $v_P(\tilde{x})=-2=v_P(\tilde{x}^3-\tilde{y}^2-b'\tilde{x}^2)$ where $b' = b$. $v_P(\tilde{x})=v_P(u)=-2$ by Q.8. Also
 \begin{gather*}
-\left(\frac{r_1(a+r_1+x_1)}{x_1-r_1}, \frac{x_2(ar_1+2b)}{(x_1-r_1)^2} \right )\\
-\text{a projektivní:}\\
-\left(r_1((a+r_1)X_3 + X_1)(X_1-r_1X_3) : (ar_1+2b)X_2X_3 : (X_1-r_1X_3)^2 \right)
+v \coloneqq \tilde{x}^3-\tilde{y}^2-b'\tilde{x}^2 = u^2 \left(\frac{u}{8}-\frac{x^2}{4}-\frac{b}{4} \right) \implies \\
+v_P(v)=2v_P(u)+v_P\left(\frac{u}{8}-\frac{x^2}{4}-\frac{b}{4} \right) = -4 + v_P(u - 2x^2 - 2b) \implies\\
+ v_P(u - 2x^2 - 2b) = v_P(y-x^2-b) = 2 \implies v_P(v)=-4+2 = -2
 \end{gather*}
 
-K 1. affinímu reprezentantovi ($\gamma_1(x_1,x_2)$) jsme se dostali následnovně:
-\begin{gather*}
-\lambda = \frac{x_2}{x_1-r_1} \implies \gamma_1(x_1,x_2) = - r_1 - x_1 + \frac{x_2^2}{(x_1-r_1)^2} - a \implies\\
-\gamma_1(x_1,x_2) = \frac{(-r_1-x_1)(x_1-r_1)^2+x_2^2-a(x_1-r_1)^2}{(x_1-r_1)^2} \text{ roznásobení a sub. za $x_2^2$} =\\
-\frac{x_1^2r_1+x_1r_1^2-r^3+2x_1ar_1-ar_1^2+bx_1}{(x_1-r_1)^2} = \frac{-ar_1^2-r_1^3+ar_1x_1+x_1(b+ar+r_1^2)+r_1x_1^2}{(x_1-r_1)^2} \implies\\
-b+ar_1+r_1^2 = 0 \implies\\
-\frac{-ar_1^2-r_1^3+ar_1x_1+r_1x_1^2}{(x_1-r_1)^2} = \frac{r_1(x_1-r_1)(a+r_1+x_1)}{(x_1-r_1)^2} = \frac{r_1(a+r_1+x_1)}{x_1-r_1}
-\end{gather*}
+Now we have shown we can use G.2 and threfore $F$ is given by $\tilde{y}^2=\tilde{x}^3-b\tilde{x}^2+c'\tilde{x}$ for some $c' \in K$. If we show $c' = \frac{b^2-c}{4}$ then we have completed the proof $g(x^2)$ separable.
 
-Při úpravě jsme použili $x_2^2 = x_1^3+ax_1^2+bx_1$ a $r_1^2+ar_1 = -b$. K druhému ($\gamma_2(x_1,x_2)$):
-\begin{gather*}
-\gamma_2(x_1,x_2) = \frac{x_2}{x_1-r_1} \cdot \left( r_1 - \frac{r_1(a+r_1+x_1)}{x_1-r_1} \right) - 0 =\\
-\frac{x_2}{x_1-r_1} \cdot \left(\frac{r_1(x_1-r_1) - r_1(a+r_1+x_1)}{x_1-r_1} \right) = \frac{x_2}{x_1-r_1} \cdot \left(\frac{-2r_1^2-ar_1}{x_1-r_1} \right) = \\
- \frac{x_2}{x_1-r_1} \cdot \left(\frac{-r_1^2+b}{x_1-r_1} \right) =  \frac{x_2(ar_1+2b)}{(x_1-r_1)^2}
-\end{gather*}
-
-Pro $P_3 = (r_2,0)$, $t_{(r_2,0)}(\alpha) = (r_2, 0) \oplus \alpha$ můžeme provést stejný postup. Reprezentanti $t_{(r_2,0)}^*$ jsou tedy:
-\begin{gather*}
-\left(\frac{r_2(a+r_2+x_1)}{x_1-r_2}, \frac{x_2(ar_2+2b)}{(x_1-r_2)^2} \right )\\
-\text{a projektivní:}\\
-\left(r_2((a+r_2)X_3 + X_1)(X_1-r_2X_3) : (ar_2+2b)X_2X_3 : (X_1-r_2X_3)^2 \right)
-\end{gather*}
 \end{document}

@@ -133,23 +133,29 @@ Zbylé 2 translace korespondují s body $P_2,P_3$, kde $P_2 = (r_1, 0), P_3 = (r
 \begin{gather*}
 \left(\frac{r_1(a+r_1+x_1)}{x_1-r_1}, \frac{x_2(ar_1+2b)}{(x_1-r_1)^2} \right )\\
 \text{a projektivní:}\\
-\left(r_1((a+r_1)X_3 + X_1)(X_1-r_1X_3)X_3 : X_1^2X_2-2r_1X_1X_2X_3+bX_2X_3^2 : (X_1-r_1X_3)^2X_3 \right)
+\left(r_1((a+r_1)X_3 + X_1)(X_1-r_1X_3) : (ar_1+2b)X_2X_3 : (X_1-r_1X_3)^2 \right)
 \end{gather*}
 
-K 1. affinímu reprezentantovi jsme se dostali následnovně:
+K 1. affinímu reprezentantovi ($\gamma_1(x_1,x_2)$) jsme se dostali následnovně:
 \begin{gather*}
-kek
+\lambda = \frac{x_2}{x_1-r_1} \implies \gamma_1(x_1,x_2) = - r_1 - x_1 + \frac{x_2^2}{(x_1-r_1)^2} - a \implies\\
+\gamma_1(x_1,x_2) = \frac{(-r_1-x_1)(x_1-r_1)^2+x_2^2-a(x_1-r_1)^2}{(x_1-r_1)^2} \text{ roznásobení a sub. za $x_2^2$} =\\
+\frac{x_1^2r_1+x_1r_1^2-r^3+2x_1ar_1-ar_1^2+bx_1}{(x_1-r_1)^2} = \frac{-ar_1^2-r_1^3+ar_1x_1+x_1(b+ar+r_1^2)+r_1x_1^2}{(x_1-r_1)^2} \implies\\
+b+ar_1+r_1^2 = 0 \implies\\
+\frac{-ar_1^2-r_1^3+ar_1x_1+r_1x_1^2}{(x_1-r_1)^2} = \frac{r_1(x_1-r_1)(a+r_1+x_1)}{(x_1-r_1)^2} = \frac{r_1(a+r_1+x_1)}{x_1-r_1}
 \end{gather*}
 
-A k druhému:
+Při úpravě jsme použili $x_2^2 = x_1^3+ax_1^2+bx_1$ a $r_1^2+ar_1 = -b$. K druhému ($\gamma_2(x_1,x_2)$):
 \begin{gather*}
-\gamma_2(x_1,x_2) = \frac{x_2}{x_1-r_1} \cdot
+\gamma_2(x_1,x_2) = \frac{x_2}{x_1-r_1} \cdot \left( r_1 - \frac{r_1(a+r_1+x_1)}{x_1-r_1} \right) - 0 =\\
+\frac{x_2}{x_1-r_1} \cdot \left(\frac{r_1(x_1-r_1) - r_1(a+r_1+x_1)}{x_1-r_1} \right) = \frac{x_2}{x_1-r_1} \cdot \left(\frac{-2r_1^2-ar_1}{x_1-r_1} \right) = \\
+ \frac{x_2}{x_1-r_1} \cdot \left(\frac{-r_1^2+b}{x_1-r_1} \right) =  \frac{x_2(ar_1+2b)}{(x_1-r_1)^2}
 \end{gather*}
 
 Pro $P_3 = (r_2,0)$, $t_{(r_2,0)}(\alpha) = (r_2, 0) \oplus \alpha$ můžeme provést stejný postup. Reprezentanti $t_{(r_2,0)}^*$ jsou tedy:
 \begin{gather*}
-\left(\frac{r_2(a+r_2+x_1)}{x_1-r_2}, \frac{x_1^2x_2-2r_2x_1x_2 + bx_2}{(x_1-r_2)^2} \right )\\
+\left(\frac{r_2(a+r_2+x_1)}{x_1-r_2}, \frac{x_2(ar_2+2b)}{(x_1-r_2)^2} \right )\\
 \text{a projektivní:}\\
-\left(r_2((a+r_2)X_3 + X_1)(X_1-r_2X_3)X_3 : X_1^2X_2-2r_2X_1X_2X_3+bX_2X_3^2 : (X_1-r_2X_3)^2X_3 \right)
+\left(r_2((a+r_2)X_3 + X_1)(X_1-r_2X_3) : (ar_2+2b)X_2X_3 : (X_1-r_2X_3)^2 \right)
 \end{gather*}
 \end{document}
