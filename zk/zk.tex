@@ -209,21 +209,144 @@ Then $l(2P) = 2 = l(2Q) \implies \{1,t\}$ is a basis of $\mathcal{L}(2P)$ and $\
 $\qed$
 
 
-\textbf{Proposition G.3} \textit{Proof:}
-Denote $\alpha, \beta \in \bar{K}$ the roots of $g(x)$. The roots of $g(x^2)$ are $\pm \sqrt{\alpha}, \pm \sqrt{\beta}$. First we will show that $g(x^2)$ is either separable or it has only multiple roots. Assume for contradiction $+\sqrt{\alpha}$ is a simple root and $g(x^2)$ has a multiple root. Then $\sqrt{\alpha} \neq -\sqrt{\alpha}$. If $-\sqrt{\alpha}$ is also a simple root then $\sqrt{\beta} = -\sqrt{\beta} \implies \beta = 0$. This means $0$ is double root of $g(x^2)$ this contradicts $c \neq 0$. Now if $-\sqrt{\alpha}$ is not a simple root then $-\sqrt{\alpha}=\sqrt{\beta}$ or $-\sqrt{\alpha}=-\sqrt{\beta}$. Both cases imply $+\sqrt{\alpha} = \sqrt{\beta}$ or $+\sqrt{\alpha} =-\sqrt{\beta}$ which contradicts $+\sqrt{\alpha}$ being a simple root.
+\textbf{Proposition G.2} \textit{Proof:}
+Since $F/K$ is given by $y^2 = g(x^2)$ we know that $F=K(x,y)$.
 
-So if $g(x^2)$ is separable we can assume $F/K$ is EFF. If not then $F/K$ is genus 0 and it is given by $z^2=(x-\gamma_2)^2$ where $\gamma_2$ is a multiple root of $g(x^2)$, $z = \frac{y}{x-\gamma_1}$ ($g(x^2)=(x-\gamma_1)^2(x-\gamma_2)^2$) and then $\frac{z}{x-\gamma_2} = \pm 1 \iff z = \pm (x-\gamma_2)$. 
+Clearly $K(\tilde{x},\tilde{y}) \subseteq K(x,y)$. The other inclusion is also clear since $x = \tilde{x}^{-1}\tilde{y}$ and $y = 2\tilde{x}-x^2-b$. 
 
-First assume $F/K$ is EFF.
-Then $F=K(x,y)$. Clearly $K(\tilde{x},\tilde{y}) \subseteq K(x,y)$. The other inclusion is also clear since $x = \tilde{x}^{-1}\tilde{y}$ and $y = 2\tilde{x}-x^2-b$. Using Q.8 we know there are places $P,Q$ of degree 1 distinct s.t $(u)=(y+x^2+b)=2Q-2P$ and $(y-x^2-b)=2P-2Q$.
+Now we need to show that $-\tilde{y}^2+\tilde{x}^3-b\tilde{x}^2+\frac{b^2-c}{4}\tilde{x} = 0$ in $F$.
 
-We have shown $F=K(x,y)=K(\tilde{x},\tilde{y})$, now let's show $v_P(\tilde{x})=-2=v_P(\tilde{x}^3-\tilde{y}^2-b'\tilde{x}^2)$ where $b' = b$. $v_P(\tilde{x})=v_P(u)=-2$ by Q.8. Also
 \begin{gather*}
-v \coloneqq \tilde{x}^3-\tilde{y}^2-b'\tilde{x}^2 = u^2 \left(\frac{u}{8}-\frac{x^2}{4}-\frac{b}{4} \right) \implies \\
-v_P(v)=2v_P(u)+v_P\left(\frac{u}{8}-\frac{x^2}{4}-\frac{b}{4} \right) = -4 + v_P(u - 2x^2 - 2b) \implies\\
- v_P(u - 2x^2 - 2b) = v_P(y-x^2-b) = 2 \implies v_P(v)=-4+2 = -2
+\tilde{y}^2 = \tilde{x}^3-b\tilde{x}^2+\frac{b^2-c}{4}\tilde{x}\\
+\text{Substitute $\tilde{x}, \tilde{y}$:}\\
+\frac{x^2u^2}{4} = \frac{u^3}{8} - \frac{bu^2}{4} + \frac{b^2-c}{8}u\\
+2x^2u^2 = u^3 - 2bu^2 + (b^2-c)u \\
+\text{Divide by $u \neq 0$ in $F$:}\\
+2x^2u = u^2 - 2bu + (b^2-c)\\
+\text{Substitute $u=y+x^2+b$:}\\
+2x^2(y+x^2+b) = (y^2+x^4+2yx^2+2by+2bx^2+b^2)-2b(y+x^2+b)+b^2-c\\
+\iff\\
+y^2-x^4-2bx^2-c = y^2 - g(x^2)= 0
+\end{gather*}
+We have shown that $\tilde{y}^2 = \tilde{x}^3-b\tilde{x}^2+\frac{b^2-c}{4}\tilde{x}$ in $F$ since $y^2=g(x^2)$ in $F$ by definition.
+
+The only thing left is to show that $y^2-x^3+bx^2+\frac{b^2-c}{4}x$ is irreducibile in $K[x,y]$. Using Einsenstein criterion with $x \in K[x]$ as a prime element we get that this polynomial is indeed irreducibile in $(K[x])[y]$.
+
+$\qed$
+
+\textbf{Theorem G.3} \textit{Proof:}
+Assume we have $(a_2, a_4) \in K \times K$ s.t. $a_4 \neq 0 \neq a_2^2-4a_4$. Set $b = -a_2$ and $c = -4a_4+a_2^2$. If $c = 0$ this would mean that $4a_4=a_2^2$ which is a contradiction with $a_2^2-4a_4 \neq 0$. If $b^2-c=0 \iff c=b^2$ then this is would imply $-4a_4+a_2^2 = a_2^2 \iff a_4 = 0$ which is again a contradiction.
+
+On the other hand assume we have $(b,c) \in K \times K$ s.t. $c \neq 0 \neq b^2-c$. Set $a_2 = -b, a_4 = \frac{b^2-c}{4}$. If $a_4 = 0$ this would imply $b^2-c = 0$ which is contradiction. If $a_2^2-4a_4 =0 \iff b^2=b^2-c \iff c = 0$ which is a contradiction.
+
+We have therefore proven that $G.1$ holds.
+
+Denote the rational map $C_1 \rightarrow C_2$ as $\psi$ and the map $C_2 \rightarrow C_1$ as $\phi$. Also $f(x_1,x_2) = x_2^2-x_1^3-a_2x_1^2-a_4x_1, C_1 = V_{f}, g(x_1,x_2) = x_2^2-x_1^4-2bx_1^2-c, C_2 = V_g$.
+
+Now we need to show that $\psi$ and $\phi$ are actually $K$-rational maps. We will use lemma $R.6$ from the lecture. 
+
+First we know that $\phi$ is a rational map thanks to proposition $G.2$. By proposition $G.2$ (since $a_2 = -b, a_4 = \frac{b^2-c}{4}$) we have shown that $(\rho_1,\rho_2) = 0 \in K(C_2)$ where $(\rho_1,\rho_2) = \left(\frac{x_2+x_1^2+b}{2} + (g), \frac{x_1(x_2+x_1^2+b)}{2} + (g)\right)$. By lemma $R.6$ this means that $\phi$ is a $K$-rational map $C_2 \rightarrow C_1$.
+
+To show that $\psi$ is a $K$-rational map $C_1 \rightarrow C_2$ we need to prove that $g(\rho_1, \rho_2) = 0 \in K(C_1)$ where $(\rho_1, \rho_2) = \left( \frac{x_2}{x_1} + (f), \frac{x_1^2-a_4}{x_1} + (f)\right)$.
+
+\begin{gather*}
+g(\rho_1, \rho_2) = \frac{(x_1^2-a_4)^2}{x_1^2} - \frac{x_2^4}{x_1^4} - 2b\frac{x_2^2}{x_1^2} - c\\
+g(\rho_1, \rho_2) = 0 \iff x_1^4g(\rho_1, \rho_2) = 0 \text{ and using $b=-a_2, c = a_2^2-4a_4$}\implies\\
+x_1^4g(\rho_1, \rho_2) = -x_2^4 + 2a_2x_1^2x_2^2+x_1^6+2a_4x_1^4-a_2^2x_1^4+a_4^2x_1^2\\
+\text{Substitution $x_1^6 = (x_2^2-a_2x_1^2-a_4x_1)^2$:}
+x_1^4g(\rho_1, \rho_2) = -2a_4x_1x_2^2+2a_4x_1^4+2a_2a_4x_1^3+2a_4^2x_1^2 = \\
+2a_4x_1(-x_2^2+x_1^3+a_2x_1^2+a_4x_1) = 0 \in K(C_1)
+\end{gather*}
+This proves that $\psi$ is a $K$-rational map $C_1 \rightarrow C_2$.
+
+
+By definition of birational equivalence we need to show that $\phi \circ \psi = id_{C_1}$ and $\psi \circ \phi = id_{C_2}$.
+
+Let's start with $id_{C_1}$, we want to show that $\phi \circ \psi$ can be represented as $(x_1, x_2) \in K(C_1)$. First coordinate:
+\begin{gather*}
+\frac{\frac{x_1^2-a_4}{x_1}+\frac{x_2^2}{x_1^2}+b}{2} = \frac{x_1^3-a_4x_1+x_2^2+x_1^2b}{2x_1^2}\\
+\text{Substitution for $x_2^2$ in $K(C_1)$ and using $b=-a_2$:}\\
+\frac{2x_1^3}{2x_1^2} = x_1
+\end{gather*}
+Second coordinate (again using $b=-a_2$):
+\begin{gather*}
+\frac{\frac{x_2}{x_1}\left(\frac{x_1^2-a_4}{x_1} + \frac{x_2^2}{x_1^2} - a_2 \right)}{2} = \frac{x_2(x_1^3-a_4x_1+x_2^2-a_2x_1^2)}{2x_1^3}\\
+\text{Substitution for $x_2^2$ again:}\\
+\frac{x_2(2x_1^3)}{2x_1^3} = x_2
+\end{gather*}
+We have shown that $\phi \circ \psi = id_{C_1}$ i.e. 
+
+Now for $\psi \circ \phi$. First coordinate:
+\begin{gather*}
+\frac{\frac{x_1(x_2+x_1^2+b)}{2}}{\frac{x_2+x_1^2+b}{2}} = \frac{x_1(x_2+x_1^2+b)}{x_2+x_1^2+b} = x_1
+\end{gather*}
+Second coordinate:
+\begin{gather*}
+\frac{\left(\frac{x_2+x_1^2+b}{2}\right)^2 - a_4}{\frac{x_2+x_1^2+b}{2}} = \frac{\frac{x_2^2+x_1^4+2x_1^2x_2+2bx_2+2bx_1^2+b^2-4a_4}{4}}{\frac{x_2+x_1^2+b}{2}}\\
+\text{Using substitution for $x_1^4$ in $K(C_2)$ and $-4a_4 = -b^2+c$:}\\
+\frac{2x_2^2+2x_1^2x_2+2bx_2}{2x_2+2x_1^2+2b} = x_2
+\end{gather*}
+We have proved that both compositions of those rational maps are identitities therefore $C_1$ and $C_2$ are birationally equivalent.
+
+$\qed$
+
+\textbf{Theorem G.4} \textit{Proof:}
+Assume we have $(a_2, \gamma) \in K \times K$ s.t. $\gamma^2 \neq 0 \neq a_2^2-4\gamma^2$. Set $B = \gamma^{-1}, A = a_2\gamma^{-1}$. Since $\gamma \neq 0$ then also $\gamma^{-1} = B$ cannot be 
+0. If $A^2 = 4$ then $a_2^2\gamma^{-2} = 4 \iff a^2 - 4\gamma \neq 0$ which is a contradiction.
+
+On the other hand if we have $(A,B) \in K \times K$ s.t. $B(A^2-4)\neq 0$ then set $\gamma = B^{-1}$ and $a_2 = AB^{-1}$. If $\gamma^2 = 0$ this would imply $\gamma = 0$ which is a contradiction with $B \neq 0$. If $a_2^2-4\gamma^2 =0 \iff a_2^2 = 4\gamma^2$ this would imply $\frac{A^2}{B^2} = 4B^{-2} \iff A^2 = 4$ which is again contradiction.
+
+We have therefore proven that $G.2$ holds.
+
+As in $G.3$ denote $f(x_1,x_2) = x_2^2-x_1^3-a_2x_1^2-a_4x_1, C_1 = V_f$ and $g(x_1,x_2) = Bx_2^2-x_1^3-Ax_1^2-x_1, C_2 = V_g$. Denote the rational map $C_1 \rightarrow C_2$ as $\psi$ and the rational map $C_2 \rightarrow C_1$ as $\phi$.
+
+First we show that $\psi$ is a $K$-rational map $C_1 \rightarrow C_2$ using $R.6$ as in $G.3$. We want to show $g(\rho_1, \rho_2) = 0 \in K(C_1)$ where $(\rho_1, \rho_2) = \left(\gamma^{-1}x_1 + (f), \gamma^{-1}x_2 + (f) \right)$. We know that $\gamma^{-1} = \frac{1}{\sqrt{a_4}}$ and $a_4 \neq 0, B = \frac{1}{\sqrt{a_4}}, A = \frac{a_2}{\sqrt{a_4}}$.
+\begin{gather*}
+g(\rho_1, \rho_2) = \frac{1}{\sqrt{a_4}}\left( \frac{x_2}{\sqrt{a_4}} \right)^2 - \frac{x_1^3}{\sqrt{a_4}^3} - \frac{a_2}{\sqrt{a_4}}\frac{x_1^2}{\sqrt{a_4}^2} - \frac{x_1}{\sqrt{a_4}} = \frac{x_2^2-x_1^3-a_2x_1^2-a_4x_1}{a_4\sqrt{a_4}} = 0
+\end{gather*} 
+
+Now we want to show $f(\rho_1, \rho_2) = 0 \in K(C_2)$ where $(\rho_1, \rho_2) = \left( B^{-1}x_1 + (g), B^{-1}x_2+(g) \right)$. Similarly $a_4 = \frac{1}{B^2}$ since $B \neq 0$ and $a_2 = \frac{A}{B}$:
+\begin{gather*}
+f(\rho_1, \rho_2) = \frac{x_2^2}{B^2} - \frac{x_1^3}{B^3} - \frac{A}{B}\frac{x_1^2}{B^2}-\frac{1}{B^2}\frac{x_1}{B_1} = \frac{Bx_2^2-x_1^3-Ax_1^2-x_1}{B^3} = 0
 \end{gather*}
 
-Now we have shown we can use G.2 and threfore $F$ is given by $\tilde{y}^2=\tilde{x}^3-b\tilde{x}^2+c'\tilde{x}$ for some $c' \in K$. If we show $c' = \frac{b^2-c}{4}$ then we have completed the proof $g(x^2)$ separable.
+So $\psi$ and $\phi$ are both $K$-rational maps. Now as in $G.3$ we show birational equivalence by proving $\phi \circ \psi = id_{C_1}$ and $\psi \circ \psi = id_{C_2}$ which is trivial in this case.
+\begin{gather*}
+\phi \circ \psi = (B^{-1}(Bx_1), B^{-1}(Bx_2)) = (x_1, x_2)\\
+\psi \circ \phi = (\gamma^{-1}(\gamma x_1), \gamma^{-1}(\gamma x_2)) = (x_1, x_2)
+\end{gather*}
+
+$\qed$
+
+\textbf{Proposition G.5} \textit{Proof:}
+Assume we have $(a,d) \in K^* \times K^*, a \neq d$. Set $B =  \frac{4}{a-d}, A = \frac{2(a+d)}{a-d}$. $B \neq 0$ and if $A = 2$ then this is a contradiction with $d \neq 0$ and if $A = -2$ then it is contradiction with $a \neq 0$. 
+
+On the other hand assume $(A,B) \in K \times K$ s.t. $B \neq 0$ and $A^2 \neq 4$. Set $a = \frac{A+2}{B}$ and $d = \frac{A-2}{B}$. If $a = 0$ or $d = 0$ this is a contradiction with $A \neq \pm 2 \iff A^2 \neq 4$. If $a=d \iff 2=-2$ which is a contradiction. We have shown that $G.3$ holds.
+
+Denote the rational map $C_1 \rightarrow C_2$ as $\psi$ and the rational map $C_2 \rightarrow C_1$ as $\phi$. First let's prove that $\psi$ is a rational map.
+
+Theorem $G.4$ gives us a $K$-rational map $\Psi_1: C_1 \rightarrow C'$ s.t. $\Psi_1(x_1, x_2) = (B^{-1}x_1, B^{-1}x_2)$ where $C' = V_f$ where $f(x_1, x_2) = x_2^2-x_1^3-a_2x_1^2-a_4x_1$ and $a_2 = \frac{A}{B}$ and $a_4 = \frac{1}{B^2}$. Theorem $G.3$ gives us a $K$-rational map $\Psi_2: C' \rightarrow C_2$ where $\Psi_2(x_1, x_2) = \left(\frac{x_2}{x_1}, \frac{x_1^2-a_4}{x_1} \right)$. We can use $G.3$ because due to the paragraph before $G.5$ we know that $C_2$ in $G.5$ and $C_2$ in $G.3$ are equal.
+
+By composition of these 2 $K$-rational maps we get $\Psi_2 \circ \Psi_1 = \psi$. Since $\Psi_1, \Psi_2$ are $K$-rational maps of finite degree (because every $\rho$ we used in the proofs were transcendental over $K$) we get by Theorem $R.9$ from the lecture that $\psi$ is also a $K$-rational map $C_1 \rightarrow C_2$.
+
+Using similar process theorem $G.3$ gives us a $K$-rational map $\Phi_1: C_2 \rightarrow C'$ s.t. $\Phi_1(x_1, x_2) = \left(\frac{x_2+x_1^2+b}{2}, \frac{x_1(x_2+x_1^2+b)}{2} \right)$ where $C' = V_g$ where $g(x_1,x_2) = x_2^2-x_1^3-a_2x_1^2-a_4x_1$ where $a_2 = -b, a_4 = \frac{b^2-c}{4}$ where (using paragraph above $G.5$) $b = \frac{-a-d}{2}, c = ad$ so in total $a_2 = \frac{a+d}{2}$ and $a_4 = \frac{(a-d)^2}{16}$. Theorem $G.4$ gives us a $K$-rational map $\Phi_2: C' \rightarrow C_1$ s.t. $\Phi_2(x_1, x_2) = (Bx_1, Bx_2)$ where in theorem $G.4$ we have $A = \frac{a_2}{\sqrt{a_4}}$ and $B = \frac{1}{\sqrt{a_4}}$. If we resubstitute we get $A = \frac{2(a+d)}{a-d}$ and $B = \frac{4}{a-d}$.
+
+Again the composition $\Phi_2 \circ \Phi_1 = \phi$. Since $\Phi_2, \Phi_1$ are $K$-rational maps of finite degree then $\phi$ is a $K$-rational map $C_2 \rightarrow C_1$.
+
+Now we need to show $\phi \circ \psi = id_{C_1}$ and $\psi \circ \phi = id_{C_2}$.
+\begin{gather*}
+\phi \circ \psi = (\Phi_2 \circ \Phi_1) \circ (\Psi_2 \circ \Psi_1) = \Phi_2 \circ (\Phi_1 \circ \Psi_2) \circ \Psi_1 = \Phi_2 \circ id_{C'} \circ \Psi_1 =\\
+\Phi_2 \circ \Psi_1 = id_{C_1}
+\end{gather*}
+We have used Theorem $G.3$ which states $\Psi_2 \circ \Psi_1 = id_{C'}, \Phi_2 \circ \Psi_1 = id_{C_1}$. Similarly due to Theorem $G.5$:
+\begin{gather*}
+\psi \circ \phi = (\Psi_2 \circ \Psi_1) \circ (\Phi_2 \circ \Phi_1) = \Psi_2 \circ id_{C'} \circ \Phi_1 = \Psi_2 \circ \Phi_1 = id_{C_2}
+\end{gather*}
+We have shown that $C_1$ and $C_2$ are birationally equivalent.
+
+$\qed$
+
+\textbf{Lemma W.1} \textit{Proof:}
+
 
 \end{document}
