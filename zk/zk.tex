@@ -347,6 +347,10 @@ We have shown that $C_1$ and $C_2$ are birationally equivalent.
 $\qed$
 
 \textbf{Lemma W.1} \textit{Proof:}
+Denote $f(x_1,x_2) = a_1x_1^2+a_2x_2^2-1-dx_1^2x_2^2 \in K[x_1, x_2]$. First we will prove $f$ absolutelly irreducible $\implies d \neq a_1a_2$ and at least one $a_i \neq 0$.
 
+Assume $d = a_1a_2$. Then $f(x_1,x_2) = a_1x_1^2+a_2x_2^2-1-a_1a_2x_1^2x_2^2 = (1-a_1x_1^2)(-1+a_2x_2^2)$. If $a_1 = 0 = a_2$ then $f(x_1,x_2) = -1-dx_1^2x_2^2 = (\sqrt{-d}x_1x_2-1)(\sqrt{-d}x_1x_2+1) \in \bar{K}[x_1, x_2]$. This proves the implication.
+
+On the other hand assume $d \neq a_1a_2$, at least one $a_i \neq 0$ and $f(x_1,x_2) = g(x_1,x_2)h(x_1,x_2)$ where $g,h \in \bar{K}[x_1,x_2]$. We have $2 = \deg_{x_1}(f) = \deg_{x_1}(g)+\deg_{x_1}(h)$ and $2 = \deg_{x_2}(f) = \deg_{x_2}(g)+\deg_{x_2}(h)$. We can assume that $g,h \notin \bar{K}$ because then it would contradict $f$ reducible in $\bar{K}[x_1,x_2]$.
 
 \end{document}
