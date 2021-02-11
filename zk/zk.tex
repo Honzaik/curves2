@@ -347,10 +347,69 @@ We have shown that $C_1$ and $C_2$ are birationally equivalent.
 $\qed$
 
 \textbf{Lemma W.1} \textit{Proof:}
-Denote $f(x_1,x_2) = a_1x_1^2+a_2x_2^2-1-dx_1^2x_2^2 \in K[x_1, x_2]$. First we will prove $f$ absolutelly irreducible $\implies d \neq a_1a_2$ and at least one $a_i \neq 0$.
+Denote $f(x_1,x_2) = a_1x_1^2+a_2x_2^2-1-dx_1^2x_2^2 \in K[x_1, x_2]$. First we will prove $f$ absolutely irreducible $\implies d \neq a_1a_2$ and at least one $a_i \neq 0$.
 
 Assume $d = a_1a_2$. Then $f(x_1,x_2) = a_1x_1^2+a_2x_2^2-1-a_1a_2x_1^2x_2^2 = (1-a_1x_1^2)(-1+a_2x_2^2)$. If $a_1 = 0 = a_2$ then $f(x_1,x_2) = -1-dx_1^2x_2^2 = (\sqrt{-d}x_1x_2-1)(\sqrt{-d}x_1x_2+1) \in \bar{K}[x_1, x_2]$. This proves the implication.
 
-On the other hand assume $d \neq a_1a_2$, at least one $a_i \neq 0$ and $f(x_1,x_2) = g(x_1,x_2)h(x_1,x_2)$ where $g,h \in \bar{K}[x_1,x_2]$. We have $2 = \deg_{x_1}(f) = \deg_{x_1}(g)+\deg_{x_1}(h)$ and $2 = \deg_{x_2}(f) = \deg_{x_2}(g)+\deg_{x_2}(h)$. We can assume that $g,h \notin \bar{K}$ because then it would contradict $f$ reducible in $\bar{K}[x_1,x_2]$.
+On the other hand assume $d \neq a_1a_2$, at least one $a_i \neq 0$ and $f(x_1,x_2) = u(x_1,x_2)v(x_1,x_2)$ where $u,v \in \bar{K}[x_1,x_2]$. We have $2 = \deg_{x_1}(f) = \deg_{x_1}(u)+\deg_{x_1}(v)$ and $2 = \deg_{x_2}(f) = \deg_{x_2}(u)+\deg_{x_2}(v)$. We can assume that $u,v \notin \bar{K}$ because then it would contradict $f$ reducible in $\bar{K}[x_1,x_2]$.
 
+W.l.o.g. we have 4 possibilities:
+\begin{enumerate}
+    \item $\deg_{x_1}(u) = 0, \deg_{x_2}(u) = 1, \deg_{x_1}(v) = 2, \deg_{x_2}(v)=1$
+    \item $\deg_{x_1}(u) = 0, \deg_{x_2}(u) = 2, \deg_{x_1}(v) = 2, \deg_{x_2}(v)=0$
+    \item $\deg_{x_1}(u) = 1, \deg_{x_2}(u) = 0, \deg_{x_1}(v) = 1, \deg_{x_2}(v)=2$
+    \item $\deg_{x_1}(u) = 1, \deg_{x_2}(u) = 1, \deg_{x_1}(v) = 1, \deg_{x_2}(v)=1$
+\end{enumerate}
+For each case we will find a contradiction.
+
+Case 1: $u = ax_2+b \in \bar{K}[x_2], v = cx_1^2+ex_1^2x_2+fx_2+gx_1+h \in \bar{K}[x_1,x_2]$. If we compare the coefficients $f = uv$ we ge conditions: $bh=-1, bf+ah=0, af=a_2, bg=0, ag=0, bc=a_1, ac+be=0, ae=-d$.
+$bh = -1 \implies b \neq 0 \neq h, ac+be= 0 \implies e = \frac{-ac}{b}, bc=a_1 \implies c = \frac{a_1}{b} \implies e = \frac{-a_1a}{b^2} \implies ae = \frac{-a_1a^2}{b}$. If $a_2 =0 \implies a=0$ or $f = 0$ if $a=0 \implies -d = 0$ a contradiction. If $f = 0 \implies bf+ah = ah = 0$ and since $h \neq 0 \implies a = 0$ again. So we can assume $a_2 \neq 0 \implies f \neq 0$. Now $ae = \frac{-a_1a^2}{b^2} = \frac{-a_1a^2f}{b^2f} = \frac{-a_1a_2a}{b^2f}$. If $\frac{a}{b^2f} = 1$ we have $d = a_1a_2$ a contradiction. $\frac{a}{b^2f} = \frac{ah}{bbhf} = \frac{-bf}{-bf} = 1$.
+
+Case 2: $u = ax_2^2+bx_2+c \in \bar{K}[x_2], v = ex_1^2+fx_1+g \in \bar{K}[x_1]$. Again we get conditions: $cg=-1, bg=0, ag=a_2, cf=0,bf=0, af=0, ce=a_1, be=0, ae=-d$. We know $c \neq 0 \neq g$ and this gives us $a = \frac{a_2}{g}, e = \frac{a_1}{c} \implies ae = \frac{a_1a_2}{cg} = -a_1a_2 = -d$ a contradiction.
+
+Case 3: $u = ax_1+b \in \bar{K}[x_1], v = cx_2^2+ex_2^2x_1+fx_2+gx_1+h \in \bar{K}[x_1,x_2]$. We get: $bh=-1, bf=0, bc=a_2, bg+ah=0, af=0, ac+be=0, ag=a_1, ae=-d$. We have $b \neq 0 \neq h$. If $a_1 = 0$ this would imply $a = 0$ or $g = 0$. If $a = 0 \implies -d = 0$ a contradiction. If $g = 0 \implies ah = 0 \implies a = 0$ again a contradiction. Therefore we have $a = \frac{a_1}{g}$. Also $bc=a_2 \iff c = \frac{a_2}{b}$ and $e = \frac{-ac}{b} \implies e = \frac{-aa_2}{b^2}$. Together $ae = \frac{-aa_2a_1}{b^2g}$. Again we want to show $\frac{a}{b^2g} = 1$ which is true since $\frac{a}{b^2g}=\frac{a}{b(-ah)} = \frac{a}{-a(bh)} = 1$.
+
+Case 4: $u = ax_1x_2 + bx_1 + cx_2 + e \in \bar{K}[x_1,x_2], v = fx_1x_2+gx_1+hx_2+i \in \bar{K}[x_1,x_2]$. 
+
+todo
+
+\textbf{Proposition W.2} \textit{Proof:}
+By lemma $Q.1$ we know that $f_1$ is absolutely irreducible since $a\neq d$ and by lemma $W.1$ we know that $f_2$ is absolutely irreducible since $a \neq d$. 
+
+Denote the $K$-rational map from $C_1 \rightarrow C_2$ as $\psi$ and the $K$-rational map from $C_2 \rightarrow C_1$ as $\phi$. First we show $\psi$ is a $K$-rational map $C_1 \rightarrow C_2$. We want to show $f_2(\rho_1, \rho_2) = 0 \in K(C_1)$ where $(\rho_1, \rho_2) = \left( \frac{1}{x_1} + (f_1), \frac{x_2}{x_1^2-d} + (f_1) \right)$.
+\begin{gather*}
+f_2(\rho_1, \rho_2) = a\frac{1}{x_1^2} + \frac{x_2^2}{(x_1^2-d)^2} - 1 -d\frac{1}{x_1^2}\frac{x_2^2}{(x_1^2-d)^2}\\
+(x_1^2-d)^2x_1^2f_2(\rho_1, \rho_2) = a(x_1^2-d)^2+x_1^2x_2^2-x_1^2(x_1^2-d)^2-dx_2^2 = \\
+x_1^2x_2^2-dx_2^2-x_1^6+2dx_1^4+ax_1^4-d^2x_1^2-2adx_1^2+ad^2\\
+\text{Substitute for $x_2^2 = x_1^4-dx_1^2-ax_1^2+ad$:}\\
+-dx_2^2+dx_1^4-d^2x_1^2-adx_1^2-ad^2\\
+\text{Substitute for $x_1^4 = x_2^2+dx_1^2+ax_1^2-ad$:}\\
+0 \implies f_2(\rho_1, \rho_2) = 0
+\end{gather*}
+Now we do the same for $\phi$. We want to show $f_1(\rho_1, \rho_2) = 0 \in K(C_2)$ where $(\rho_1, \rho_2) = \left( \frac{1}{x_1} + (f_2), \frac{x_2(1-dx_1^2)}{x_1^4} + (f_2) \right)$.
+\begin{gather*}
+f_1(\rho_1, \rho_2) = \frac{x_2^2(1-dx_1^2)^2}{x_1^4} - \frac{1}{x_1^4} + \frac{(d+a)}{x_1^2}-ad\\
+x_1^4f_1(\rho_1, \rho_2) = x_2^2(1-dx_1^2)^2-1+dx_1^2+ax_1^2-adx_1^4 = x_2^2(1-dx_1^2)^2 - (1-ax_1^2)(1-dx_1^2)\\
+\text{As mentioned before $W.2$ in $K(C_2)$ we have $x_2^2(1-dx_1^2)^2 = (1-ax_1^2)(1-dx_1^2)$}\\
+\implies f_1(\rho_1, \rho_2) = 0
+\end{gather*}
+Now we want to prove $\phi \circ \psi = id_{C_1}$ and $\psi \circ \phi = id_{C_2}$. First coordinate is trivially $x_1$ in both cases. The second coordinate for $\phi \circ \psi$:
+\begin{gather*}
+\frac{\frac{x_2}{x_1^2-d}\left(1- d\frac{1}{x_1^2} \right)}{\frac{1}{x_1^2}} = \frac{x_1^2x_2(1-\frac{d}{x_1^2})}{x_1^2-d} = \frac{x_2(x_1^2-d)}{x_1^2-d} = x_2
+\end{gather*}
+And for $\psi \circ \phi$:
+\begin{gather*}
+\frac{\frac{x_2(1-dx_1^2)}{x_1^2}}{\frac{1}{x_1^2}-d} = \frac{x_2(1-dx_1^2)}{1-dx_1^2} = x_2
+\end{gather*}
+This proves that $C_1$ and $C_2$ are birationally equivalent. 
+
+Since $f_1, f_2$ are absolutely irreducible (which implies $f_1,f_2$ irreducible in $K[x_1,x_2]$)a nd $C_1,C_2$ are birationally equivalent we can use corollary $R.10$ from the lecture and we have that $K(C_1) \cong K(C_2)$.
+
+If $a=0$ then $f_1(x_1,x_2) = x_2^2-f(x_1)$ where $f(x_1) = x_1^2(x_1^2-d)$. $0$ is a multiple root of $f$ therefore $f$ is not separable. Theorem $Q.6$ states that in this case $K(C_1)/K$ has genus 0.
+
+If $a\neq 0$ then $f$ is separable since its roots are $\pm \sqrt{a}, \pm \sqrt{d}$ which are distinct since also $d \neq 0$. By $Q.6$ again the genus is 1. Since $K(C_1)/K$ and $K(C_2)/K$ are isomorphic their genera coincide.
+
+$\qed$
+
+\textbf{Theorem W.3} \textit{Proof:}
 \end{document}
