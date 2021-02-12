@@ -369,9 +369,16 @@ Case 2: $u = ax_2^2+bx_2+c \in \bar{K}[x_2], v = ex_1^2+fx_1+g \in \bar{K}[x_1]$
 
 Case 3: $u = ax_1+b \in \bar{K}[x_1], v = cx_2^2+ex_2^2x_1+fx_2+gx_1+h \in \bar{K}[x_1,x_2]$. We get: $bh=-1, bf=0, bc=a_2, bg+ah=0, af=0, ac+be=0, ag=a_1, ae=-d$. We have $b \neq 0 \neq h$. If $a_1 = 0$ this would imply $a = 0$ or $g = 0$. If $a = 0 \implies -d = 0$ a contradiction. If $g = 0 \implies ah = 0 \implies a = 0$ again a contradiction. Therefore we have $a = \frac{a_1}{g}$. Also $bc=a_2 \iff c = \frac{a_2}{b}$ and $e = \frac{-ac}{b} \implies e = \frac{-aa_2}{b^2}$. Together $ae = \frac{-aa_2a_1}{b^2g}$. Again we want to show $\frac{a}{b^2g} = 1$ which is true since $\frac{a}{b^2g}=\frac{a}{b(-ah)} = \frac{a}{-a(bh)} = 1$.
 
-Case 4: $u = ax_1x_2 + bx_1 + cx_2 + e \in \bar{K}[x_1,x_2], v = fx_1x_2+gx_1+hx_2+i \in \bar{K}[x_1,x_2]$. 
+Case 4: $u = ax_1x_2 + bx_1 + cx_2 + e \in \bar{K}[x_1,x_2], v = fx_1x_2+gx_1+hx_2+i \in \bar{K}[x_1,x_2]$. W.l.o.g. consider $f \in (K[x_2])[x_1] \iff f = x_1^2(a_1-dx_2^2)+(a_2x_2^2-1)$. Since $\deg_{x_1}(u)=1=\deg_{x_1}(v)$ means that $f = (a'x_1+b')(c'x_1+d') \in (K[x_2])[x_1]$ i.e. $f$ has roots $\frac{b'}{a'}, \frac{d'}{c'} \in \bar{K}(x_2)$. 
 
-todo
+Since $f$ is a quadratic polynomial it must be that the discriminant of $f: D= -4(a_1-dx_2^2)(a_2x_2^2-1)$ is a square in $\bar{K}(x_2)$ which is equivalent to saying it is a square in $\bar{K}[x_2]$ since $D \in \bar{K}[x_2]$. This means that $a_1-dx_2^2$ must have a double root and same for $a_2x_2^2-1$ or they have a common root. 
+
+If $a_1-dx_2^2$ has a double root then its discriminant is 0 $\iff a_1d = 0$ similarly for $a_2x_2^2-1$ it must be that $a_2 = 0$. If $a_1 \neq 0 \neq a_2$ we have a contradiction. If one $a_i=0$ we have also a contradiction since $d \neq 0$. 
+
+The only possibility left it that they have a common root. $\pm\frac{\sqrt{da_1}}{d}$ are the roots of the first polynomial and $\pm\frac{\sqrt{a_2}}{a_2}$ are the roots of the other polynomial. We know that at least one $a_i$ is non zero. If $a_1 = 0, a_2 \neq 0$ then obviously they don't have common roots and same goes for $a_2 = 0, a_1 \neq 0$. Now we can assume $a_i$ are both non zero and in that case if we want a common root we get a requirement that $d=a_1a_2$ which is a contradiction.
+
+$\qed$
+
 
 \textbf{Proposition W.2} \textit{Proof:}
 By lemma $Q.1$ we know that $f_1$ is absolutely irreducible since $a\neq d$ and by lemma $W.1$ we know that $f_2$ is absolutely irreducible since $a \neq d$. 
