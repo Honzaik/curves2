@@ -369,7 +369,7 @@ Case 2: $u = ax_2^2+bx_2+c \in \bar{K}[x_2], v = ex_1^2+fx_1+g \in \bar{K}[x_1]$
 
 Case 3: $u = ax_1+b \in \bar{K}[x_1], v = cx_2^2+ex_2^2x_1+fx_2+gx_1+h \in \bar{K}[x_1,x_2]$. We get: $bh=-1, bf=0, bc=a_2, bg+ah=0, af=0, ac+be=0, ag=a_1, ae=-d$. We have $b \neq 0 \neq h$. If $a_1 = 0$ this would imply $a = 0$ or $g = 0$. If $a = 0 \implies -d = 0$ a contradiction. If $g = 0 \implies ah = 0 \implies a = 0$ again a contradiction. Therefore we have $a = \frac{a_1}{g}$. Also $bc=a_2 \iff c = \frac{a_2}{b}$ and $e = \frac{-ac}{b} \implies e = \frac{-aa_2}{b^2}$. Together $ae = \frac{-aa_2a_1}{b^2g}$. Again we want to show $\frac{a}{b^2g} = 1$ which is true since $\frac{a}{b^2g}=\frac{a}{b(-ah)} = \frac{a}{-a(bh)} = 1$.
 
-Case 4: $u = ax_1x_2 + bx_1 + cx_2 + e \in \bar{K}[x_1,x_2], v = fx_1x_2+gx_1+hx_2+i \in \bar{K}[x_1,x_2]$. W.l.o.g. consider $f \in (K[x_2])[x_1] \iff f = x_1^2(a_1-dx_2^2)+(a_2x_2^2-1)$. Since $\deg_{x_1}(u)=1=\deg_{x_1}(v)$ means that $f = (a'x_1+b')(c'x_1+d') \in (K[x_2])[x_1]$ i.e. $f$ has roots $\frac{b'}{a'}, \frac{d'}{c'} \in \bar{K}(x_2)$. 
+Case 4: We know $\deg_{x_1}(u)=1=\deg_{x_1}(v)$. Consider $f \in (K[x_2])[x_1] \iff f = x_1^2(a_1-dx_2^2)+(a_2x_2^2-1)$. Since $\deg_{x_1}(u)=1=\deg_{x_1}(v)$ means that $f = (a'x_1+b')(c'x_1+d') \in (K[x_2])[x_1]$ i.e. $f$ has roots $\frac{b'}{a'}, \frac{d'}{c'} \in \bar{K}(x_2)$. 
 
 Since $f$ is a quadratic polynomial it must be that the discriminant of $f: D= -4(a_1-dx_2^2)(a_2x_2^2-1)$ is a square in $\bar{K}(x_2)$ which is equivalent to saying it is a square in $\bar{K}[x_2]$ since $D \in \bar{K}[x_2]$. This means that $a_1-dx_2^2$ must have a double root and same for $a_2x_2^2-1$ or they have a common root. 
 
@@ -419,4 +419,46 @@ If $a\neq 0$ then $f$ is separable since its roots are $\pm \sqrt{a}, \pm \sqrt{
 $\qed$
 
 \textbf{Theorem W.3} \textit{Proof:}
+First assume $(a,d) \in K^* \times K^*, a \neq d$. Set $B = \frac{4}{a-d}, A = 2+\frac{4d}{a-d}$. By definition $B \neq 0$. If $A = 2 \implies d = 0$ a contradiction. If $A = -2 \implies a = 0$ again a contradiction. On the other hand assume $(A,B) \in K \times K$ s.t. $B \neq 0$ and $A^2 \neq 4$. Set $d = \frac{A-2}{B}, a = \frac{A+2}{B}$. If $a=0$ or $d=0$ contradicts $A\neq \pm2$. If $a=d$ then we have also a contradiction. This proves $(W.2)$.
+
+Denote the $K$-rational map $C_1 \rightarrow C_2$ as $\psi$ and the $K$-rational map $C_2 \rightarrow C_1$ as $\phi$. We will use similar steps as in the proof of $G.5$.
+
+First assume we have $(A,B) \in K\times K, B \neq 0, A^2 \neq 4$. By applying $G.5$ we get a $K$-rational map $\Psi_1: C_1 \rightarrow C'$ s.t. $\Psi_1(x_1,x_2) = \left( \frac{x_2}{x_1}, \frac{x_1^2-1}{Bx_1}\right)$ where $C' = V_g, g(x_1,x_2) = x_2^2-(x_1-a)(x_1-d)$ ($a,d$ given by $W.2$). Also by using Proposition $W.2$ we have another $K$-rational map $\Psi_2: C' \rightarrow C_2$ s.t. $\Psi_2(x_1,x_2) = \left( \frac{1}{x_1}, \frac{x_2}{x_1^2-d} \right)$. $\Psi_1$ and $\Psi_2$ are $K$-rational maps of finite degree so their composition is also a $K$-rational map of finite degree. Now we will check that $\psi = \Psi_2 \circ \Psi_1$. Using $d = \frac{A-2}{B}$ we check again the coordinates of the composition of maps. First coordinate:
+\begin{gather*}
+\frac{1}{\frac{x_2}{x_1}} = \frac{x_1}{x_2}
+\end{gather*}
+And the second:
+\begin{gather*}
+\frac{\frac{x_1^2-1}{Bx_1}}{\frac{x_2^2}{x_1^2}-d} = \frac{\frac{x_1^2-1}{Bx_1}}{\frac{x_2^2}{x_1^2}-\frac{A-2}{B}} = \frac{x_1(x_1^2-1)}{Bx_2^2-x_1^2(A-2)}\\
+\text{Substitute $Bx_2^2 = x_1^3+Ax_1^2+x_1$:}\\
+\frac{x_1(x_1-1)(x_1+1)}{x_1^3+2x_1^2+x_1} = \frac{(x_1-1)(x_1+1)}{(x_1+1)^2} = \frac{x_1-1}{x_1+1}
+\end{gather*}
+We have shown $\Psi_2 \circ \Psi_1 = \psi$. Therefore $\psi$ is a $K$-rational map $C_1 \rightarrow C_2$.
+
+Now assume we have $(a,d) \in K^* \times K^*, a\neq d$. By Proposition $W.2$ we have a $K$-rational map $\Phi_1: C_2 \rightarrow C'$ s.t. $\Phi_1(x_1,x_2) = \left(\frac{1}{x_1}, \frac{x_2(1-dx_1^2)}{x_1^2} \right)$ where $C' = V_g, g(x_1,x_2) = x_2^2-(x_1-a)(x_1-d)$. Using theorem $G.5$ we also have a $K$-rational map $\Phi_2: C' \rightarrow C_1$ s.t. $\Phi_2(x_1,x_2) = \left( \frac{2(x_2+x_1^2)-(a+d)}{a-d}, x_1\frac{2(x_2+x_1^2)-(a+d)}{a-d}\right)$. $\Phi_1, \Phi_2$ are $K$-rational maps of finite degree and therefore their composition is also a $K$-rational map of finite degree.
+
+We will show $\Phi_2 \circ \Phi_1 = \phi$. First coordinate:
+\begin{gather*}
+\frac{2\left(\frac{x_2(1-dx_1^2)}{x_1^2}+\frac{1}{x_1^2}\right)-a-d}{a-d} = \frac{ax_1^2+dx_1^2-2-2x_2+2dx_1^2x_2}{(d-a)x_1^2}\\
+\text{Substitute $ax_1^2-1 = dx_1^2x_2^2-x_2^2$:}\\
+\frac{dx_1^2x_2^2-x_2^2-1-2x_2+dx_1^2+2dx_1^2x_2}{dx_1^2-ax_1^2} = \frac{(x_2+1)^2(dx_1^2-1)}{dx_1^2-ax_1^2}\\
+\text{Substitute $ax_1^2 = dx_1^2x_2^2-x_2^2+1$:}\\
+\frac{(x_2+1)^2(dx_1^2-1)}{dx_1^2-dx_1x_2^2+x_2^2-1} = \frac{(x_2+1)^2(dx_1^2-1)}{(dx_1^2-1)(-x_2^2+1)} = \frac{(x_2+1)^2}{(1-x_2)(1+x_2)} = \frac{1+x_2}{1-x_2}
+\end{gather*}
+Second coordinate is clearly $\frac{1+x_2}{x_1(1-x_2)}$ since it is the first coordinate multiplied by $\frac{1}{x_1}$.
+
+This proves $\Phi_2 \circ \Phi_1 = \phi$. Therefore $\phi$ is a $K$-rational map $C_2 \rightarrow C_1$.
+
+Now we want to prove the birational equivalence e.g. $\phi \circ \psi = id_{C_1}$ and $\psi \circ \phi = id_{C_2}$. Using the the fact that these maps are compositions of maps mentioned and from $W.2$ we know that $\Phi_1 \circ \Psi_2 = id_{C'}$ and from $G.5$ we know $\Phi_2 \circ \Psi_1 = id_{C_1}$:
+\begin{gather*}
+\phi \circ \psi = (\Phi_2 \circ \Phi_1) \circ (\Psi_2 \circ \Psi_1) = \Phi_2 \circ (\Phi_1 \circ \Psi_2) \circ \Psi_1 = \Phi_2 \circ id_{C'} \circ \Psi_1 = id_{C_1}
+\end{gather*}
+Similarly from $G.5$ we know that $\Psi_1 \circ \Phi_2 = id_{C'}$ and from $W.2$ we know $\Psi_2 \circ \Phi_1 = id_{C_2}$
+\begin{gather*}
+\psi \circ \phi =  (\Psi_2 \circ \Psi_1) \circ (\Phi_2 \circ \Phi_1) = \Psi_2 \circ (\Psi_1 \circ \Phi_2) \circ \Phi_1 = \Psi_2 \circ id_{C'} \circ \Phi_1 = id_{C_2}
+\end{gather*}
+
+$\qed$
+
+\textbf{Problem:}
 \end{document}
