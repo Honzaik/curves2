@@ -162,20 +162,22 @@ Denote $B = \{1,x,x^2,x^3,x^4,y,yx,yx^2,y^2\}$, clearly $B \subseteq \mathcal{L}
 y^2 = a_1y + a_2yx + a_3yx^2 + a_4x^4 + a_5x^3 + a_6x^2 + a_7x+ a_8
 \end{gather*}
 
-Denote $C = \{1,x,x^2,x^3,y,yx\}$. $C$ is a basis of $\mathcal{L}(3D)$, $C \cup \{yx^2,y^2\}$ is also a basis of $\mathcal{L}(4D)$. If $a_4=0$ that would be a contradiction to $C \cup \{yx^2,y^2\}$ being a basis of $\mathcal{L}(4D)$ since $y^2$ would be a linear combination of 7 elements.
+Denote $C = \{1,x,x^2,x^3,y,yx\}$. $C$ is a basis of $\mathcal{L}(3D)$, $C \cup \{yx^2,y^2\}$ is also a basis of $\mathcal{L}(4D)$ since $y^2,yx^2 \in \mathcal{L}(4D) \setminus \mathcal{L}(3D)$ because we have chosen $y$ s.t. $(y)_{-} \geq 2P$ or $(y)_{-} \geq 2Q$.
+
+If $a_4=0$ that would be a contradiction to $C \cup \{yx^2,y^2\}$ being a basis of $\mathcal{L}(4D)$ since $y^2$ would be a linear combination of 7 elements.
 
 Now we make a substitution $y \rightarrow y - \frac{a_1+a_2x+a_3x^2}{2}$. This gives us form:
 \begin{gather*}
 y^2 =b_1x^4 + b_2x^3 + b_3x^2 + b_4x+ b_5
 \end{gather*}
-where $b_1 = a_4+\frac{a_3^2}{4}$. If $b_1=0$ then $y^2$ would be a linear combination of elements in $\mathcal{L}(3D)$ but 
+where $b_1 = a_4+\frac{a_3^2}{4}$. If $b_1=0$ then $y^2$ would be a linear combination of elements in $\mathcal{L}(3D)$ that is a contradiction.
 
 $\qed$
 
 \textbf{Theorem Q.8.} \textit{Proof:}
-Denote $f(x) = g(x^2)$. $F$ is EFF therefore genus is 1 and there exists a place of degree $1$. Also $K$ can be assumed algebraically closed.
+Denote $f(x) = g(x^2)$. $F$ is EFF therefore genus is 1 and there exists a place of degree $1$. Also this means $K$ algebraically closed.
 
-If $g(x)$ has a multiple root $\alpha$, then $f(x)=g(x^2)$ has also a multiple root because $g(x)=(x-\alpha)^2 \implies g(x^2) = (x-\sqrt{\alpha})^2(x+\sqrt{\alpha})^2$. Set $z = \frac{y}{x-\sqrt{\alpha}}$. Then $F$ is given by $z^2=(x+\sqrt{\alpha})^2$. This means $x \in K(z)$ and from the definition of $y$ also $y \in K(z)$ which means $F$ has genus 0, a contradiction.
+If $g(x)$ has a multiple root $\alpha$, then $f(x)=g(x^2)$ has also a multiple root because $g(x)=(x-\alpha)^2 \implies g(x^2) = (x-\sqrt{\alpha})^2(x+\sqrt{\alpha})^2$. Set $z = \frac{y}{x-\sqrt{\alpha}}$. Then $F$ is given by $z^2=(x+\sqrt{\alpha})^2$. This means (using same technique as in Q.2) that $F = K(x+z)$ which means $F$ has genus 0, a contradiction.
 
 From now on we can assume $g(x)$ has 2 distinct roots. If $f(x)=g(x^2)$ would have a multiple root then it's genus would not be $1$ by Q.6. So we can assume $g(x^2)$ separable. 
 
@@ -202,12 +204,26 @@ As we have shown before. We can assume $g(x^2)$ separable and then we have invol
 
 If $t \in F$ s.t. $(t) = P - Q \implies \deg((t)_{+}) = 1 = [F:K(t)]$ and that would be contradiction with F being EFF.
 
-Now we assume we have involution. We can always find $t \in F \setminus K$ s.t. $(t) = 2P-2Q$ where $P,Q$ distinct places of degree 1 and $P-Q$ is involution.
+Now we assume we have involution. This mean we have $P \neq Q$ places of degree one s.t. $2[P-Q]=(t), t \in F$ and $P-Q \neq (s), s \in F$. Using Q.7 we know $F$ is given by $y^2 = f(x), \deg(f)=4$ and $f$ monic where $x,y \in F, (x)_{-} = P+Q$. We can also assume $f$ separable since $F$ is of genus 1 using Q.6. If $f$ has no simple root then similarly it can be shown $F$ has genus 0.
 
-Then $l(2P) = 2 = l(2Q) \implies \{1,t\}$ is a basis of $\mathcal{L}(2P)$ and $\{1,t^{-1}\}$ is a basis of $\mathcal{L}(2Q)$.
+By Q.5 we also have $(y-x^2)_{-} = 2P$ and $(y+x^2)_{-} = 2Q$. We know that $t \in \mathcal{L}(2P), t^{-1} \in \mathcal{L}(2Q)$. Since $t \notin K$ $\{1,t\}$ forms a basis of $\mathcal{L}(2P)$ and $\{1,t^{-1}\}$ forms a basis of $\mathcal{L}(2Q)$ therefore there exist $p_1, p_2, q_1, q_2 \in K$ s.t. $y-x^2 = p_1+p_2t, y+x^2=q_1+q_2t^{-1}$. We know that $f(x)=x^4+ax^3+bx^2+cx+d, a,b,c,d \in K$. We want to show that $a = 0 = c$. 
+
+We have $y^2-x^4=(y-x^2)(y+x^2)=ax^3+bx^2+cx+d \iff (p_1+p_2t)(q_1+q_2t^{-1})-d = ax^3+bx^2+cx$. If we use new names for the coefficients on the left side $(s_1,s_2,s_3 \in K, s_1,s_2 \neq 0)$
+ we get:
+\begin{gather*}
+s_1t+s_2t^{-1}+s_3 = ax^3+bx^2+cx
+\end{gather*}
+We know $v_P(t)=2$ and $v_P(t^{-1})=-2$. Assume $s_3 \neq 0$. Then $v_P(s_2t^{-1}+s_3) = -2$ since $v_P(s_3) = 0$. Also this means that $v_P(s_1t+s_2t^{-1}+s_3)=-2$. If $s_3=0$ we get the same result. We now have:
+\begin{gather*}
+-2=v_P(ax^3+bx^2+cx) = v_P(x)+v_P(ax^2+bx+c)
+\end{gather*}
+Since $v_P(x)=-1$ we have $v_P(ax^2+bx+c) = -1$. It must be that $a=0$.
+
+Now we have $s_1t+s_2t^{-1}+s_3 = bx^2+cx \iff cx = s_1t+s_2t^{-1}+s_3-bx^2$. Assume $c \neq 0$. If $b=0$ then $x \in K(t)$ and since $y+x^2 \in K(t)$ we have $y \in K(t) \implies F=K(t)$ which is a contradiction with genus being 1. If $b \neq 0$ then $x \in K(t,x^2)$ and also since $(y-x^2)-(y+x^2) \in K(t) \implies x^2 \in K(t) \implies x \in K(t)$ and also $y \in K(t)$ which is again a contradiction with $F$ being genus 1.
+
+Therefore it must be $a=0=c$.
 
 $\qed$
-
 
 \textbf{Proposition G.2} \textit{Proof:}
 Since $F/K$ is given by $y^2 = g(x^2)$ we know that $F=K(x,y)$.
