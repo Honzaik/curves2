@@ -58,19 +58,13 @@ $\qed$
 \textbf{Lemma Q.4.} \textit{Proof:}
 By sublemma Q.3.5 we know, that if $P \in \mathbb{P}_{F/K}: x^{-1} \in P \implies y^{-1} \in P$ and $2v_P(x)=v_P(y)$. This proves $(y)_{-}=2(x)_{-}$ ($x^{-1},y^{-1}$ "share" places and the valuation is 2:1).
 
-Let's first assume that $f$ possesses a multiple root. Therefore $f(x_1) = (x_1-\alpha)^2g(x_1)$ where $\deg(g) = 2$ and $g$ is not a square. By Q.3 $F$ is given by $z^2 = g(x)$ i.e. $F=K(x,z)$. $[F:K(x)]=2$ since $min_{z,K(x)}(T) = T^2 - g(x)$, that polynomial has $z$ as a root in $F$ and it is absolutely irreducible (as a polynomial in $K[x,T]$) since $g$ is not a square. We can then assume $\bar{K}=K$ since $[F:\bar{K}(x)] = 2$ (same polynomial) and $[F:K(x)] = [F:\bar{K}(x)][\bar{K}:K] = 2 \implies [\bar{K}:K] = 1$.
+Let's first assume that $f$ possesses a multiple root. Therefore $f(x_1) = (x_1-\alpha)^2g(x_1)$ where $\deg(g) = 2$ and $g$ is not a square (since $f$ has a simple root). By Q.3 $F$ is given by $z^2 = g(x)$ i.e. $F=K(x,z)$. $[F:K(x)]=2$ since $min_{z,K(x)}(T) = T^2 - g(x)$, that polynomial has $z$ as a root in $F$ and it is absolutely irreducible (as a polynomial in $K[x,T]$) since $g$ is not a square. This also means it is irreducible over $\tilde{K}$. We can then assume $\tilde{K}=K$ since $F \supseteq \tilde{K}$ and $2 = [F:K(x)] = [F:\tilde{K}(x)] [\tilde{K}(x):K(x)]$ ($[\tilde{K}(x):K(x)]=[\tilde{K}:K]$). Also $[F:\tilde{K}(x)]=2$ (same polynomial) which implies $[\tilde{K}:K] = 1$.
 
 Then we know $\deg((x)_{-}) = [F:K(x^{-1})] = [F:K(x)] = 2$ i.e. $\deg(D)=2$.
 
-Now assume $f$ is separable. We can then use the same argument for $K=\bar{K}$ since $min_{y,K(x)}(T) = T^2-f(x)$ and by Q.1 this one is also absolutely irreducible. $F=K(x,y) \implies [F:K(x)] = [F:\bar{K}(x)][\bar{K}:K] = 2 \implies [\bar{K}:K]=1$. And again $\deg(D)=2$.
+Now assume $f$ is separable. We can then use the same argument for $K=\tilde{K}$ since $min_{y,K(x)}(T) = T^2-f(x)$ and by Q.1 this one is also absolutely irreducible. $F=K(x,y) \implies 2=[F:K(x)] = [F:\tilde{K}(x)][\tilde{K}:K] = 2 \implies [\tilde{K}:K]=1$. And again $\deg(D)=2$.
 
-Now let's prove that the genus is at most 1. Since $\deg(D)=2 \implies \sum\limits_{P: x^{-1}\in P} v_P(x)\deg(P) = 2$ means we have 2 possibilities (we are assuming $K=\bar{K}$ which implies $\forall P \in \mathbb{P}_{F/K}: \deg(P)=1$:
-\begin{enumerate}
-    \item There exists a unique place $P_\infty: v_{P_\infty}(x)=-2, v_{P_\infty}(y)=-4$ and $D = 2P_\infty$
-    \item There are 2 distinct places $P,Q$ s.t. $v_P(x)=-1=v_Q(x), v_P(y)=-2=v_Q(y)$ and $D = P + Q$.
-\end{enumerate}
-
-In both cases we can see that for $k \geq 2: \{1,x,\dots,x^k, y, yx, \dots, yx^{k-2}\} \subset \mathcal{L}(kD)$ because $(x^k) + kD = k((x)_{+}-(x)_{-})+k(x)_{-} = k(x)_{+} \geq 0$ and also $(y)_{-}=2(x)_{-}$ so it holds if we substitute $x^2$ for $y$. This subset is linearly indepent over $K$ because $y$ cannot be expressed as a linear combination of $x^i$ since $f$ has one simple root (if $f(x)=g^2(x) \implies y=g(x)$). The set also contains $2k$ elements. Therefore $l(kD) \geq 2k$. 
+We can see that for $k \geq 2: \{1,x,\dots,x^k, y, yx, \dots, yx^{k-2}\} \subset \mathcal{L}(kD)$ because $(x^k) + kD = k((x)_{+}-(x)_{-})+k(x)_{-} = k(x)_{+} \geq 0$ and also $(y)_{-}=2(x)_{-}$ so it holds if we substitute $x^2$ for $y$. This subset is linearly independent over $K$ because $y$ cannot be expressed as a linear combination of $x^i$ since $f$ has one simple root (if $f(x)=g^2(x) \implies y=g(x)$). The set also contains $2k$ elements. Therefore $l(kD) \geq 2k$. 
 
 We know that for a sufficiently large $k$ (if $l(kD) \geq 2g-1$, $g$ genus) we have $l(kD) = \deg(kD)-g+1$ having $\deg(kD)=2k, l(kD) \geq 2k \implies 0 \leq l(kD)-\deg(kD) = -g + 1 \iff g \leq 1$.
 
@@ -477,4 +471,8 @@ Similarly from $G.5$ we know that $\Psi_1 \circ \Phi_2 = id_{C'}$ and from $W.2$
 $\qed$
 
 \textbf{Problem:}
+First we will show that any curve given by an Edwards curve is smooth.
+...
+
+Elliptic function field $F/K$ char$(K)\neq 2$ can be given by a Weirstrass equation $w(x,y)=0$ where $w(x_1,x_2) = x_2^2-f(x)$ and $F=K(C), C=V_w$ is smooth.
 \end{document}
