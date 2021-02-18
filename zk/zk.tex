@@ -34,7 +34,7 @@ x_2^2 - f(x_1) =h = (x_2 - s_1)(x_2 - s_2) = x_2^2 - (s_1+s_2)x_2 + s_1 s_2
 \]
 So it must hold that $s_1 = -s_2$ and then $h = x_2^2 + s_1(-s_1) \implies f(x_1) = s_1^2$. 
 
-Now assume w.l.o.g $u \in \bar{K}[x_1]$.We compare the leading coefficients.
+Now assume w.l.o.g $u \in \bar{K}[x_1]$. We compare the leading coefficients.
 \[
 1 = lc_{x_2}(h) = lc_{x_2}(u) \cdot lc_{x_2}(v) = u \cdot lc_{x_2}(v)
 \]
@@ -64,7 +64,7 @@ Then we know $\deg((x)_{-}) = [F:K(x^{-1})] = [F:K(x)] = 2$ i.e. $\deg(D)=2$.
 
 Now assume $f$ is separable. We can then use the same argument for $K=\tilde{K}$ since $min_{y,K(x)}(T) = T^2-f(x)$ and by Q.1 this one is also absolutely irreducible. $F=K(x,y) \implies 2=[F:K(x)] = [F:\tilde{K}(x)][\tilde{K}:K] = 2 \implies [\tilde{K}:K]=1$. And again $\deg(D)=2$.
 
-We can see that for $k \geq 2: \{1,x,\dots,x^k, y, yx, \dots, yx^{k-2}\} \subset \mathcal{L}(kD)$ because $(x^k) + kD = k((x)_{+}-(x)_{-})+k(x)_{-} = k(x)_{+} \geq 0$ and also $(y)_{-}=2(x)_{-}$ so it holds if we substitute $x^2$ for $y$. This subset is linearly independent over $K$ because $y$ cannot be expressed as a linear combination of $x^i$ since $f$ has one simple root (if $f(x)=g^2(x) \implies y=g(x)$). The set also contains $2k$ elements. Therefore $l(kD) \geq 2k$. 
+We can see that for $k \geq 2: \{1,x,\dots,x^k, y, yx, \dots, yx^{k-2}\} \subset \mathcal{L}(kD)$ because $(x^k) + kD = k((x)_{+}-(x)_{-})+k(x)_{-} = k(x)_{+} \geq 0$ and also $(y)_{-}=2(x)_{-}$ so it holds if we substitute $x^2$ for $y$. To show that this set is linearly independent is it sufficient show that $y \notin K(x)$. If $y \in K(x)$ then $K(x)=K(x,y)=F$ (same for the case $F=K(x,z)$ because $z \in K(x,y)$). We have shown that $[F:K(x)]=2$. The set also contains $2k$ elements. Therefore $l(kD) \geq 2k$. 
 
 We know that for a sufficiently large $k$ (if $l(kD) \geq 2g-1$, $g$ genus) we have $l(kD) = \deg(kD)-g+1$ having $\deg(kD)=2k, l(kD) \geq 2k \implies 0 \leq l(kD)-\deg(kD) = -g + 1 \iff g \leq 1$.
 
@@ -101,7 +101,7 @@ First consider $v_P(x)=v_P(z_1)=v_P(z_2)$ and $v_P(x)=-2$, then $2P = (x)_{-}= (
 
 Now let's assume $v_P(x)=-1$ and then there also exist a different place $Q$ s.t. $v_Q(x)=v_Q(z_1)=v_Q(z_2)=-1$. Since $\deg((z)_{-})=2$ then again $P+Q = (x)_{-}= (z_1)_{-} = (z_2)_{-}$ and we have the same contradiction.
 
-We have proven that $v_P(x)=v_P(z_1)=v_P(z_2)$ is impossible therefore for one $z$ it must hold $v_P(z)<v_P(x)$.
+We have proven that $v_P(x)=v_P(z_1)=v_P(z_2)$ is impossible. Therefore for one $z$ it must hold $v_P(z)<v_P(x)$.
 
 $\deg(g)=1$: $v_P(x)=v_P(z_1)+v_P(z_2)$. First assume $v_P(x)=-2$. And also $v_P(z_1)=v_P(z_2)=-1$. This is impossible since $\deg((z)_{-})=2$ but for every other place $Q \neq P: 0 = v_Q(z_1)+v_Q(z_2) \implies v_Q(z_1)=-v_Q(z_2)$. If there was $Q_1: v_{Q_1}(z_1)=-1 \implies v_{Q_1}(z_2)=1$ and $Q_2: v_{Q_2}(z_2)=-1 \implies v_{Q_2}(z_1)=1$. Then for some $P_1,P_2$ places of degree 1: $(z_1)=(P_1+Q_2)-(P+Q_1), (z_2)=(P_2+Q_1)-(P+Q_2)$. Set $D'=P+Q_1+Q_2$ then $z_1,z_2 \in \mathcal{L}(D')$ and as before this means that $y \in \mathcal{L}(D')$ which is a contradiction.
 
@@ -114,7 +114,9 @@ The last case is $\deg(g)=0$: $v_P(z_1)=-v_P(z_2) \implies (z_1) = -(z_2)$. Firs
 If $v_P(z_1)=1 \implies v_P(z_2)=-1$. There exists another place $P'$ s.t. $v_{P'}(z_1)=1 \implies v_{P'}(z_2)=-1$. There must be again two places $Q_1,Q_2$ s.t. $(z_1)=P+P'-(Q_1+Q_2), (z_2) = -(z_1)$. Put $D' = P+P'+Q_1+Q_2$ then again $y \in \mathcal{L}(D')$ which is a contradiction.
 \\
 
-We have proven that for each place $P \leq D$ at least one $z \in Z$ must have $v_P(z)<v_P(x)$. This shows also that $(x)_{-}=P+Q$ for distinct $P,Q$. If $P=Q$ then $v_P(x)=-2 \implies v_P(z)\leq -3$ which contradicts $[F:K(z)]=2$. Since $\deg((z)_{-})=2$ and $v_P(z) < -1$ it must be that $(z)_{-}=2P, (z')_{-}=2Q$ for $z,z' \in Z$. Since we have not distinguished $P$ and $Q$ we can say $(z_1)_{-}=2P$ and $(z_2)_{-}=2Q$.
+We have proven that for each place $P \leq D$ at least one $z \in Z$ must have $v_P(z)<v_P(x)$. This shows also that $(x)_{-}=P+Q$ for distinct $P,Q$. If $P=Q$ then $v_P(x)=-2 \implies v_P(z)\leq -3$ which contradicts $[F:K(z)]=2$. Since $\deg((z)_{-})=2$ and $v_P(z) < -1$ it must be that $(z)_{-}=2P, (z')_{-}=2Q$ for $z,z' \in Z$. Similar argument can be used for if $(x)_{-} = P$ where $\deg(P)=2$. It would have to be that $v_P(z) \leq -2$ which would contradict $[F:K(z)]=2$.
+
+Since we have not distinguished $P$ and $Q$ we can say $(z_1)_{-}=2P$ and $(z_2)_{-}=2Q$.
 
 
 
@@ -144,12 +146,12 @@ Denote $w=x_2^2-f(x_1)$.
 \begin{gather}
 \frac{\partial w}{\partial x_1} = -f'(x_1), \frac{\partial w}{\partial x_1} = 2x_2
 \end{gather}
-For a singularity $\alpha = (\alpha_1, \alpha_2), \alpha_2$ must be $0$ and $\alpha_1$ must be a root of $f(x_1)$ and also of $f'(x_1)$ this is true iff $f(x_1)$ is separable. If $f(x_1)$ is not separable then it shares a common root $\alpha_1$ with $f'(x_1)$ and this gives us singularity at $(\alpha_1, 0)$. This proves the rest of the theorem.
+For a singularity $\alpha = (\alpha_1, \alpha_2), \alpha_2$ must be $0$ and $\alpha_1$ must be a root of $f(x_1)$ and also of $f'(x_1)$. That is true iff $f(x_1)$ is not separable. If $f(x_1)$ is not separable then it shares a common root $\alpha_1$ with $f'(x_1)$ and this gives us singularity at $(\alpha_1, 0)$. This proves the rest of the theorem.
 
 $\qed$
 
 \textbf{Theorem Q.7.} \textit{Proof:}
-Denote $D = P + Q$ a divisor. Due to genus being 1 $\forall k\geq 1: l(kD) = 2k$. $l(D)=2$ and that means there exists $x \notin K$ s.t. $\{1,x\}$ is a basis of $\mathcal{L}(D)$ and also $(x)_{-} \leq P+Q$. Then $(x)^2 = 2(x) = 2(x)_{+}-2(x)_{-} \implies x^2 \in \mathcal{L}(2D),\{1,x,x^2\}$ is linearly independent in $\mathcal{L}(2D)$ but $l(2D)=4$ that means there exists $y \in \mathcal{L}(2D)\setminus \mathcal{L}(D)$ such that $\{1,x,x^2,y\}$ is a basis of $\mathcal{L}(2D)$. 
+Denote $D = P + Q$ a divisor. Due to genus being 1 $\forall k\geq 1: l(kD) = 2k$. $l(D)=2$ and that means there exists $x \notin K$ s.t. $\{1,x\}$ is a basis of $\mathcal{L}(D)$ and s.t. $(x)_{-} = P+Q$. Then $(x)^2 = 2(x) = 2(x)_{+}-2(x)_{-} \implies x^2 \in \mathcal{L}(2D),\{1,x,x^2\}$ is linearly independent in $\mathcal{L}(2D)$ but $l(2D)=4$ that means there exists $y \in \mathcal{L}(2D)\setminus \mathcal{L}(D)$ such that $\{1,x,x^2,y\}$ is a basis of $\mathcal{L}(2D)$. 
 
 Denote $B = \{1,x,x^2,x^3,x^4,y,yx,yx^2,y^2\}$, clearly $B \subseteq \mathcal{L}(4D), l(4D)=8$ and $|B|=9 \implies 1 \leq i \leq 8: \exists a_i \in K:$
 \begin{gather*}
@@ -166,10 +168,16 @@ y^2 =b_1x^4 + b_2x^3 + b_3x^2 + b_4x+ b_5
 \end{gather*}
 where $b_1 = a_4+\frac{a_3^2}{4}$. If $b_1=0$ then $y^2$ would be a linear combination of elements in $\mathcal{L}(3D)$ that is a contradiction.
 
+We know $2=\deg((x)_{-})=[F:K(x)]$. We have $K(x,y) \subseteq F$. We want to show $F=K(x,y)$.
+\begin{gather*}
+2=[F:K(x)]=[F:K(x,y)][K(x,y):K(x)]
+\end{gather*}
+If $[F:K(x,y)] = 1$ we are done. Assume $[F:K(x,y)]=2$ which means $[K(x,y):K(x)]=1$ i.e. $K(x,y)=K(x)$. We know that $p(T)=T^2-g(x) \in K(x)[T]$ where $g(x)=b_1x^4 + b_2x^3 + b_3x^2 + b_4x+ b_5$ has $y$ as a root in $K(x,y)$. Since $[K(x,y):K(x)]=1$ there must exist a polynomial $T-h(x) \in K(x)[T]$ s.t. $T-h(x)|p(T)$ and it must be $\deg(h)=2$. This implies $y=ax^2+bx+c$ for some $a,b,c \in K$. This is a contradiction with selection of $y$ since we are selecting it to $\{1,x,x^2,y\}$ be a basis of $\mathcal{L}(2D)$.
+
 $\qed$
 
 \textbf{Theorem Q.8.} \textit{Proof:}
-Denote $f(x) = g(x^2)$. $F$ is EFF therefore genus is 1 and there exists a place of degree $1$. Also this means $K$ algebraically closed.
+Denote $f(x) = g(x^2)$. $F$ is EFF therefore genus is 1 and there exists a place of degree $1$.
 
 If $g(x)$ has a multiple root $\alpha$, then $f(x)=g(x^2)$ has also a multiple root because $g(x)=(x-\alpha)^2 \implies g(x^2) = (x-\sqrt{\alpha})^2(x+\sqrt{\alpha})^2$. Set $z = \frac{y}{x-\sqrt{\alpha}}$. Then $F$ is given by $z^2=(x+\sqrt{\alpha})^2$. This means (using same technique as in Q.2) that $F = K(x+z)$ which means $F$ has genus 0, a contradiction.
 
@@ -194,28 +202,26 @@ Since $\deg((y+x^2+b)_{+}) = \deg((y+x^2+b)_{-}) = \deg((y+x^2)_{-}) = 2 \implie
 
 We have proven the last part of the theorem. Now let's prove the equivalence.
 
-As we have shown before. We can assume $g(x^2)$ separable and then we have involution $P-Q$ as shown above since $2P-2Q = (t)$ for $t \in F$. We only have to show that $P-Q \neq (t)$ for some $t \in F$. 
+As we have shown before. We can assume $g(x^2)$ separable and then we have involution $P-Q$ as shown above since $2P-2Q = (t)$ for $t \in F$. We only have to show that $P-Q \neq (t)$ for some $t \in F$. We know that if $P-Q \in \text{Princ}(F/K) \implies P=Q$ so that would be a contradiction. 
 
-If $t \in F$ s.t. $(t) = P - Q \implies \deg((t)_{+}) = 1 = [F:K(t)]$ and that would be contradiction with F being EFF.
+Now we assume we have involution. This mean we have $P \neq Q$ places of degree one s.t. $2[P-Q]=(t), t \in F$ and $P-Q \neq (s), s \in F$. Using Q.7 we know $F$ is given by $y^2 = f(x), \deg(f)=4$ and $f$ monic where $x,y \in F, (x)_{-} = P+Q$. We can also assume $f$ separable since $F$ is of genus 1 using Q.6. If $f$ has no simple root then similarly it can be shown $F$ has genus 0. We can also take $f$ s.t. $\deg(f(x)-x^4)=2$ due to the paragraph before Q.5.
 
-Now we assume we have involution. This mean we have $P \neq Q$ places of degree one s.t. $2[P-Q]=(t), t \in F$ and $P-Q \neq (s), s \in F$. Using Q.7 we know $F$ is given by $y^2 = f(x), \deg(f)=4$ and $f$ monic where $x,y \in F, (x)_{-} = P+Q$. We can also assume $f$ separable since $F$ is of genus 1 using Q.6. If $f$ has no simple root then similarly it can be shown $F$ has genus 0.
+By Q.5 we also have $(y-x^2)_{-} = 2P$ and $(y+x^2)_{-} = 2Q$. We know that $t \in \mathcal{L}(2P), t^{-1} \in \mathcal{L}(2Q)$. Since $t \notin K$ $\{1,t\}$ forms a basis of $\mathcal{L}(2P)$ and $\{1,t^{-1}\}$ forms a basis of $\mathcal{L}(2Q)$ therefore there exist $p_1, p_2, q_1, q_2 \in K$ s.t. $y-x^2 = p_1+p_2t, y+x^2=q_1+q_2t^{-1}$. We know that $f(x)=x^4+bx^2+cx+d, b,c,d \in K$. We want to show that $c=0$. 
 
-By Q.5 we also have $(y-x^2)_{-} = 2P$ and $(y+x^2)_{-} = 2Q$. We know that $t \in \mathcal{L}(2P), t^{-1} \in \mathcal{L}(2Q)$. Since $t \notin K$ $\{1,t\}$ forms a basis of $\mathcal{L}(2P)$ and $\{1,t^{-1}\}$ forms a basis of $\mathcal{L}(2Q)$ therefore there exist $p_1, p_2, q_1, q_2 \in K$ s.t. $y-x^2 = p_1+p_2t, y+x^2=q_1+q_2t^{-1}$. We know that $f(x)=x^4+ax^3+bx^2+cx+d, a,b,c,d \in K$. We want to show that $a = 0 = c$. 
-
-We have $y^2-x^4=(y-x^2)(y+x^2)=ax^3+bx^2+cx+d \iff (p_1+p_2t)(q_1+q_2t^{-1})-d = ax^3+bx^2+cx$. If we use new names for the coefficients on the left side $(s_1,s_2,s_3 \in K, s_1,s_2 \neq 0)$
+We have $y^2-x^4=(y-x^2)(y+x^2)=bx^2+cx+d \iff (p_1+p_2t)(q_1+q_2t^{-1})-d = bx^2+cx$. If we use new names for the coefficients on the left side $(s_1,s_2,s_3 \in K, s_1,s_2 \neq 0)$
  we get:
 \begin{gather*}
-s_1t+s_2t^{-1}+s_3 = ax^3+bx^2+cx
+s_1t+s_2t^{-1}+s_3 = bx^2+cx
 \end{gather*}
 We know $v_P(t)=2$ and $v_P(t^{-1})=-2$. Assume $s_3 \neq 0$. Then $v_P(s_2t^{-1}+s_3) = -2$ since $v_P(s_3) = 0$. Also this means that $v_P(s_1t+s_2t^{-1}+s_3)=-2$. If $s_3=0$ we get the same result. We now have:
 \begin{gather*}
--2=v_P(ax^3+bx^2+cx) = v_P(x)+v_P(ax^2+bx+c)
+-2=v_P(bx^2+cx) = v_P(x)+v_P(bx+c)
 \end{gather*}
-Since $v_P(x)=-1$ we have $v_P(ax^2+bx+c) = -1$. It must be that $a=0$.
+Since $v_P(x)=-1$ we have $v_P(bx+c) = -1$.
 
 Now we have $s_1t+s_2t^{-1}+s_3 = bx^2+cx \iff cx = s_1t+s_2t^{-1}+s_3-bx^2$. Assume $c \neq 0$. If $b=0$ then $x \in K(t)$ and since $y+x^2 \in K(t)$ we have $y \in K(t) \implies F=K(t)$ which is a contradiction with genus being 1. If $b \neq 0$ then $x \in K(t,x^2)$ and also since $(y-x^2)-(y+x^2) \in K(t) \implies x^2 \in K(t) \implies x \in K(t)$ and also $y \in K(t)$ which is again a contradiction with $F$ being genus 1.
 
-Therefore it must be $a=0=c$.
+Therefore it must be $c=0$.
 
 $\qed$
 
@@ -471,8 +477,43 @@ Similarly from $G.5$ we know that $\Psi_1 \circ \Phi_2 = id_{C'}$ and from $W.2$
 $\qed$
 
 \textbf{Problem:}
-First we will show that any curve given by an Edwards curve is smooth.
+
+Assume $F/K$ EFF can be given by $y^2=(x^2-a)(x^2-d)$ since $F$ is EFF $f(x)=(x^2-a)(x^2-d)$ must be separable and therefore we can assume $a,d \in K^*, a \neq d$. Assume there exists $c \in K^*: c^2=a$. We can then say that $F/K$ can be given by $y^2=(x-c)(x+c)(x^2-d)$.
+
+We will investigate the structure of divisor $(x-c)$. By Q.4 we know that $[F:K(x)]=2$, since $c \in K: K(x)=K(x-c)$ and we can see that $\deg((x\pm c)_{-})=2=\deg((x\pm c)_{+})$. By Q.5 we know there exist distinct places $P,Q$ of degree one s.t. $(x)_{-}=P+Q, (y)_{-}=2P+2Q$. We then have:
+\begin{gather*}
+2v_P(y)=v_P(x-c)+v_P(x+c)+v_P(x^2-d)\\
+v_P(x) < 0 \implies v_P(x^2-d)=v_P(x^2)=2v_P(x)=v_P(y) \implies\\
+-2 = v_P(y) = v_P(x-c)+v_P(x+c)\\
+\text{And same for $Q$:}\\
+-2 = v_Q(y) = v_Q(x-c)+v_Q(x+c)\\
+\end{gather*}
+Since $\deg((x\pm c)_{-})=2$ the only possibilities are:
+\begin{gather*}
+v_P(x-c) = -1 = v_P(x+c) \text{ and } v_Q(x-c) = -1 = v_Q(x+c) \\
+\text{ or w.l.o.g.:}\\
+v_P(x-c) = -2, v_P(x+c) = 0, v_Q(x-c)=0, v_Q(x+c) = -2
+\end{gather*}
+The first option implies $(x-c)_{-}=(x+c)_{-}=P+Q$ and the second one $(x-c)_{-}=2P, (x+c)_{-}=2Q$. The second option is not possible since $\{1,x\}$ forms a basis of $\mathcal{L}(P+Q)$ and therefore $x \pm c \in \mathcal{L}(P+Q)$ but $(x-c)_{-}=2P \implies x-c \notin \mathcal{L}(P+Q)$ which is a contradiction.
+
+Now we know $(x-c)_{-}=(x+c)_{-}=P+Q$. There exists a place $W$ different from $P,Q$ s.t. $v_W(x-c) > 0$. Again we get an equality:
+\begin{gather*}
+2v_W(y) = v_W(x-c)+v_W(x+c)+v_W(x^2-d)
+\end{gather*}
+Since we know $(y)_{-}=2P+2Q$ it must be $v_W(y) \geq 0$. For similar reasons it must be $v_W(x+c) \geq 0$. Also $v_W(x) \geq 0$ since $(x)_{-} = P+Q$ using valuation definition we have $v_W(x^2-d) \geq min(2v_W(x), v_W(d))$. $d \in K \implies v_W(d)=0$ and with $v_W(x) \geq 0$ we get $v_W(x^2-d) \geq 0$. This gives us $v_W(y) \geq v_W(x-c) \implies v_W(y) \geq 1$. 
+
+Either $v_W(x-c) = 2$ then $(x-c)_{+}=2W$ since $\deg((x-c)_{+})=2$ and $v_W(y) \geq 1$ or $v_W(x-c)=1$ which means there exists another place $T$ s.t. $v_T(x-c)=1 \implies (x-c)_{+}=W+T$ and $v_T(y) \geq 1$.
+
+In both cases clearly $v_W(x+c) = 0$ since it must be nonnegative integer and $v_W(x+c) > 0$ implies $c \in W$ and $c \in K$ which is a contradiction. Therefore we can say:
+\begin{gather*}
+2v_W(y) = v_W(x-c)+v_W(x^2-d)
+\end{gather*}
+Assume $v_W(x-c) = 1 \implies v_W(x^2-d) > 0$. Since also $v_W(y) > 0: y,x-c, x^2-d \in W \implies (x-c)(x^2-d) = \frac{y^2}{x+c}$
 ...
 
-Elliptic function field $F/K$ char$(K)\neq 2$ can be given by a Weirstrass equation $w(x,y)=0$ where $w(x_1,x_2) = x_2^2-f(x)$ and $F=K(C), C=V_w$ is smooth.
+If $(x-c)_{+} = 2W$ then $(x-c)=2W-P-Q \implies (x-c)^2 = 4W - 2P - 2Q$. Set $b = \frac{c^2-d}{2}$ then by Q.8 we have $(y+x^2+b)=2P-2Q \implies (x-c)^2(y+x^2+b) = 4W - 4Q = 4[W-Q]$. Now we need to show that $2W-2Q \neq (t)$ for some $t \in F$ (we should also show that $W-Q \neq (t)$ but this gives us the same contradiction with $F/K$ being EFF and $[F:K(t)]=1$). Assume there exists $t \in F$ s.t. $(t) = 2W-2Q$. By Q.5 $(y+x^2)_{-}=2Q$ then $y+x^2, t \in \mathcal{L}(2Q)$. $\{1,t\}$ forms a basis of $\mathcal{L}(2Q)$ which means there exist $s_1,s_2 \in K$ s.t. $y+x^2 = s_1t +s_2 \iff y+x^2+b = s_1t + (s_1+b)$. $v_P(y+x^2+b) = 2$ but $v_P(s_1t+(s_2+b)$
+
+Converse implication. We have $F/K$ EFF s.t. $\text{Pic}^0(F/K)$ contains an element of order 4. $F/K$ is EFF therefore there exists a place $Q$ of degree 1. Set $[D] \in \text{Pic}^0(F/K)$ to be the element of order 4 i.e. $4[D] \in \text{Princ}(F/K)$. Also there exists a place $W$ of degree 1 s.t. $[D]=[W-Q] \implies 4W-4Q = (t), t \in F$. $2[D]=[2D]$ in involution. Denote $P$ the place of degree 1 s.t. $[2D] = [P-Q]$. 
+
+Using Q.7 and Q.8 we get that $F/K$ is given by $y^2=g(x^2), g(x)=x^2+2bx+c$ where $b,c \in K$. Also that $(x)_{-}=P+Q, (y)_{-}=2P+2Q$.
 \end{document}
