@@ -64,7 +64,7 @@ Then we know $\deg((x)_{-}) = [F:K(x^{-1})] = [F:K(x)] = 2$ i.e. $\deg(D)=2$.
 
 Now assume $f$ is separable. We can then use the same argument for $K=\tilde{K}$ since $min_{y,K(x)}(T) = T^2-f(x)$ and by Q.1 this one is also absolutely irreducible. $F=K(x,y) \implies 2=[F:K(x)] = [F:\tilde{K}(x)][\tilde{K}:K] = 2 \implies [\tilde{K}:K]=1$. And again $\deg(D)=2$.
 
-We can see that for $k \geq 2: \{1,x,\dots,x^k, y, yx, \dots, yx^{k-2}\} \subset \mathcal{L}(kD)$ because $(x^k) + kD = k((x)_{+}-(x)_{-})+k(x)_{-} = k(x)_{+} \geq 0$ and also $(y)_{-}=2(x)_{-}$ so it holds if we substitute $x^2$ for $y$. To show that this set is linearly independent is it sufficient show that $y \notin K(x)$. If $y \in K(x)$ then $K(x)=K(x,y)=F$ (same for the case $F=K(x,z)$ because $z \in K(x,y)$). We have shown that $[F:K(x)]=2$. The set also contains $2k$ elements. Therefore $l(kD) \geq 2k$. 
+We can see that for $k \geq 2: \{1,x,\dots,x^k, y, yx, \dots, yx^{k-2}\} \subset \mathcal{L}(kD)$ because $(x^k) + kD = k((x)_{+}-(x)_{-})+k(x)_{-} = k(x)_{+} \geq 0$ and also $(y)_{-}=2(x)_{-}$ so it holds if we substitute $x^2$ for $y$. To show that this set is linearly independent is equivalent to say that $p(x)+yq(x) = 0 \in F \iff p(x)+yq(x) \in (y^2-f(x)) \iff p(x)=0,q(x)=0$ for $p(x),q(x) \in K(x)$. This is true since $f(x)$ is not a square. Also $y \notin K(x)$. If $y \in K(x)$ then $K(x)=K(x,y)=F$ (same for the case $F=K(x,z)$ because $z \in K(x,y)$). We have shown that $[F:K(x)]=2$. The set also contains $2k$ elements. Therefore $l(kD) \geq 2k$. 
 
 We know that for a sufficiently large $k$ (if $l(kD) \geq 2g-1$, $g$ genus) we have $l(kD) = \deg(kD)-g+1$ having $\deg(kD)=2k, l(kD) \geq 2k \implies 0 \leq l(kD)-\deg(kD) = -g + 1 \iff g \leq 1$.
 
@@ -478,7 +478,7 @@ $\qed$
 
 \textbf{Problem:}
 
-Assume $F/K$ EFF can be given by $y^2=(x^2-a)(x^2-d)$ since $F$ is EFF $f(x)=(x^2-a)(x^2-d)$ must be separable and therefore we can assume $a,d \in K^*, a \neq d$. Assume there exists $c \in K^*: c^2=a$. We can then say that $F/K$ can be given by $y^2=(x-c)(x+c)(x^2-d)$.
+Assume $F/K$ EFF can be given by $y^2=(x^2-a)(x^2-d)$ since $F$ is EFF $f(x)=(x^2-a)(x^2-d)$ must be separable and therefore we can assume $a,d \in K^*, a \neq d$. Assume there exists $c \in K^*: c^2=a$. Then $F/K$ is given by $y^2=(x-c)(x+c)(x^2-d)$.
 
 We will investigate the structure of divisor $(x-c)$. By Q.4 we know that $[F:K(x)]=2$, since $c \in K: K(x)=K(x-c)$ and we can see that $\deg((x\pm c)_{-})=2=\deg((x\pm c)_{+})$. By Q.5 we know there exist distinct places $P,Q$ of degree one s.t. $(x)_{-}=P+Q, (y)_{-}=2P+2Q$. We then have:
 \begin{gather*}
@@ -508,10 +508,8 @@ In both cases clearly $v_W(x+c) = 0$ since it must be nonnegative integer and $v
 \begin{gather*}
 2v_W(y) = v_W(x-c)+v_W(x^2-d)
 \end{gather*}
-Assume $v_W(x-c) = 1 \implies v_W(x^2-d) > 0$. Since also $v_W(y) > 0: y,x-c, x^2-d \in W \implies (x-c)(x^2-d) = \frac{y^2}{x+c}$
-...
 
-If $(x-c)_{+} = 2W$ then $(x-c)=2W-P-Q \implies (x-c)^2 = 4W - 2P - 2Q$. Set $b = \frac{c^2-d}{2}$ then by Q.8 we have $(y+x^2+b)=2P-2Q \implies (x-c)^2(y+x^2+b) = 4W - 4Q = 4[W-Q]$. Now we need to show that $2W-2Q \neq (t)$ for some $t \in F$ (we should also show that $W-Q \neq (t)$ but this gives us the same contradiction with $F/K$ being EFF and $[F:K(t)]=1$). Assume there exists $t \in F$ s.t. $(t) = 2W-2Q$. By Q.5 $(y+x^2)_{-}=2Q$ then $y+x^2, t \in \mathcal{L}(2Q)$. $\{1,t\}$ forms a basis of $\mathcal{L}(2Q)$ which means there exist $s_1,s_2 \in K$ s.t. $y+x^2 = s_1t +s_2 \iff y+x^2+b = s_1t + (s_1+b)$. $v_P(y+x^2+b) = 2$ but $v_P(s_1t+(s_2+b)$
+If $(x-c)_{+} = 2W$ then $(x-c)=2W-P-Q \implies (x-c)^2 = 4W - 2P - 2Q$. Set $b = \frac{c^2-d}{2}$ then by Q.8 we have $(y+x^2+b)=2P-2Q \implies (x-c)^2(y+x^2+b) = 4W - 4Q = 4[W-Q]$. Now we need to show that $2W-2Q \neq (t)$ for some $t \in F$. Assume there exists $t \in F$ s.t. $(t) = 2W-2Q$. By Q.5 $(y+x^2)_{-}=2Q$ then $y+x^2, t \in \mathcal{L}(2Q)$. $\{1,t\}$ forms a basis of $\mathcal{L}(2Q)$ which means there exist $s_1,s_2 \in K$ s.t. $y+x^2 = s_1t +s_2$...
 
 Converse implication. We have $F/K$ EFF s.t. $\text{Pic}^0(F/K)$ contains an element of order 4. $F/K$ is EFF therefore there exists a place $Q$ of degree 1. Set $[D] \in \text{Pic}^0(F/K)$ to be the element of order 4 i.e. $4[D] \in \text{Princ}(F/K)$. Also there exists a place $W$ of degree 1 s.t. $[D]=[W-Q] \implies 4W-4Q = (t), t \in F$. $2[D]=[2D]$ in involution. Denote $P$ the place of degree 1 s.t. $[2D] = [P-Q]$. 
 
